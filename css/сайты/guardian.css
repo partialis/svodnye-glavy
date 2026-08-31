@@ -1,0 +1,56 @@
+/* THE GUARDIAN · theguardian.com
+   Замер 01.09 на живой статье: колонка 620 px, текст 17px/23.8px (1.40)
+   цветом rgb(18,18,18) шрифтом GuardianTextEgyptian, ссылка в тексте
+   rgb(199,70,0), h1 34px/39.1px ВЕСОМ 300 (светлое начертание — примета
+   издания), h2 24px/27.6px вес 700.
+
+   Guardian Egyptian кириллицы не имеет. Замена — Source Serif 4: полный
+   расширенный кириллический набор (Adobe, кириллица Ирины Влаху), тот же
+   класс — плотная газетная антиква с крупным очком. */
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;700&display=swap");
+
+:root{
+  --ob-fs: 17px; --ob-lh: 1.4;
+  --ob-font: "Source Serif 4", Georgia, serif;
+  --ob-font-h: var(--ob-font);
+  --ob-col: 620px; --ob-left-w: 292px; --ob-right-w: 0px; --ob-gap: 36px;
+
+  --ob-bg: #f6f6f6; --ob-sheet: #ffffff; --ob-surface: #ffffff;
+  --ob-text: #121212; --ob-muted: #707070;
+  --ob-link: #c74600; --ob-link-hover: #8a3100;
+  --ob-rule: #dcdcdc; --ob-accent: #c74600;
+
+  /* Заголовок ЛЁГКИЙ, вес 300 — это и есть узнаваемая примета Guardian.
+     Соблазн поставить 700 «чтобы читалось» противоречит замеру. */
+  --ob-h1-fs: 2.15rem; --ob-h1-fw: 300; --ob-h1-col: #121212;
+  --ob-h2-fs: 1.45rem; --ob-h2-fw: 700; --ob-h2-col: #121212;
+  --ob-h3-fs: 1.1rem; --ob-h3-fw: 700; --ob-h3-col: #121212;
+
+  --ob-top-bg: #052962; --ob-top-fg: #ffffff; --ob-top-h: 58px;
+  --ob-top-brd: 0;
+  --ob-sub-bg: #ffffff; --ob-sub-fg: #121212;
+
+  --ob-th-bg: transparent; --ob-th-col: #121212;
+  --ob-td-brd: 1px solid #dcdcdc; --ob-table-fs: .88em;
+  --ob-vrezka-bg: #ffffff; --ob-vrezka-brd: 1px solid #c74600; --ob-vrezka-rad: 0;
+  --ob-card-bg: #ffffff; --ob-card-brd: 1px solid #dcdcdc; --ob-card-rad: 0;
+  --ob-card-pad: 14px 16px;
+  --ob-radius: 0;
+}
+
+/* Тёмно-синяя шапка — фирменный цвет издания, снят с живой страницы. */
+:root .ob-top a{ color: #ffffff; }
+:root .ob-side-btn{ color: #ffffff; }
+
+/* Вертикальная линейка слева у заголовка раздела: у Guardian ею отбиты
+   рубрики и вставки. */
+:root .ob-article h2{
+  border-top: 1px solid #121212; padding-top: 10px; margin-top: 2em;
+}
+:root .ob-article a{ text-decoration: none; border-bottom: 1px solid rgba(199,70,0,.35); }
+:root .ob-article a:hover{ border-bottom-color: #c74600; }
+:root .ob-article figcaption{
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: .76em; color: #707070;
+}
+:root .ob-toc a{ font-family: "Source Sans 3", system-ui, sans-serif; font-size: .92em; }

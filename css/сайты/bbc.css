@@ -1,0 +1,50 @@
+/* BBC · bbc.com
+   Замер 01.09 на живой статье: колонка 721 px, текст 18px/26px (1.44) цветом
+   rgb(32,34,36) шрифтом BBC Reith Serif, h1 38px/44px вес 500, h2 18px/22px
+   вес 500. Своя документация BBC (GEL) называет предельную длину строки
+   50–70 знаков и шаг отступов кратный 8 — этому здесь и следуют.
+
+   Reith кириллицы не имеет. Замена — Literata: сделана TypeTogether для
+   Google Play Books, то есть ровно под непрерывное чтение с экрана, полный
+   расширенный кириллический набор. */
+@import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,700;1,7..72,400&family=Inter:wght@400;500;700&display=swap");
+
+:root{
+  --ob-fs: 18px; --ob-lh: 1.44;
+  --ob-font: "Literata", Georgia, serif;
+  --ob-font-h: var(--ob-font);
+  --ob-col: 721px; --ob-left-w: 296px; --ob-right-w: 0px; --ob-gap: 40px;
+
+  --ob-bg: #ffffff; --ob-sheet: #ffffff; --ob-surface: #ffffff;
+  --ob-text: #202224; --ob-muted: #6a6c6e;
+  --ob-link: #1160a8; --ob-link-hover: #0b4478;
+  --ob-rule: #dbdbdb; --ob-accent: #bb1919;
+
+  --ob-h1-fs: 2.1rem; --ob-h1-fw: 500; --ob-h1-col: #202224;
+  --ob-h2-fs: 1.35rem; --ob-h2-fw: 500; --ob-h2-col: #202224;
+  --ob-h3-fs: 1.08rem; --ob-h3-fw: 500; --ob-h3-col: #202224;
+
+  --ob-top-bg: #ffffff; --ob-top-fg: #202224; --ob-top-h: 56px;
+  --ob-top-brd: 1px solid #dbdbdb;
+  --ob-sub-bg: #ffffff; --ob-sub-fg: #202224;
+
+  --ob-th-bg: #f2f2f2; --ob-th-col: #202224;
+  --ob-td-brd: 1px solid #dbdbdb; --ob-table-fs: .9em;
+  --ob-vrezka-bg: #f2f2f2; --ob-vrezka-brd: 0; --ob-vrezka-rad: 0;
+  --ob-card-bg: #ffffff; --ob-card-brd: 1px solid #dbdbdb; --ob-card-rad: 0;
+  --ob-card-pad: 16px;
+  --ob-radius: 0;
+}
+
+/* Красная линейка над заголовком раздела — узнаваемая примета BBC News.
+   Отступы кратны 8, как предписывает их же GEL. */
+:root .ob-article h2{
+  border-top: 4px solid #bb1919; padding-top: 16px; margin-top: 40px;
+}
+:root .ob-article a{ text-decoration: none; border-bottom: 1px solid rgba(17,96,168,.4); }
+:root .ob-article a:hover{ border-bottom-color: #1160a8; }
+:root .ob-article figcaption{
+  font-family: "Inter", system-ui, sans-serif; font-size: .78em; color: #6a6c6e;
+}
+:root .ob-toc a{ font-family: "Inter", system-ui, sans-serif; font-size: .9em; }
+:root .ob-article th, :root .ob-article td{ padding: 8px 16px; }

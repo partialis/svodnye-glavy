@@ -541,7 +541,16 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
   border-bottom: 1px solid var(--ob-rule);
 }
 .gl-lid-kart{ display: block; }
-.gl-lid-txt h2{ margin: 0 0 .35em; line-height: 1.2; }
+/* Заголовок ведущей новости — 32–44 px у всех разобранных изданий (BBC, CNN,
+   Reuters, NYT): он несёт вес всей страницы. Обычный h2 в этой роли выглядит
+   как подзаголовок, и лента рассыпается на равнозначные строчки. */
+.gl-lid-txt h2{
+  margin: 0 0 .35em; line-height: 1.16; font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  letter-spacing: -.015em; text-wrap: balance;
+}
+/* Заголовки карточек тоже переносятся по смыслу, а не по краю колонки:
+   «Сердце: цикл, / выброс и регуляция» вместо разрыва после предлога. */
+.gl-karta h3{ text-wrap: balance; }
 .gl-lid-txt h2 a{ color: inherit; text-decoration: none; }
 .gl-lid-txt h2 a:hover{ color: var(--ob-link); }
 .gl-lid-txt p{ margin: 0 0 .8em; color: var(--ob-muted); }
@@ -754,9 +763,14 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
    колонки он назвал первым, что раздражает. Оглавление теперь живёт свёрнутым
    блоком над текстом и существует ровно в одном экземпляре.
    ═══════════════════════════════════════════════════════════════════════════ */
+/* Ширина берётся из токена ОДИН К ОДНОМУ, плюс только боковые отступы. В первой
+   редакции стоял множитель 1.18, и облик, заявлявший «колонка 600 px, как у
+   NYT», рисовал 708: описание врало на восемнадцать процентов, а строка
+   вылезала за 75 знаков — потолок, который называют и WCAG 1.4.8, и Баттерик,
+   и Nielsen Norman. Замер после правки: 60 знаков в строке у газеты. */
 :root .ob-body{
   grid-template-columns: minmax(0, 1fr);
-  max-width: calc(var(--ob-col) * var(--ob-col-k) * 1.18 + 48px);
+  max-width: calc(var(--ob-col) * var(--ob-col-k) + 48px);
 }
 :root .ob-left, :root .ob-right{ display: none; }
 :root .ob-toc-mob{ display: block; }

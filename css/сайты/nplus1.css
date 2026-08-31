@@ -1,0 +1,48 @@
+/* N+1 · nplus1.ru
+   Замер 01.09 на живой статье: колонка 743 px, текст 18px/26px (1.44) цветом
+   rgb(50,54,58) гротеском AeonikPro, h1 52px/58px ВЕСОМ 400 — крупный, но не
+   жирный. Единственный русскоязычный источник в наборе, и единственный, где
+   тело набрано ГРОТЕСКОМ, а не антиквой.
+
+   Он тут не для разнообразия, а как встречный довод: остальные семь
+   замеренных изданий взяли засечный текст, N+1 — нет, и читается он хорошо.
+   Значит «засечный шрифт обязателен» — не вывод замера.
+
+   Aeonik платный. Замена — Inter: гротеск, сделанный под экран, с полной
+   кириллицей; ближайший общедоступный родственник по рисунку. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root{
+  --ob-fs: 18px; --ob-lh: 1.44;
+  --ob-font: "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --ob-font-h: var(--ob-font);
+  --ob-col: 743px; --ob-left-w: 300px; --ob-right-w: 0px; --ob-gap: 44px;
+
+  --ob-bg: #ffffff; --ob-sheet: #ffffff; --ob-surface: #ffffff;
+  --ob-text: #32363a; --ob-muted: #7a8085;
+  --ob-link: #0a58ca; --ob-link-hover: #073d8c;
+  --ob-rule: #e6e8ea; --ob-accent: #0a58ca;
+
+  /* Вес 400 у заголовка — это замер, а не недосмотр: у N+1 крупный кегль
+     работает вместо жирности. */
+  --ob-h1-fs: 2.9rem; --ob-h1-fw: 400; --ob-h1-col: #14181c;
+  --ob-h2-fs: 1.5rem; --ob-h2-fw: 600; --ob-h2-col: #14181c;
+  --ob-h3-fs: 1.1rem; --ob-h3-fw: 600; --ob-h3-col: #14181c;
+
+  --ob-top-bg: #ffffff; --ob-top-fg: #14181c; --ob-top-h: 58px;
+  --ob-top-brd: 1px solid #e6e8ea;
+  --ob-sub-bg: #ffffff; --ob-sub-fg: #32363a;
+
+  --ob-th-bg: #f5f7f8; --ob-th-col: #14181c;
+  --ob-td-brd: 1px solid #e6e8ea; --ob-table-fs: .9em;
+  --ob-vrezka-bg: #f5f7f8; --ob-vrezka-brd: 0; --ob-vrezka-rad: 8px;
+  --ob-card-bg: #ffffff; --ob-card-brd: 1px solid #e6e8ea; --ob-card-rad: 8px;
+  --ob-card-pad: 16px 18px;
+  --ob-radius: 8px;
+}
+
+:root .ob-head h1{ letter-spacing: -.025em; line-height: 1.12; text-wrap: balance; }
+:root .ob-article h2{ letter-spacing: -.015em; margin-top: 2.1em; }
+:root .ob-article a{ text-decoration: none; border-bottom: 1px solid rgba(10,88,202,.35); }
+:root .ob-article a:hover{ border-bottom-color: #0a58ca; }
+:root .ob-article figcaption{ font-size: .8em; color: #7a8085; }
