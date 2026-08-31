@@ -1,0 +1,64 @@
+/* NCBI BOOKSHELF / STATPEARLS · ncbi.nlm.nih.gov/books/NBK538339
+   Замерено 31.08: фон страницы rgb(204,204,204), белый лист статьи, текст
+   Times New Roman 16px/22px чёрным, колонка 758 px, ссылки rgb(47,74,139) с
+   подчёркиванием. Тёмно-синяя полоса NIH и коричневые заголовки разделов
+   сняты со СНИМКА экрана, а не из вычисленных стилей: мой сборщик берёт первый
+   h1/h2 в документе, а им на этой странице оказался служебный заголовок
+   «StatPearls [Internet]». Оговорка нужна, чтобы цифру не выдавать за замер. */
+
+:root{
+  --ob-fs: 16px; --ob-lh: 1.375;
+  --ob-font: "Times New Roman", Times, serif;
+  --ob-font-h: Arial, Helvetica, sans-serif;
+  --ob-col: 758px; --ob-left-w: 210px; --ob-right-w: 300px; --ob-gap: 26px;
+
+  --ob-bg: #cccccc; --ob-sheet: #ffffff;
+  --ob-text: #000000; --ob-muted: #575757;
+  --ob-link: #2f4a8b; --ob-link-hover: #1b2d5e;
+  --ob-rule: #cdcdcd; --ob-accent: #8a4b27;
+
+  --ob-h1-fs: 1.62rem; --ob-h1-fw: 700; --ob-h1-col: #000; --ob-h1-font: var(--ob-font-h);
+  --ob-h2-fs: 1.18rem; --ob-h2-fw: 700; --ob-h2-col: #8a4b27; --ob-h2-font: var(--ob-font-h);
+  --ob-h2-rule: 1px solid #d8d8d8;
+  --ob-h3-fs: 1rem; --ob-h3-fw: 700; --ob-h3-col: #000; --ob-h3-font: var(--ob-font-h);
+
+  --ob-top-bg: #20558a; --ob-top-fg: #ffffff; --ob-top-h: 64px;
+  --ob-sub-bg: #e8e8e8; --ob-sub-fg: #333333;
+
+  --ob-th-bg: #f0f0f0; --ob-td-brd: 1px solid #bcbcbc; --ob-table-fs: .9em;
+  --ob-vrezka-bg: #f6f4ee; --ob-vrezka-brd: 1px solid #d8d0bd; --ob-vrezka-rad: 0;
+  --ob-card-bg: #ffffff; --ob-card-brd: 1px solid #cdcdcd; --ob-card-rad: 0;
+  --ob-card-pad: 0; --ob-radius: 2px;
+}
+
+/* Белый лист внутри серого поля — главная примета этого вида. */
+.ob-body{ background: #fff; max-width: 1200px; margin: 0 auto; padding: 0 22px;
+  border: 1px solid #b8b8b8; border-top: 0; }
+.ob-mark{ background: #fff; color: #20558a; border-radius: 2px; font-family: var(--ob-font-h); }
+.ob-brand-name{ font-family: var(--ob-font-h); font-weight: 400; font-size: 1.28em; letter-spacing: -.01em; }
+.ob-topnav{ font-family: var(--ob-font-h); }
+.ob-subnav{ font-family: var(--ob-font-h); border-bottom: 1px solid #b8b8b8; }
+.ob-search{ background: #fff; border: 1px solid #9aa7b8; color: #333; }
+
+.ob-left{ font-family: var(--ob-font-h); }
+.ob-left-t{ color: #20558a; border-bottom: 1px solid #cdcdcd; padding-bottom: 6px; }
+.ob-toc{ font-size: .82em; }
+.ob-toc a{ color: var(--ob-link); }
+
+.ob-crumbs{ font-family: var(--ob-font-h); }
+.ob-meta{ font-family: var(--ob-font-h); }
+
+/* Правая колонка панелями: голубая шапка панели, тонкие разделители, никаких
+   скруглений — вид ведомственной базы данных. */
+.ob-right{ font-family: var(--ob-font-h); }
+.ob-card-t{ background: #dbe6f3; color: #20558a; border-bottom: 1px solid #b9cbe0;
+  text-transform: none; letter-spacing: 0; font-size: .84em; padding: 5px 10px; margin: 0; }
+.ob-mini{ font-size: .8em; padding: 4px 10px 8px; }
+.ob-mini a{ border-bottom: 1px dotted #dcdcdc; }
+.ob-tiles{ padding: 8px 10px; }
+
+.ob-article h2{ padding-bottom: .18em; }
+.ob-article a{ text-decoration: underline; }
+.ob-article table{ font-family: var(--ob-font-h); }
+.ob-article aside{ font-family: var(--ob-font-h); font-size: .88em; }
+.ob-article aside strong:first-child{ color: #8a4b27; }

@@ -1,0 +1,62 @@
+/* OSMOSIS · osmosis.org
+   Замерено 31.08: белая шапка 50 px с рамкой rgb(212,212,212), h1 32px/700
+   гарнитурой Nunito, h2 24px/700 цветом rgb(30,41,59) — то есть slate-800 из
+   Tailwind, чем сайт и собран; левая панель тем карточкой на светло-сером,
+   скруглённые карточки с тонкой рамкой, синий баннер и кнопки-таблетки.
+   Синий баннера снят со снимка экрана: замер отдал цвет текста внутри него,
+   а не заливку. National-2 платная — берём системный гротеск. */
+
+:root{
+  --ob-fs: 16px; --ob-lh: 1.6;
+  --ob-font: Nunito, "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  --ob-font-h: var(--ob-font);
+  --ob-col: 760px; --ob-left-w: 260px; --ob-right-w: 260px; --ob-gap: 30px;
+
+  --ob-bg: #f8fafc; --ob-sheet: #ffffff;
+  --ob-text: #1e293b; --ob-muted: #64748b;
+  --ob-link: #0b5cad; --ob-link-hover: #08427a;
+  --ob-rule: #e2e8f0; --ob-accent: #0b5cad;
+
+  --ob-h1-fs: 2rem; --ob-h1-fw: 700; --ob-h1-col: #0f172a;
+  --ob-h2-fs: 1.5rem; --ob-h2-fw: 700; --ob-h2-col: #1e293b;
+  --ob-h3-fs: 1.16rem; --ob-h3-fw: 700; --ob-h3-col: #1e293b;
+
+  --ob-top-bg: #ffffff; --ob-top-fg: #1e293b; --ob-top-h: 50px;
+  --ob-top-brd: 1px solid #d4d4d4;
+  --ob-sub-bg: #0b4f9e; --ob-sub-fg: #ffffff;
+
+  --ob-th-bg: #eff6ff; --ob-th-col: #0f172a;
+  --ob-td-brd: 1px solid #e2e8f0; --ob-table-fs: .94em;
+  --ob-vrezka-bg: #eff6ff; --ob-vrezka-brd: 4px solid #0b5cad; --ob-vrezka-rad: 10px;
+  --ob-card-bg: #ffffff; --ob-card-brd: 1px solid #e2e8f0; --ob-card-rad: 12px;
+  --ob-card-pad: 16px 18px; --ob-radius: 10px;
+}
+
+.ob-mark{ background: #0b5cad; border-radius: 10px; }
+.ob-brand-name{ font-weight: 800; }
+.ob-topnav a{ font-weight: 700; opacity: 1; color: #334155; }
+.ob-search{ background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 999px; color: #475569; padding: 6px 14px; }
+.ob-subnav{ border-bottom: 0; }
+.ob-subnav a{ padding: 11px 0; font-weight: 700; font-size: .86em; }
+.ob-subnav a:hover{ color: #bfdbfe; }
+
+/* Панель тем — карточка на светло-сером, а не голый список: узнаваемая
+   особенность их библиотеки. */
+.ob-left{ background: #f1f5f9; border-radius: 12px; padding: 18px 16px 26px; margin-top: 26px; }
+.ob-left-t{ text-transform: none; letter-spacing: 0; font-size: 1.15em; font-weight: 800; color: #0f172a; }
+.ob-toc a{ padding: 7px 10px; border-radius: 8px; border-left: 0; font-weight: 700; color: #334155; }
+.ob-toc a:hover{ background: #e2e8f0; }
+.ob-toc a.ob-tek{ background: #dbeafe; color: #0b5cad; padding-left: 10px; }
+.ob-toc-3 a{ font-weight: 400; padding-left: 22px; }
+
+.ob-crumbs{ font-size: 1em; font-weight: 700; }
+.ob-crumb-now{ color: #0f172a; }
+.ob-head{ background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px 24px; }
+.ob-main{ padding-bottom: 60px; }
+.ob-article{ background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px 26px; margin-top: 16px; }
+.ob-article a{ text-decoration: none; font-weight: 700; }
+.ob-article a:hover{ text-decoration: underline; }
+.ob-article aside{ border-radius: 10px; }
+.ob-article aside strong:first-child{ color: #0b5cad; }
+.ob-article figure img{ border-radius: 10px; }
+.ob-card-t{ text-transform: none; letter-spacing: 0; font-size: 1.02em; font-weight: 800; color: #0f172a; }

@@ -1,0 +1,61 @@
+/* ВИКИПЕДИЯ · обложка Vector 2022 — en.wikipedia.org/wiki/Kidney
+   Замерено 31.08 через CDP: фон страницы rgb(248,249,250), текст rgb(32,33,34)
+   16px/26px, колонка 1117 px, таблица 14.08 px с рамкой rgb(162,169,177).
+   Из известной палитры проекта: ссылки #3366cc, посещённые #795cb2, линейки
+   #a2a9b1. Гарнитура заголовков Linux Libertine не отдаётся сайтом — заменена
+   на Georgia, ближайшую системную с тем же характером. */
+
+:root{
+  --ob-fs: 16px; --ob-lh: 1.625;
+  --ob-font: -apple-system, "Segoe UI", Arial, sans-serif;
+  --ob-font-h: "Linux Libertine", Georgia, "Times New Roman", serif;
+  --ob-col: 800px; --ob-left-w: 230px; --ob-right-w: 0px; --ob-gap: 34px;
+
+  --ob-bg: #f8f9fa; --ob-sheet: #ffffff;
+  --ob-text: #202122; --ob-muted: #54595d;
+  --ob-link: #3366cc; --ob-link-hover: #2a4b8d;
+  --ob-rule: #a2a9b1; --ob-accent: #3366cc;
+
+  --ob-h1-fs: 1.8rem; --ob-h1-fw: 400; --ob-h1-font: var(--ob-font-h);
+  --ob-h2-fs: 1.5rem; --ob-h2-fw: 400; --ob-h2-font: var(--ob-font-h);
+  --ob-h2-rule: 1px solid #a2a9b1;
+  --ob-h3-fs: 1.05rem; --ob-h3-fw: 700; --ob-h3-font: var(--ob-font);
+
+  --ob-top-bg: #ffffff; --ob-top-fg: #202122; --ob-top-h: 50px;
+  --ob-top-brd: 1px solid #a2a9b1;
+  --ob-sub-bg: #f8f9fa; --ob-sub-fg: #202122;
+
+  --ob-th-bg: #eaecf0; --ob-td-brd: 1px solid #a2a9b1; --ob-table-fs: .88em;
+  --ob-vrezka-bg: #f8f9fa; --ob-vrezka-brd: 1px solid #a2a9b1; --ob-vrezka-rad: 0;
+  --ob-card-bg: #f8f9fa; --ob-card-rad: 2px; --ob-radius: 2px;
+}
+
+/* Страница-лист: белое поле статьи на светло-сером фоне, с тонкой рамкой
+   справа — так в Vector 2022 и сделано. */
+.ob-body{ background: #fff; border-left: 1px solid #c8ccd1; border-right: 1px solid #c8ccd1;
+  max-width: 1290px; padding: 0 28px 0 20px; }
+.ob-right{ display: none; }
+.ob-search{ background: #fff; border: 1px solid #a2a9b1; }
+.ob-search input{ width: 210px; }
+.ob-mark{ border-radius: 0; background: #202122; }
+.ob-topnav a{ opacity: 1; }
+.ob-subnav a{ padding: 8px 0; }
+
+.ob-left{ padding-top: 22px; }
+.ob-left-t{ text-transform: none; letter-spacing: 0; font-size: .95em; color: var(--ob-text);
+  border-bottom: 1px solid var(--ob-rule); padding-bottom: 8px; }
+.ob-toc a{ font-size: .95em; }
+.ob-toc a.ob-tek{ background: #eaf3ff; }
+
+.ob-head h1{ padding-bottom: .18em; border-bottom: 1px solid var(--ob-rule); font-weight: 400; }
+.ob-article a{ text-decoration: none; }
+.ob-article a:hover{ text-decoration: underline; }
+
+/* wikitable: серая шапка, светлый фон ячеек, рамка везде. */
+.ob-article table{ background: #f8f9fa; }
+.ob-article th{ background: #eaecf0; text-align: left; }
+.ob-article aside{ background: #f8f9fa; border: 1px solid #a2a9b1; border-left: 1px solid #a2a9b1;
+  padding: 10px 14px; font-size: .9em; }
+.ob-article aside strong:first-child{ color: var(--ob-text); }
+.ob-article figure{ border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; }
+.ob-article figcaption{ margin-top: .5em; font-size: .82em; }

@@ -1,0 +1,122 @@
+[
+ {
+  "глава": "serdce",
+  "файл": "serdce-1.png",
+  "подпись": "Сердце в разрезе: камеры, клапаны и направление тока крови",
+  "исходник": "File:Diagram of the human heart (cropped).svg",
+  "автор": "Wapcaplet",
+  "лицензия": "CC BY-SA 3.0",
+  "страница": "https://commons.wikimedia.org/wiki/File%3ADiagram_of_the_human_heart_%28cropped%29.svg",
+  "байт": 337231
+ },
+ {
+  "глава": "serdce",
+  "файл": "serdce-2.png",
+  "подпись": "Диаграмма Виггерса: давления, объём желудочка, тоны и ЭКГ за один цикл",
+  "исходник": "File:Wiggers diagram with jugular venous waveform.png",
+  "автор": "Nootherone321",
+  "лицензия": "CC BY-SA 4.0",
+  "страница": "https://commons.wikimedia.org/wiki/File%3AWiggers_diagram_with_jugular_venous_waveform.png",
+  "байт": 172356
+ },
+ {
+  "глава": "serdce",
+  "файл": "serdce-3.png",
+  "подпись": "Фазы сердечного цикла",
+  "исходник": "File:07 Hegasy Cardiac Cycle Wiki EN CCBYSA.png",
+  "автор": "Guido4",
+  "лицензия": "CC BY-SA 4.0",
+  "страница": "https://commons.wikimedia.org/wiki/File%3A07_Hegasy_Cardiac_Cycle_Wiki_EN_CCBYSA.png",
+  "байт": 376696
+ },
+ {
+  "глава": "dyhanie",
+  "файл": "dyhanie-1.png",
+  "подпись": "Дыхательные пути: от полости носа до альвеол, с русскими подписями",
+  "исходник": "File:Respiratory system complete ru.svg",
+  "автор": "Respiratory_system_complete_numbered.svg : LadyofHats , Jmarchn Russif",
+  "лицензия": "Public domain",
+  "страница": "https://commons.wikimedia.org/wiki/File%3ARespiratory_system_complete_ru.svg",
+  "байт": 437207
+ },
+ {
+  "глава": "dyhanie",
+  "файл": "dyhanie-2.png",
+  "подпись": "Альвеола и аэрогематический барьер",
+  "исходник": "File:Gas exchange in the aveolus.svg",
+  "автор": "domdomegg",
+  "лицензия": "CC BY 4.0",
+  "страница": "https://commons.wikimedia.org/wiki/File%3AGas_exchange_in_the_aveolus.svg",
+  "байт": 236819
+ },
+ {
+  "глава": "dyhanie",
+  "файл": "dyhanie-3.png",
+  "подпись": "Кривая диссоциации оксигемоглобина и её сдвиги",
+  "исходник": "File:Oxygen-Haemoglobin dissociation curves.svg",
+  "автор": "Peter Southwood",
+  "лицензия": "CC0",
+  "страница": "https://commons.wikimedia.org/wiki/File%3AOxygen-Haemoglobin_dissociation_curves.svg",
+  "байт": 124964
+ },
+ {
+  "глава": "vozbudimost",
+  "файл": "vozbudimost-1.png",
+  "подпись": "Потенциал действия: фазы и ионные токи",
+  "исходник": "File:Action potential schematic.svg",
+  "автор": "Laurens R. Krol",
+  "лицензия": "CC0",
+  "страница": "https://commons.wikimedia.org/wiki/File%3AAction_potential_schematic.svg",
+  "байт": 48630
+ },
+ {
+  "глава": "vozbudimost",
+  "файл": "vozbudimost-2.png",
+  "подпись": "Нервно-мышечный синапс",
+  "исходник": "File:Neuro Muscular Junction.png",
+  "автор": "Doctor Jana",
+  "лицензия": "CC BY 4.0",
+  "страница": "https://commons.wikimedia.org/wiki/File%3ANeuro_Muscular_Junction.png",
+  "байт": 805617
+ },
+ {
+  "глава": "vozbudimost",
+  "файл": "vozbudimost-3.png",
+  "подпись": "Миелиновая оболочка и перехваты Ранвье",
+  "исходник": "File:Nodes of Ranvier.png",
+  "автор": "Mgcaptainzanko",
+  "лицензия": "CC BY 4.0",
+  "страница": "https://commons.wikimedia.org/wiki/File%3ANodes_of_Ranvier.png",
+  "байт": 186438
+ },
+ {
+  "глава": "gemostaz",
+  "файл": "gemostaz-1.jpg",
+  "подпись": "Каскад свёртывания",
+  "исходник": "File:Coagulation cascade.jpg",
+  "автор": "డా. గన్నవరపు నరసింహమూర్తి",
+  "лицензия": "CC0",
+  "страница": "https://commons.wikimedia.org/wiki/File%3ACoagulation_cascade.jpg",
+  "байт": 62517
+ },
+ {
+  "глава": "gemostaz",
+  "файл": "gemostaz-2.jpg",
+  "подпись": "Активация и агрегация тромбоцитов",
+  "исходник": "File:Thrombocyteaggregation.jpg",
+  "автор": "Dietzel65 , Steffen Dietzel",
+  "лицензия": "CC BY-SA 3.0",
+  "страница": "https://commons.wikimedia.org/wiki/File%3AThrombocyteaggregation.jpg",
+  "байт": 29831
+ },
+ {
+  "глава": "gemostaz",
+  "файл": "gemostaz-3.png",
+  "подпись": "Образование тромба",
+  "исходник": "File:Blood clot formation.svg",
+  "автор": "Victdomi",
+  "лицензия": "CC BY-SA 3.0",
+  "страница": "https://commons.wikimedia.org/wiki/File%3ABlood_clot_formation.svg",
+  "байт": 219939
+ }
+]

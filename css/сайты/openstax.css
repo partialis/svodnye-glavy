@@ -1,0 +1,63 @@
+/* OPENSTAX · openstax.org/books/anatomy-and-physiology-2e
+   Замерено 31.08: колонка 905 px, текст 16px/23px цветом rgb(66,66,66),
+   h2 18px/600 цветом rgb(94,96,98), ссылки rgb(2,106,161) с подчёркиванием,
+   ячейки таблицы padding 8px 16px с линейками rgb(221,221,221) и шапкой без
+   заливки, левая панель оглавления книги 375 px на фоне rgb(250,250,250).
+   Neue Helvetica заменена системным гротеском. */
+
+:root{
+  --ob-fs: 16px; --ob-lh: 1.44;
+  --ob-font: "Helvetica Neue", Helvetica, Arial, "Segoe UI", system-ui, sans-serif;
+  --ob-font-h: var(--ob-font);
+  --ob-col: 780px; --ob-left-w: 300px; --ob-right-w: 0px; --ob-gap: 44px;
+
+  --ob-bg: #ffffff; --ob-sheet: #ffffff;
+  --ob-text: #424242; --ob-muted: #6f7172;
+  --ob-link: #026aa1; --ob-link-hover: #014c74;
+  --ob-rule: #dddddd; --ob-accent: #0056b3;
+
+  --ob-h1-fs: 1.9rem; --ob-h1-fw: 600; --ob-h1-col: #3c3c3c;
+  --ob-h2-fs: 1.32rem; --ob-h2-fw: 600; --ob-h2-col: #5e6062;
+  --ob-h3-fs: 1.06rem; --ob-h3-fw: 600; --ob-h3-col: #5e6062;
+
+  /* Шапка БЕЛАЯ с волосяной линией, а не густо-синяя. Синюю полосу я
+     придумал сам, и владелец назвал её среди четырёх раздражителей: «густо-синяя
+     полоса, а сразу за ней белое поле, резкий стык, выглядит дёшево». Замер
+     учебных сайтов 31.08 подтвердил: у Постнауки, Coursera, Osmosis и Stripe
+     шапка светлая с тонкой линией и одним акцентом; тёмная только там, где это
+     фирменный приём (Arzamas, Brilliant, Britannica). У настоящего OpenStax
+     шапка тоже белая. */
+  --ob-top-bg: #ffffff; --ob-top-fg: #1a1a1a; --ob-top-h: 62px;
+  --ob-top-brd: 1px solid #e0e0e0;
+  --ob-sub-bg: #ffffff; --ob-sub-fg: #424242;
+
+  --ob-th-bg: transparent; --ob-th-col: #000;
+  --ob-td-brd: 1px solid #dddddd; --ob-table-fs: 1em;
+  --ob-vrezka-bg: #f4f8fb; --ob-vrezka-brd: 4px solid #0056b3; --ob-vrezka-rad: 0;
+  --ob-card-bg: transparent; --ob-card-brd: 0; --ob-card-rad: 0; --ob-card-pad: 0;
+  --ob-radius: 3px;
+}
+
+/* Панель оглавления книги — широкая, на светло-сером, с рамкой справа.
+   Это главная примета: у учебника оглавление КНИГИ, а не только страницы. */
+.ob-right{ display: none; }
+.ob-left{ background: #fafafa; border-right: 1px solid #e5e5e5; padding: 26px 20px 40px; }
+.ob-left-t{ text-transform: none; letter-spacing: 0; font-size: 1.05em; color: #3c3c3c;
+  border-bottom: 1px solid #e0e0e0; padding-bottom: 10px; margin-bottom: 10px; }
+.ob-toc{ font-size: .9em; }
+.ob-toc a{ padding: 7px 0; color: #424242; }
+.ob-toc a.ob-tek{ color: #0056b3; border-left-color: #0056b3; }
+.ob-body{ padding-left: 0; gap: 0; }
+.ob-main{ padding-left: 44px; padding-right: 24px; }
+
+.ob-mark{ background: #f47641; }
+.ob-brand-name{ font-weight: 700; }
+.ob-topnav a{ font-size: .9em; }
+.ob-subnav a{ padding: 10px 0; font-size: .85em; }
+.ob-search{ background: rgba(255,255,255,.14); }
+
+.ob-article th{ border: 0; border-bottom: 3px solid #dddddd; padding: 8px 16px; }
+.ob-article td{ padding: 8px 16px; border: 0; border-bottom: 1px solid #dddddd; }
+.ob-article a{ text-decoration: underline; }
+.ob-article aside strong:first-child{ color: #0056b3; }
+.ob-article figure{ background: #fafafa; padding: 14px; border: 1px solid #ececec; }

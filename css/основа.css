@@ -1,0 +1,902 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   ОСНОВА · геометрия обвязки, общая для всех обликов
+
+   Подключается ПОСТОЯННО, рядом с переключаемой таблицей. Разделение не
+   косметическое: если каждый облик будет нести свою раскладку целиком, они
+   разойдутся молча — правка сетки в одном не доедет до десяти остальных.
+   Здесь только каркас и переменные; облик задаёт значения переменных и
+   доводит частности.
+
+   Все размеры выражены через переменные, потому что кегль переключается
+   кнопкой (--ob-zoom), а ширина колонки — отдельно (data-shirina).
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root{
+  --ob-zoom: 1;
+  --ob-fs: 16px;            --ob-lh: 1.62;
+  --ob-font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --ob-font-h: var(--ob-font);
+  --ob-font-mono: "Cascadia Mono", Consolas, "SF Mono", Menlo, monospace;
+
+  --ob-col: 720px;          --ob-left-w: 240px;      --ob-right-w: 280px;
+  --ob-gap: 40px;           --ob-pad: 32px;
+
+  --ob-bg: #ffffff;         --ob-sheet: #ffffff;
+  --ob-text: #202122;       --ob-muted: #6a7280;
+  --ob-link: #3366cc;       --ob-link-hover: #2a4b8d;
+  --ob-rule: #dcdfe3;       --ob-accent: #3366cc;
+  --ob-sel: rgba(51,102,204,.15);
+
+  --ob-h1-fs: 2rem;   --ob-h1-fw: 700; --ob-h1-col: var(--ob-text); --ob-h1-font: var(--ob-font-h);
+  --ob-h2-fs: 1.5rem; --ob-h2-fw: 700; --ob-h2-col: var(--ob-text); --ob-h2-font: var(--ob-font-h);
+  --ob-h3-fs: 1.15rem;--ob-h3-fw: 600; --ob-h3-col: var(--ob-text); --ob-h3-font: var(--ob-font-h);
+  --ob-h2-rule: none;
+
+  --ob-surface: #ffffff;    --ob-surface-fg: #202122;
+  --ob-card-bg: #ffffff;    --ob-card-brd: 1px solid var(--ob-rule);
+  --ob-card-rad: 6px;       --ob-card-pad: 14px 16px;
+  --ob-radius: 4px;
+
+  --ob-top-bg: #1b1f24;     --ob-top-fg: #ffffff;    --ob-top-h: 58px;
+  --ob-top-brd: none;       --ob-sub-bg: #ffffff;    --ob-sub-fg: #1b1f24;
+
+  --ob-th-bg: #eaecf0;      --ob-th-col: var(--ob-text);
+  --ob-td-brd: 1px solid var(--ob-rule);
+  --ob-table-fs: .94em;
+
+  --ob-vrezka-bg: #f4f7fb;  --ob-vrezka-brd: 3px solid var(--ob-accent);
+  --ob-vrezka-rad: 0px;
+}
+
+/* Ширина колонки — кнопкой. Множитель, а не абсолютное число: у Radiopaedia
+   колонка 612 px, у Википедии 1117, и общий «широкий» размер стёр бы разницу
+   между обликами, ради которой всё и затевалось. */
+:root[data-shirina="uzkaya"]   { --ob-col-k: .82; }
+:root[data-shirina="obychnaya"]{ --ob-col-k: 1; }
+:root[data-shirina="shirokaya"]{ --ob-col-k: 1.3; }
+:root                          { --ob-col-k: 1; }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+
+body{
+  margin: 0;
+  background: var(--ob-bg);
+  color: var(--ob-text);
+  font-family: var(--ob-font);
+  font-size: calc(var(--ob-fs) * var(--ob-zoom));
+  line-height: var(--ob-lh);
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--ob-sel); }
+
+/* ─── шапка ───────────────────────────────────────────────────────────────*/
+.ob-top{ background: var(--ob-top-bg); color: var(--ob-top-fg); border-bottom: var(--ob-top-brd); }
+.ob-top-in{
+  max-width: 1360px; margin: 0 auto; padding: 0 24px;
+  min-height: var(--ob-top-h); display: flex; align-items: center; gap: 28px;
+}
+.ob-brand{ display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; flex: 0 0 auto; }
+.ob-mark{
+  display: grid; place-items: center; width: 34px; height: 34px;
+  background: var(--ob-accent); color: #fff; border-radius: var(--ob-radius);
+  font-weight: 700; font-size: .78em; letter-spacing: .04em;
+}
+.ob-brand-name{ font-weight: 700; font-size: 1.02em; letter-spacing: -.01em; }
+.ob-topnav{ display: flex; gap: 22px; flex: 1 1 auto; }
+.ob-topnav a{ color: inherit; text-decoration: none; font-size: .92em; opacity: .86; }
+.ob-topnav a:hover{ opacity: 1; }
+.ob-search{ display: inline-flex; align-items: center; gap: 7px; flex: 0 0 auto;
+  background: rgba(128,128,128,.16); border-radius: 999px; padding: 7px 15px;
+  color: inherit; text-decoration: none; font-size: .9em; }
+.ob-search:hover{ background: rgba(128,128,128,.26); }
+.ob-search-i{ opacity: .65; }
+.ob-search input{
+  border: 0; background: transparent; color: inherit; outline: none;
+  font: inherit; font-size: .88em; width: 168px;
+}
+.ob-search input::placeholder{ color: currentColor; opacity: .55; }
+.ob-subnav{ background: var(--ob-sub-bg); color: var(--ob-sub-fg); border-bottom: 1px solid var(--ob-rule); }
+.ob-subnav-in{ max-width: 1360px; margin: 0 auto; padding: 0 24px; display: flex; gap: 24px; flex-wrap: wrap; }
+.ob-subnav a{ color: inherit; text-decoration: none; font-size: .88em; padding: 11px 0; display: inline-block; }
+.ob-subnav a:hover{ color: var(--ob-accent); }
+
+/* ─── три колонки ─────────────────────────────────────────────────────────*/
+.ob-body{
+  max-width: 1360px; margin: 0 auto; padding: 0 24px;
+  display: grid;
+  grid-template-columns: var(--ob-left-w) minmax(0, calc(var(--ob-col) * var(--ob-col-k))) var(--ob-right-w);
+  gap: var(--ob-gap);
+  align-items: start;
+  justify-content: center;
+}
+.ob-left, .ob-right{ position: sticky; top: 18px; max-height: calc(100vh - 40px); overflow-y: auto; padding: 26px 0 40px; }
+.ob-left::-webkit-scrollbar, .ob-right::-webkit-scrollbar{ width: 7px; }
+.ob-left::-webkit-scrollbar-thumb, .ob-right::-webkit-scrollbar-thumb{ background: var(--ob-rule); border-radius: 4px; }
+.ob-main{ min-width: 0; padding: 26px 0 90px; background: var(--ob-sheet); }
+
+.ob-left-t{ font-size: .78em; text-transform: uppercase; letter-spacing: .07em; color: var(--ob-muted); margin-bottom: 12px; font-weight: 700; }
+.ob-toc{ list-style: none; margin: 0; padding: 0; font-size: .9em; line-height: 1.4; }
+.ob-toc li{ margin: 0; }
+.ob-toc a{ display: block; padding: 5px 10px 5px 0; color: var(--ob-text); text-decoration: none; border-left: 2px solid transparent; }
+.ob-toc-3 a{ padding-left: 14px; font-size: .95em; color: var(--ob-muted); }
+.ob-toc a:hover{ color: var(--ob-link); }
+.ob-toc a.ob-tek{ color: var(--ob-accent); font-weight: 600; border-left-color: var(--ob-accent); padding-left: 8px; }
+.ob-toc-3 a.ob-tek{ padding-left: 20px; }
+
+.ob-crumbs{ font-size: .86em; color: var(--ob-muted); margin-bottom: 18px; display: flex; flex-wrap: wrap; gap: 7px; align-items: baseline; }
+.ob-crumbs a{ color: var(--ob-link); text-decoration: none; }
+.ob-crumbs a:hover{ text-decoration: underline; }
+.ob-sep{ opacity: .55; }
+.ob-crumb-now{ color: var(--ob-muted); }
+
+.ob-head{ margin-bottom: 26px; }
+.ob-head h1{
+  font-family: var(--ob-h1-font); font-size: var(--ob-h1-fs); font-weight: var(--ob-h1-fw);
+  color: var(--ob-h1-col); line-height: 1.16; margin: 0 0 10px; letter-spacing: -.012em;
+  text-wrap: balance;
+}
+.ob-meta{ margin: 0; font-size: .84em; color: var(--ob-muted); display: flex; gap: 8px; flex-wrap: wrap; }
+.ob-dot{ opacity: .5; }
+
+/* ─── правая колонка ──────────────────────────────────────────────────────*/
+.ob-card{ background: var(--ob-card-bg); border: var(--ob-card-brd); border-radius: var(--ob-card-rad); padding: var(--ob-card-pad); margin-bottom: 16px; }
+.ob-card-t{ font-size: .8em; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--ob-muted); margin-bottom: 9px; }
+.ob-mini{ list-style: none; margin: 0; padding: 0; font-size: .85em; line-height: 1.35; }
+.ob-mini li{ margin: 0 0 2px; }
+.ob-mini a{ display: block; padding: 3px 0; color: var(--ob-text); text-decoration: none; }
+.ob-mini a:hover{ color: var(--ob-link); }
+.ob-mini a.ob-tek{ color: var(--ob-accent); font-weight: 600; }
+.ob-tiles{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ob-tile{ display: block; text-decoration: none; color: var(--ob-muted); font-size: .68em; line-height: 1.25; }
+.ob-tile img{ width: 100%; height: 74px; object-fit: cover; border: 1px solid var(--ob-rule); border-radius: 3px; background: #fff; display: block; margin-bottom: 4px; }
+.ob-tile:hover{ color: var(--ob-link); }
+
+/* ─── сам текст главы ─────────────────────────────────────────────────────
+   Селекторы бьют по ГОЛЫМ тегам внутри .ob-article: в разметке главы нет ни
+   одного класса, и это условие всей затеи — иначе облик не сменить. */
+.ob-article{ }
+.ob-article h2{
+  font-family: var(--ob-h2-font); font-size: var(--ob-h2-fs); font-weight: var(--ob-h2-fw);
+  color: var(--ob-h2-col); line-height: 1.25; margin: 2.1em 0 .62em;
+  border-bottom: var(--ob-h2-rule); padding-bottom: .22em; text-wrap: balance;
+}
+.ob-article h2:first-child{ margin-top: .2em; }
+.ob-article h3{
+  font-family: var(--ob-h3-font); font-size: var(--ob-h3-fs); font-weight: var(--ob-h3-fw);
+  color: var(--ob-h3-col); line-height: 1.3; margin: 1.7em 0 .5em; text-wrap: balance;
+}
+.ob-article p{ margin: 0 0 1.05em; }
+.ob-article ul, .ob-article ol{ margin: 0 0 1.15em; padding-left: 1.5em; }
+.ob-article li{ margin-bottom: .38em; }
+.ob-article li > ul, .ob-article li > ol{ margin: .38em 0 .2em; }
+.ob-article a{ color: var(--ob-link); }
+.ob-article a:hover{ color: var(--ob-link-hover); }
+.ob-article strong{ font-weight: 700; }
+.ob-article abbr{ text-decoration: underline dotted; cursor: help; }
+.ob-article code{ font-family: var(--ob-font-mono); font-size: .89em; background: rgba(0,0,0,.05); padding: .1em .35em; border-radius: 3px; }
+.ob-article sup, .ob-article sub{ line-height: 0; }
+
+.ob-article dl{ margin: 0 0 1.2em; }
+.ob-article dt{ font-weight: 700; margin-top: .8em; }
+.ob-article dd{ margin: .15em 0 0 1.4em; color: var(--ob-text); }
+
+.ob-article table{
+  border-collapse: collapse; width: 100%; margin: 1.3em 0 1.5em;
+  font-size: var(--ob-table-fs); line-height: 1.42;
+}
+.ob-article caption{ caption-side: top; text-align: left; font-size: .9em; color: var(--ob-muted); padding-bottom: .55em; }
+.ob-article th{ background: var(--ob-th-bg); color: var(--ob-th-col); font-weight: 700; text-align: left; padding: 8px 11px; border: var(--ob-td-brd); vertical-align: bottom; }
+.ob-article td{ padding: 8px 11px; border: var(--ob-td-brd); vertical-align: top; }
+.ob-table-wrap{ overflow-x: auto; }
+
+.ob-article figure{ margin: 1.6em 0; }
+.ob-article figure img{ max-width: 100%; height: auto; display: block; }
+.ob-article figcaption{ font-size: .84em; color: var(--ob-muted); margin-top: .6em; line-height: 1.45; }
+
+.ob-article blockquote{
+  margin: 1.3em 0; padding: .1em 0 .1em 1.1em;
+  border-left: 3px solid var(--ob-rule); color: var(--ob-muted); font-style: italic;
+}
+/* Врезка — это <aside>. Тег выбран потому, что он единственный семантически
+   означает «в стороне от основного изложения», а класс в главе запрещён. */
+.ob-article aside{
+  margin: 1.5em 0; padding: 14px 18px;
+  background: var(--ob-vrezka-bg); border-left: var(--ob-vrezka-brd);
+  border-radius: var(--ob-vrezka-rad); font-size: .95em;
+}
+.ob-article aside > :last-child{ margin-bottom: 0; }
+.ob-article aside strong:first-child{ color: var(--ob-accent); }
+
+/* ─── термины и всплывашки ────────────────────────────────────────────────
+   Термин — это <button>, а не <span>: он обязан открываться с клавиатуры и
+   объявляться экранным диктором как управляющий элемент. Всё «кнопочное»
+   оформление с него снимается, остаётся пунктир под словом. */
+.ob-term{
+  font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0;
+  cursor: help; text-align: inherit; line-height: inherit;
+  text-decoration: underline dotted var(--ob-accent);
+  text-underline-offset: .18em; text-decoration-thickness: 1.5px;
+}
+.ob-term:hover, .ob-term:focus-visible{ color: var(--ob-link); text-decoration-style: solid; }
+.ob-term:focus-visible{ outline: 2px solid var(--ob-accent); outline-offset: 2px; border-radius: 2px; }
+
+/* Браузер по умолчанию центрирует popover через inset:0 + margin:auto —
+   сбрасываем, координаты ставит скрипт. */
+.ob-pop{
+  position: fixed; inset: auto; margin: 0; padding: 14px 16px 12px;
+  width: min(340px, calc(100vw - 24px));
+  border: 1px solid var(--ob-rule); border-radius: 10px;
+  background: var(--ob-surface); color: var(--ob-surface-fg);
+  box-shadow: 0 10px 34px rgba(0,0,0,.18), 0 2px 6px rgba(0,0,0,.08);
+  font-size: .92em; line-height: 1.5;
+}
+.ob-pop::backdrop{ background: transparent; }
+.ob-pop-x{
+  position: absolute; top: 6px; right: 6px; width: 26px; height: 26px;
+  font: inherit; font-size: 17px; line-height: 1; cursor: pointer;
+  color: var(--ob-muted); background: none; border: 0; border-radius: 6px;
+}
+.ob-pop-x:hover{ background: rgba(0,0,0,.07); color: var(--ob-text); }
+.ob-pop-t{ font-weight: 700; margin: 0 26px .35em 0; }
+.ob-pop-b{ color: var(--ob-text); }
+.ob-pop-more{
+  display: inline-block; margin-top: .7em; font-size: .93em; font-weight: 600;
+  color: var(--ob-link); text-decoration: none;
+}
+.ob-pop-more:hover{ text-decoration: underline; }
+@media (max-width: 520px){
+  /* На телефоне всплывашка прижимается к низу экрана: подсказка под пальцем
+     перекрывала бы сам термин. */
+  .ob-pop{ left: 12px !important; right: 12px; width: auto;
+           top: auto !important; bottom: 12px; font-size: 1em; }
+}
+
+/* ─── страница вопросов ───────────────────────────────────────────────────
+   Вариант — это <button>, а не радиокнопка: выбор здесь не форма для отправки,
+   а действие «проверить», и с клавиатуры оно должно работать как кнопка. */
+.vp{ margin: 0 0 2em; padding: 0 0 1.4em; border-bottom: 1px solid var(--ob-rule); }
+.vp-q{ font-size: 1.03em; margin: 0 0 .7em; }
+.vp-hint{ font-size: .85em; color: var(--ob-muted); margin: -.35em 0 .7em; }
+.vp-vars{ list-style: none; margin: 0; padding: 0; }
+.vp-vars li{ margin: 0 0 8px; }
+.vp-var{
+  display: block; width: 100%; text-align: left; font: inherit; cursor: pointer;
+  padding: 10px 14px; border: 1px solid var(--ob-rule); border-radius: var(--ob-radius);
+  background: var(--ob-card-bg, #fff); color: var(--ob-text); line-height: 1.45;
+}
+.vp-var:hover:not(:disabled){ border-color: var(--ob-accent); }
+.vp-var:disabled{ cursor: default; }
+.vp-var.vp-pick{ box-shadow: inset 0 0 0 2px var(--ob-accent); }
+/* Верный и неверный различаются НЕ ТОЛЬКО ЦВЕТОМ: при дальтонизме и в печати
+   цвет не носитель смысла, поэтому есть ещё знак и толщина рамки. */
+.vp-good{ border-color: #2e7d32; border-width: 2px; background: rgba(46,125,50,.08); }
+.vp-bad{ border-color: #c62828; border-width: 2px; background: rgba(198,40,40,.06); }
+.vp-good::before{ content: "✓ "; font-weight: 700; color: #2e7d32; }
+.vp-bad::before{ content: "✗ "; font-weight: 700; color: #c62828; }
+.vp-razbor{ font-size: .92em; color: var(--ob-muted); padding: 6px 14px 2px; line-height: 1.5; }
+.vp-itog{ font-weight: 700; margin: .6em 0 0; }
+.vp-itog-good{ color: #2e7d32; }
+.vp-itog-bad{ color: #c62828; }
+.vp-razdel{ font-size: .84em; color: var(--ob-muted); margin: .8em 0 0; }
+.vp-pole{
+  display: block; width: 100%; font: inherit; font-size: .96em; padding: 10px 12px;
+  border: 1px solid var(--ob-rule); border-radius: var(--ob-radius);
+  background: var(--ob-card-bg, #fff); color: var(--ob-text); resize: vertical;
+}
+.vp-open{
+  font: inherit; font-size: .92em; font-weight: 600; cursor: pointer; margin-top: 10px;
+  padding: 7px 14px; border: 1px solid var(--ob-accent); border-radius: var(--ob-radius);
+  background: transparent; color: var(--ob-accent);
+}
+.vp-open:hover:not(:disabled){ background: var(--ob-accent); color: #fff; }
+.vp-open:disabled{ opacity: .45; cursor: default; }
+.vp-etalon{ margin-top: 10px; padding: 12px 15px; background: var(--ob-vrezka-bg);
+  border-left: var(--ob-vrezka-brd); border-radius: var(--ob-vrezka-rad); font-size: .95em; }
+.vp-krit ul{ margin: .4em 0 0; padding-left: 1.3em; }
+.vp-krit li{ margin-bottom: .2em; }
+.vp-schet{
+  position: sticky; top: 0; z-index: 5; padding: 8px 0; margin-bottom: 1em;
+  font-size: .88em; font-weight: 600; color: var(--ob-muted);
+  background: var(--ob-sheet, #fff); border-bottom: 1px solid var(--ob-rule);
+}
+
+/* Поле поиска в тексте страницы (не то, что в шапке). Стиль берётся от облика,
+   поэтому на каждом из одиннадцати оно выглядит своим. */
+.ob-article input[type="search"], .ob-main > input[type="search"],
+.ob-article textarea, main input[type="search"]{
+  font: inherit; width: 100%; max-width: 540px; padding: 11px 14px;
+  border: 1px solid var(--ob-rule); border-radius: var(--ob-radius);
+  background: var(--ob-card-bg, #fff); color: var(--ob-text);
+}
+main input[type="search"]:focus{ outline: 2px solid var(--ob-accent); outline-offset: 1px; }
+#vydacha p{ margin: 0 0 1.1em; }
+
+/* Азбука глоссария: строка букв-ссылок над списком терминов. */
+.ob-azbuka{ display: flex; flex-wrap: wrap; gap: 6px; margin: 1.4em 0 1.8em; }
+.ob-azbuka a{
+  display: inline-block; min-width: 30px; padding: 4px 7px; text-align: center;
+  border: 1px solid var(--ob-rule); border-radius: var(--ob-radius);
+  text-decoration: none; color: var(--ob-link); font-weight: 600; font-size: .92em;
+}
+.ob-azbuka a:hover{ background: var(--ob-accent); color: #fff; border-color: var(--ob-accent); }
+.ob-article dt:target{ background: var(--ob-sel); border-radius: 3px; }
+
+/* ─── меню шапки: выпадающие списки, гамбургер, шестерёнка ────────────────
+   Первым пунктом факультет, дальше главы и справочники, а настройки — в самом
+   конце ряда, как на обычных сайтах. Цвета берутся от облика, поэтому меню на
+   каждом из одиннадцати выглядит своим. */
+.ob-drop{ position: relative; }
+.ob-drop-t{
+  display: inline-flex; align-items: center; gap: 5px; font: inherit; font-size: .92em;
+  color: inherit; background: none; border: 0; padding: 6px 2px; cursor: pointer; opacity: .88;
+}
+.ob-drop-t:hover, .ob-drop.ob-open .ob-drop-t{ opacity: 1; }
+.ob-drop-v{ font-size: .7em; opacity: .7; transition: transform .15s; }
+.ob-drop.ob-open .ob-drop-v{ transform: rotate(180deg); }
+.ob-drop-m{
+  display: none; position: absolute; top: calc(100% + 6px); left: -10px; z-index: 60;
+  min-width: 232px; padding: 6px; border-radius: 10px;
+  background: var(--ob-surface); color: var(--ob-surface-fg);
+  border: 1px solid var(--ob-rule); box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+.ob-drop.ob-open .ob-drop-m{ display: block; }
+.ob-drop-m a, .ob-drop-m button{
+  display: block; width: 100%; text-align: left; font: inherit; font-size: .93em;
+  padding: 8px 11px; border: 0; border-radius: 7px; background: none;
+  color: var(--ob-text); text-decoration: none; cursor: pointer;
+}
+.ob-drop-m a:hover, .ob-drop-m button:hover{ background: var(--ob-sel); }
+.ob-drop-m a[aria-current="page"]{ font-weight: 700; color: var(--ob-accent); }
+.ob-drop-m button[aria-pressed="true"]{ font-weight: 700; color: var(--ob-accent); }
+.ob-drop-m button[aria-pressed="true"]::after{ content: " ✓"; }
+
+.ob-fak-now{ font-size: .82em; opacity: .7; margin-left: auto; white-space: nowrap; }
+
+.ob-gear{
+  display: inline-grid; place-items: center; width: 34px; height: 34px; flex: 0 0 auto;
+  color: inherit; background: none; border: 1px solid transparent; border-radius: 8px;
+  cursor: pointer; opacity: .85;
+}
+.ob-gear:hover{ opacity: 1; background: rgba(128,128,128,.16); }
+.ob-gear:focus-visible{ outline: 2px solid var(--ob-accent); outline-offset: 2px; }
+
+.ob-burger{ display: none; width: 38px; height: 34px; flex-direction: column; gap: 4px;
+  align-items: center; justify-content: center; background: none; border: 0; cursor: pointer; }
+.ob-burger span{ display: block; width: 19px; height: 2px; background: currentColor; border-radius: 2px; }
+
+/* ─── окно настроек ───────────────────────────────────────────────────────*/
+.ns{
+  width: min(560px, calc(100vw - 28px)); max-height: min(86vh, 760px); overflow-y: auto;
+  padding: 22px 24px 18px; border: 1px solid var(--ob-rule); border-radius: 14px;
+  background: var(--ob-surface); color: var(--ob-surface-fg);
+  font: inherit; box-shadow: 0 24px 60px rgba(0,0,0,.3);
+}
+.ns::backdrop{ background: rgba(0,0,0,.45); backdrop-filter: blur(2px); }
+.ns-h{ margin: 0 0 18px; font-size: 1.25em; font-weight: 700; }
+.ns-x{ float: right; }
+.ns-x button{ width: 30px; height: 30px; font-size: 20px; line-height: 1; cursor: pointer;
+  color: var(--ob-muted); background: none; border: 0; border-radius: 8px; }
+.ns-x button:hover{ background: rgba(128,128,128,.16); color: var(--ob-text); }
+.ns-blok{ margin: 0 0 20px; }
+.ns-t{ font-size: .78em; font-weight: 700; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--ob-muted); margin-bottom: 9px; }
+.ns-ryad{ display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.ns-setka{ display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 7px; }
+.ns-knopka, .ns-az, .ns-znak{
+  font: inherit; font-size: .92em; cursor: pointer; color: var(--ob-text);
+  background: transparent; border: 1px solid var(--ob-rule); border-radius: 9px; padding: 9px 12px;
+}
+.ns-knopka{ text-align: left; }
+.ns-knopka:hover, .ns-az:hover, .ns-znak:hover{ border-color: var(--ob-accent); }
+.ns-knopka[aria-pressed="true"], .ns-znak[aria-pressed="true"]{
+  border-color: var(--ob-accent); background: var(--ob-sel); font-weight: 700;
+}
+.ns-az{ min-width: 52px; font-weight: 600; }
+.ns-az-b{ font-size: 1.12em; }
+.ns-znach{ min-width: 62px; text-align: center; font-variant-numeric: tabular-nums;
+  color: var(--ob-muted); font-size: .92em; }
+.ns-znak{ display: inline-grid; place-items: center; padding: 8px 10px; color: var(--ob-text); }
+.ns-pod{ margin-top: 9px; font-size: .84em; color: var(--ob-muted); line-height: 1.5; }
+.ns-pod i{ font-style: normal; color: var(--ob-link); }
+.ns-niz{ border-top: 1px solid var(--ob-rule); padding-top: 14px; }
+.ns-sbros{ font: inherit; font-size: .88em; cursor: pointer; color: var(--ob-muted);
+  background: none; border: 0; padding: 4px 0; text-decoration: underline; }
+.ns-sbros:hover{ color: var(--ob-text); }
+
+/* ─── свёрнутое оглавление для узких экранов ──────────────────────────────
+   Показывается только когда НЕ видно ни левой колонки, ни правой карточки —
+   решение принимает облик.js по фактической ширине элементов. Список разделов
+   на странице всегда ровно один. */
+.ob-toc-mob{
+  margin: 0 0 22px; border: 1px solid var(--ob-rule); border-radius: var(--ob-radius);
+  background: var(--ob-surface); color: var(--ob-surface-fg); font-size: .92em;
+}
+.ob-toc-mob > summary{
+  cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+.ob-toc-mob > summary::-webkit-details-marker{ display: none; }
+.ob-toc-mob > summary::after{ content: "▾"; opacity: .6; transition: transform .15s; }
+.ob-toc-mob[open] > summary::after{ transform: rotate(180deg); }
+.ob-toc-mob > ul{ list-style: none; margin: 0; padding: 0 14px 12px; max-height: 46vh; overflow-y: auto; }
+.ob-toc-mob a{ display: block; padding: 6px 0; color: var(--ob-text); text-decoration: none; }
+.ob-toc-mob a:hover{ color: var(--ob-link); }
+.ob-toc-mob .ob-toc-3 a{ padding-left: 14px; font-size: .95em; color: var(--ob-muted); }
+.ob-toc-mob a.ob-tek{ color: var(--ob-accent); font-weight: 600; }
+
+/* ─── узкие экраны ────────────────────────────────────────────────────────
+   Две ступени, как у снятых сайтов: сперва уходит правая колонка (она
+   вспомогательная), потом левая, а её место занимает свёрнутый блок. */
+@media (max-width: 1180px){
+  .ob-body{ grid-template-columns: var(--ob-left-w) minmax(0, 1fr); }
+  .ob-right{ display: none; }
+}
+@media (max-width: 860px){
+  .ob-body{ grid-template-columns: minmax(0, 1fr); padding: 0 16px; }
+  .ob-left{ display: none; }
+  /* Меню на телефоне не исчезает, а складывается в панель: сайт читают и с
+     телефона, и «просто спрятать навигацию» — это её потерять. */
+  .ob-burger{ display: flex; }
+  .ob-topnav{
+    display: none; position: absolute; left: 0; right: 0; top: 100%; z-index: 70;
+    flex-direction: column; align-items: stretch; gap: 0; padding: 8px 14px 14px;
+    background: var(--ob-top-bg); border-bottom: 1px solid var(--ob-rule);
+  }
+  .ob-nav-open .ob-topnav{ display: flex; }
+  .ob-top-in{ position: relative; flex-wrap: wrap; gap: 12px; }
+  .ob-drop{ width: 100%; }
+  .ob-drop-t{ width: 100%; justify-content: space-between; padding: 11px 2px; font-size: 1em; }
+  .ob-drop-m{ position: static; display: none; min-width: 0; margin: 0 0 6px 10px;
+              box-shadow: none; background: transparent; border: 0; border-left: 2px solid var(--ob-rule); border-radius: 0; }
+  .ob-drop.ob-open .ob-drop-m{ display: block; }
+  .ob-fak-now{ display: none; }
+  .ob-search{ display: none; }
+  .ob-main{ padding: 18px 0 60px; }
+  /* Кегль не меньше 16 px: на меньшем Safari сам увеличивает страницу при
+     касании поля, и вёрстка уезжает. */
+  body{ font-size: max(16px, calc(var(--ob-fs) * var(--ob-zoom))); }
+  .ob-head h1{ font-size: clamp(1.5rem, 7.5vw, var(--ob-h1-fs)); }
+  .ob-article h2{ font-size: clamp(1.25rem, 5.6vw, var(--ob-h2-fs)); }
+  .ob-subnav-in{ overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
+  .ob-subnav-in::-webkit-scrollbar{ display: none; }
+  .ob-subnav a{ white-space: nowrap; }
+  .ob-tiles{ grid-template-columns: 1fr 1fr 1fr; }
+  /* Полоса переключателей на телефоне занимала пол-экрана: ограничиваем и
+     прокручиваем внутри себя. */
+}
+@media (max-width: 520px){
+  .ob-body{ padding: 0 12px; }
+  .ob-brand-name{ font-size: .95em; }
+  .ob-crumbs{ font-size: .8em; }
+  .ob-tiles{ grid-template-columns: 1fr 1fr; }
+}
+/* Липкие колонки считаем от ДИНАМИЧЕСКОЙ высоты: на мобильных браузерах
+   адресная строка съезжает, и 100vh даёт колонку выше экрана. */
+@supports (height: 100dvh){
+  .ob-left, .ob-right{ max-height: calc(100dvh - 40px); }
+}
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *{ transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+@media print{
+  .ob-top, .ob-left, .ob-right, .ob-crumbs{ display: none !important; }
+  .ob-body{ display: block; max-width: none; padding: 0; }
+  .ob-main{ padding: 0; }
+}
+
+/* Элемент, спрятанный через `hidden`, обязан прятаться. Кнопка «Содержание»
+   выставляла себе `display: inline-flex` в медиазапросе, и это перебивало
+   браузерное `display: none` у `[hidden]`: содержание главы висело на главной,
+   где никакой главы нет. Правило стоит ПЕРВЫМ в разделе и с !important, потому
+   что перебить его может любой облик. */
+[hidden]{ display: none !important; }
+
+/* ─── главная: лента новостей ─────────────────────────────────────────────
+   Новость тут одна по природе — вышла глава, и у каждой своя картинка. Так
+   устроены новостные ленты университетских сайтов: одна крупная запись сверху,
+   остальные сеткой. Прежняя редакция печатала список коммитов строчками без
+   картинок, и владелец назвал это дословно: «Что это за убожество? А где
+   картинки? Каждая должна быть отдельной записью с картинкой!» */
+.gl-glavnaya{ margin: 0 0 2em; }
+
+/* Префикс `:root` — не украшение. Облики грузятся ПОСЛЕ основы, и у них есть
+   свои правила на `.ob-article img` той же специфичности; побеждает последний,
+   то есть облик. Без префикса пропорция слетала у части карточек, и сетка
+   выглядела рваной: четыре картинки 16:9 и одна вдвое выше. */
+:root .gl-ramka{
+  overflow: hidden; border-radius: var(--ob-radius);
+  background: var(--ob-rule); aspect-ratio: 16 / 9;
+}
+:root .gl-ramka img{
+  width: 100%; height: 100%; max-width: 100%; object-fit: cover; display: block;
+  margin: 0; border: 0; padding: 0;
+  transition: transform .35s cubic-bezier(.32,.72,0,1);
+}
+/* Схемы — не фотографии: обрезка по краю съела бы подписи, поэтому светлый
+   подклад и вписывание целиком. */
+:root .gl-ramka img[src$=".svg"]{
+  object-fit: contain; background: #fff; padding: 6px;
+}
+a:hover .gl-ramka img{ transform: scale(1.03); }
+.gl-net-kart{ background: var(--ob-rule); }
+
+.gl-meta{
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  margin: 12px 0 6px;
+}
+.gl-rubrika{
+  font-size: .72em; letter-spacing: .08em; text-transform: uppercase;
+  font-weight: 700; color: var(--ob-accent);
+}
+.gl-data{ color: var(--ob-muted); font-size: .82em; font-variant-numeric: tabular-nums; }
+
+/* Ведущая запись: картинка и текст рядом, текст крупнее остальных. */
+.gl-lid{
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 28px; align-items: start;
+  padding-bottom: 26px; margin-bottom: 26px;
+  border-bottom: 1px solid var(--ob-rule);
+}
+.gl-lid-kart{ display: block; }
+.gl-lid-txt h2{ margin: 0 0 .35em; line-height: 1.2; }
+.gl-lid-txt h2 a{ color: inherit; text-decoration: none; }
+.gl-lid-txt h2 a:hover{ color: var(--ob-link); }
+.gl-lid-txt p{ margin: 0 0 .8em; color: var(--ob-muted); }
+.gl-dei{ display: flex; gap: 18px; font-size: .92em; }
+.gl-dei a{ font-weight: 600; }
+
+.gl-setka{
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  gap: 26px 24px;
+}
+.gl-karta-kart{ display: block; }
+.gl-karta h3{ margin: 0 0 .35em; font-size: 1.02rem; line-height: 1.28; }
+.gl-karta h3 a{ color: inherit; text-decoration: none; }
+.gl-karta h3 a:hover{ color: var(--ob-link); }
+.gl-karta p{ margin: 0; font-size: .9em; color: var(--ob-muted); line-height: 1.5; }
+
+.gl-vse{
+  margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--ob-rule);
+  font-size: .93em; color: var(--ob-muted);
+}
+
+/* Одна колонка — раньше, чем общий телефонный порог: ведущая запись в две
+   колонки читается плохо уже на планшете. */
+@media (max-width: 760px){
+  :root .gl-lid{ grid-template-columns: 1fr; gap: 14px; }
+  :root .gl-setka{ grid-template-columns: 1fr; gap: 22px; }
+}
+
+.ob-article .gl-lenta{ list-style: none; padding: 0; margin: 0 0 1.6em; }
+.ob-article .gl-lenta li{
+  padding: 11px 0; border-bottom: 1px solid var(--ob-rule); line-height: 1.55;
+}
+.ob-article .gl-lenta li:last-child{ border-bottom: 0; }
+.ob-article .gl-karty{
+  list-style: none; padding: 0; margin: 0 0 1.6em;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px;
+}
+.ob-article .gl-karty li{
+  margin: 0; padding: 15px 17px; line-height: 1.5;
+  border: var(--ob-card-brd); border-radius: var(--ob-card-rad);
+  background: var(--ob-card-bg);
+}
+.ob-article .gl-karty a{ text-decoration: none; }
+.ob-article .gl-karty a:hover{ text-decoration: underline; }
+
+/* Страница настроек: те же органы, что были в окне, но в тексте страницы. */
+#настройки-тут .ns-blok{ margin: 0 0 30px; }
+#настройки-тут .ns-blok h2{ margin: 0 0 .5em; font-size: 1.15rem; }
+#настройки-тут .ns-pod{ margin: 10px 0 0; }
+#настройки-тут .ns-ryad{ margin-top: 4px; }
+#настройки-тут .ns-niz{ margin-top: 34px; }
+.gl-data + b{ font-weight: 700; }
+
+@media (max-width: 520px){
+  .gl-data{ display: block; min-width: 0; margin-bottom: 2px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ТЕЛЕФОН · отдельное оформление, а не сжатый десктоп
+
+   «Вёрстка на телефоне, конечно, будет другая. Наверное, нужно будет иначе
+   оформление для телефона врубить». Так и есть, и причина измеримая: облики
+   сняты с ДЕСКТОПНЫХ страниц, а там у Radiopaedia текст 13 px, у MkDocs
+   Material 12.8 px. На экране в 390 px это нечитаемо — не потому что скин
+   плохой, а потому что он не про телефон.
+
+   Поэтому ниже телефон получает свою типографику и свою раскладку, но
+   СОХРАНЯЕТ характер облика: цвета, акцент, шапку, врезки. Меняется то, что
+   на телефоне работать не может, — и только оно.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 700px){
+  :root{
+    /* Кегль не наследуем от десктопного скина: берём читаемый и общий для всех.
+       Множитель из настроек продолжает действовать поверх. */
+    --ob-fs: 17px;
+    --ob-lh: 1.62;
+    --ob-col: 100%;
+    --ob-gap: 0px;
+    --ob-h1-fs: clamp(1.55rem, 7vw, 2.1rem);
+    --ob-h2-fs: clamp(1.25rem, 5.4vw, 1.6rem);
+    --ob-h3-fs: 1.1rem;
+    --ob-card-pad: 14px 15px;
+  }
+  body{ font-size: calc(17px * var(--ob-zoom)); }
+
+  /* Одна колонка во всю ширину: боковые панели на телефоне только отнимают
+     место, их работу делают гамбургер и свёрнутое оглавление. */
+  :root .ob-body{ display: block; padding: 0 15px; max-width: none; border: 0; box-shadow: none; }
+  :root .ob-main{ padding: 16px 0 64px; border: 0; }
+  :root .ob-left, .ob-right{ display: none !important; }
+
+  /* Шапка компактная и липкая: на телефоне переход между главами нужен чаще,
+     чем на большом экране, а места мало. */
+  :root .ob-top{ position: sticky; top: 0; z-index: 80; }
+  :root .ob-top-in{ min-height: 52px; padding: 0 14px; gap: 10px; }
+  :root .ob-mark{ width: 30px; height: 30px; }
+
+  /* Пальцем — не мышью: цель меньше 44 px промахивается. */
+  :root .ob-topnav a, .ob-drop-t, .ob-drop-m a, .ob-drop-m button{ min-height: 44px; }
+  :root .ob-drop-m a, .ob-drop-m button{ display: flex; align-items: center; }
+
+  /* Врезки, таблицы и рисунки — во всю ширину, без лишних отступов. */
+  :root .ob-article aside{ margin-left: -15px; margin-right: -15px; border-radius: 0; padding: 13px 15px; }
+  :root .ob-article figure{ margin-left: -15px; margin-right: -15px; padding: 0; border: 0; background: none; }
+  :root .ob-article figcaption{ padding: 0 15px; }
+  :root .ob-table-wrap{ margin-left: -15px; margin-right: -15px; padding: 0 15px; }
+  :root .ob-article table{ font-size: .92em; }
+
+  /* Карточки, в которые часть обликов заворачивает текст (Osmosis), на узком
+     экране крадут по 26 px с каждой стороны — распрямляем. */
+  :root .ob-article, .ob-head{ background: none !important; border: 0 !important;
+                         border-radius: 0 !important; padding-left: 0 !important;
+                         padding-right: 0 !important; }
+
+  /* Свёрнутое оглавление липнет под шапкой: это главный способ прыгать по
+     длинной главе, когда боковой колонки нет. */
+  :root .ob-toc-mob{ position: sticky; top: 52px; z-index: 40; }
+  :root .ob-toc-mob > summary{ min-height: 46px; }
+
+  :root .ob-article .gl-karty{ grid-template-columns: 1fr !important; }
+  :root .ns-setka{ grid-template-columns: 1fr 1fr; }
+}
+
+/* Значок вместо названия сайта: ссылка на главную. */
+.ob-mark-link{ display: inline-flex; text-decoration: none; color: inherit; flex: 0 0 auto; }
+
+/* ─── шапка: доводка по снимкам реальных сайтов (замер 31.08) ─────────────
+   Смотрел mkdocs-tel.png, osmosis-tel.png, stripe-pk.png. Что взято:
+   · на телефоне «☰ · название страницы · значок поиска» в полосе 48–56 px
+     (MkDocs Material) — без названия шапка выглядит как полоса с одной кнопкой;
+   · меню на телефоне выезжает ПАНЕЛЬЮ поверх страницы с затемнением, а не
+     раздвигает содержимое вниз (так у Material и Docusaurus);
+   · на ПК ряд один, невысокий, с тонкой нижней границей (Stripe, Osmosis). */
+.ob-top-title{ display: none; }
+.ob-search-t{ display: inline; }
+
+@media (min-width: 701px){
+  :root .ob-top-in{ min-height: 56px; }
+  :root .ob-topnav a, :root .ob-drop-t{ position: relative; }
+  :root .ob-topnav > a::after, :root .ob-drop-t::after{
+    content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
+    background: currentColor; opacity: 0; transition: opacity .12s;
+  }
+  :root .ob-topnav > a:hover::after, :root .ob-drop:hover .ob-drop-t::after{ opacity: .55; }
+  :root .ob-topnav > a[aria-current="page"]::after{ opacity: 1; }
+}
+
+@media (max-width: 700px){
+  :root .ob-top-in{ min-height: 52px; gap: 12px; padding: 0 12px; }
+  /* Название страницы рядом с бургером — как «Материалы для MkDocs» у Material. */
+  :root .ob-top-title{
+    display: block; flex: 1 1 auto; min-width: 0; font-weight: 700; font-size: .98em;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  :root .ob-search{
+    display: inline-flex; order: 3; background: none; padding: 6px; border-radius: 8px;
+    min-width: 40px; justify-content: center;
+  }
+  :root .ob-search-t{ display: none; }
+  :root .ob-search-i{ font-size: 1.35em; opacity: .9; }
+  :root .ob-fak-now{ display: none; }
+
+  /* Меню — выезжающая панель поверх страницы, а не стопка, толкающая текст. */
+  :root .ob-topnav{
+    position: fixed; top: 0; left: 0; bottom: 0; width: min(84vw, 330px);
+    transform: translateX(-102%); transition: transform .22s ease;
+    display: flex; flex-direction: column; align-items: stretch; gap: 0;
+    padding: 62px 16px 24px; overflow-y: auto; z-index: 95;
+    background: var(--ob-surface); color: var(--ob-surface-fg);
+    border-right: 1px solid var(--ob-rule); box-shadow: 0 0 40px rgba(0,0,0,.28);
+  }
+  :root .ob-nav-open .ob-topnav{ transform: none; }
+  :root .ob-topnav a{ color: var(--ob-text); opacity: 1; padding: 12px 8px;
+                      border-bottom: 1px solid var(--ob-rule); font-size: 1em; }
+  :root .ob-drop-t{ color: var(--ob-text); padding: 12px 8px;
+                    border-bottom: 1px solid var(--ob-rule); }
+  :root .ob-drop-m{ border-left: 2px solid var(--ob-accent); margin: 4px 0 8px 10px; }
+  /* Затемнение под панелью: без него панель висит в воздухе и не читается как
+     слой поверх страницы. */
+  :root .ob-nav-open::before{
+    content: ""; position: fixed; inset: 0; z-index: 90; background: rgba(0,0,0,.45);
+  }
+}
+@media (max-width: 700px) and (prefers-reduced-motion: reduce){
+  :root .ob-topnav{ transition: none; }
+}
+
+@media (max-width: 700px){
+  /* Ряд шапки в ОДНУ строку. Прежний flex-wrap остался от той версии, где меню
+     раскрывалось стопкой внутри шапки; теперь оно выезжает панелью, и перенос
+     только растил полосу до 98 px вместо 52. */
+  :root .ob-top-in{ flex-wrap: nowrap; }
+}
+
+@media (max-width: 700px){
+  /* Затемнение ДОЛЖНО быть ниже шапки. Липкая .ob-top создаёт свой слой (z 80),
+     и панель внутри неё z-index 95 считается ВНУТРИ этого слоя — снаружи она всё
+     равно ниже 90, поэтому затемнение накрывало саму панель, и меню выглядело
+     серым. Ставим затемнение под шапку. */
+  :root .ob-nav-open::before{ z-index: 70; }
+  /* И пункты прижимаем к верху: без явного значения они уезжали вниз панели. */
+  :root .ob-topnav{ justify-content: flex-start; align-content: flex-start; }
+  :root .ob-topnav > *{ flex: 0 0 auto; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ОДНА КОЛОНКА · боковых панелей на странице главы больше нет
+
+   «Ничего, текст во всю ширину» — решение владельца после того, как пустые
+   колонки он назвал первым, что раздражает. Оглавление теперь живёт свёрнутым
+   блоком над текстом и существует ровно в одном экземпляре.
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root .ob-body{
+  grid-template-columns: minmax(0, 1fr);
+  max-width: calc(var(--ob-col) * var(--ob-col-k) * 1.18 + 48px);
+}
+:root .ob-left, :root .ob-right{ display: none; }
+:root .ob-toc-mob{ display: block; }
+
+/* ─── низ страницы ────────────────────────────────────────────────────────
+   Состав выбран владельцем: ссылка на вопросы, когда обновлено, переход к
+   следующей главе. Раньше страница просто обрывалась. */
+.ob-foot{ margin-top: 56px; padding-top: 26px; border-top: 2px solid var(--ob-rule); }
+.ob-foot-q{
+  display: inline-block; margin-bottom: 22px; padding: 12px 20px;
+  border-radius: var(--ob-radius); background: var(--ob-accent); color: #fff;
+  text-decoration: none; font-weight: 600; font-size: .96em;
+}
+.ob-foot-q:hover{ filter: brightness(1.12); color: #fff; }
+.ob-foot-nav{ display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.ob-foot-nav a{
+  display: block; padding: 14px 16px; border: 1px solid var(--ob-rule);
+  border-radius: var(--ob-card-rad); text-decoration: none; color: var(--ob-text);
+  background: var(--ob-surface);
+}
+.ob-foot-nav a:hover{ border-color: var(--ob-accent); }
+.ob-foot-nav span{ display: block; font-size: .82em; color: var(--ob-muted); margin-bottom: 3px; }
+.ob-foot-nav b{ font-size: 1.02em; line-height: 1.35; }
+.ob-foot-next{ text-align: right; }
+.ob-foot-date{ margin: 20px 0 0; font-size: .84em; color: var(--ob-muted); }
+@media (max-width: 620px){
+  :root .ob-foot-nav{ grid-template-columns: 1fr; }
+  :root .ob-foot-next{ text-align: left; }
+}
+
+/* Светлая шапка: акцент даёт текущий пункт, а не заливка всей полосы.
+   Замер учебных сайтов 31.08 — самый частый приём у хороших сайтов этого
+   рода: белая полоса, тёмный текст, один акцентный цвет. */
+.ob-top[style], .ob-top{ transition: none; }
+:root .ob-topnav > a[aria-current="page"]{ color: var(--ob-accent); font-weight: 600; }
+:root .ob-topnav > a[aria-current="page"]::after{ background: var(--ob-accent); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ВЫДВИЖНАЯ ПАНЕЛЬ СОДЕРЖАНИЯ · только на широком экране
+
+   «Содержание главы должно было быть сбоку, типа боковая панель. Ты можешь её
+   включить, текст чуть двигается. Правда двигается он на пк только — такое на
+   телефонах будет дерьмово смотреться, одновременно листать текст и
+   использовать навигацию вот так не выйдет на телефоне.»
+
+   Текст не перекрывается, а СДВИГАЕТСЯ: панель стоит фиксированно, а сетка
+   получает отступ, и оба движения идут одним переходом одной длительности —
+   иначе панель и текст разъезжаются и выглядит дёргано.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.ob-side-btn{
+  display: none; align-items: center; gap: 8px; flex: 0 0 auto;
+  font: inherit; font-size: .88em; cursor: pointer; color: inherit;
+  background: rgba(128,128,128,.14); border: 0; border-radius: 999px; padding: 7px 14px;
+}
+.ob-side-btn:hover{ background: rgba(128,128,128,.24); }
+.ob-side-btn[aria-expanded="true"]{ background: var(--ob-accent); color: #fff; }
+
+@media (min-width: 1000px){
+  :root .ob-side-btn{ display: inline-flex; }
+  :root .ob-left{
+    display: block; position: fixed; top: var(--ob-top-h); bottom: 0; left: 0; width: 300px;
+    z-index: 55; overflow-y: auto; padding: 22px 18px 40px;
+    background: var(--ob-surface); color: var(--ob-surface-fg);
+    border-right: 1px solid var(--ob-rule);
+    transform: translateX(-100%); transition: transform .26s ease;
+  }
+  :root .ob-side-open .ob-left{ transform: none; }
+  :root .ob-body{ transition: padding-left .26s ease; }
+  :root .ob-side-open .ob-body{ padding-left: 316px; }
+  /* Свёрнутый блок над текстом на широком экране не нужен: его работу делает
+     панель, а два оглавления сразу — то, на что владелец уже ругался. */
+  :root .ob-side-open .ob-toc-mob{ display: none; }
+}
+@media (min-width: 1000px) and (prefers-reduced-motion: reduce){
+  :root .ob-left, :root .ob-body{ transition: none; }
+}
+
+/* ─── пункты меню пилюлями ────────────────────────────────────────────────
+   Приём взят у medbreak.ru, но ТОЛЬКО приём: «да, там пилюли, но не бери их
+   интерфейс, он уродливый». Поэтому пилюли ложатся на СВЕТЛУЮ чистую шапку —
+   как у Постнауки и Stripe, — без иконок, без чёрного фона и без нагромождения
+   круглых кнопок. Активный пункт залит акцентом, остальные без рамок. */
+:root .ob-topnav{ gap: 4px; align-items: center; }
+:root .ob-topnav > a{
+  padding: 8px 15px; border-radius: 999px; font-size: .92em; opacity: 1;
+  color: inherit; text-decoration: none; white-space: nowrap;
+  transition: background-color .13s, color .13s;
+}
+:root .ob-topnav > a:hover{ background: rgba(128,128,128,.13); }
+:root .ob-topnav > a[aria-current="page"]{
+  background: var(--ob-accent); color: #fff; font-weight: 600;
+}
+:root .ob-topnav > a::after{ display: none; }
+:root .ob-search{ border-radius: 999px; }
+
+@media (max-width: 700px){
+  /* В выдвижной панели пилюли не нужны — там обычный список строк. */
+  :root .ob-topnav > a{ border-radius: 8px; padding: 12px 12px; font-size: 1em; }
+  :root .ob-topnav > a[aria-current="page"]{ background: var(--ob-sel); color: var(--ob-accent); }
+}
+
+/* ─── плавность панели ────────────────────────────────────────────────────
+   «Она у тебя не плавная. Анимации перехода мягкой нет. Это ощущается
+   картонно.» Верно: было .26s ease — короткий, почти линейный ход, и панель с
+   текстом ехали как две картонки.
+
+   Кривая cubic-bezier(.32,.72,0,1) — быстрый старт и долгое мягкое торможение,
+   ровно то, что читается как «плавно». Длительность 380 мс: на ходе в 300 px
+   более короткое время глаз воспринимает как рывок. Обоим элементам ОДНА кривая
+   и ОДНО время, иначе панель и текст разъезжаются.
+
+   will-change поднимает панель на свой слой — без него браузер перерисовывает
+   весь текст на каждом кадре, и как раз это ощущается дёрганьем. */
+@media (min-width: 1000px){
+  :root .ob-left{
+    transition: transform .38s cubic-bezier(.32,.72,0,1);
+    will-change: transform;
+  }
+  :root .ob-body{
+    transition: padding-left .38s cubic-bezier(.32,.72,0,1);
+  }
+  /* Пункты панели проявляются чуть позже самой панели — так движение читается
+     как «панель приехала и принесла содержимое», а не как рывок целиком. */
+  :root .ob-left .ob-toc, :root .ob-left .ob-left-t{
+    opacity: 0; transition: opacity .26s ease .1s;
+  }
+  :root .ob-side-open .ob-left .ob-toc,
+  :root .ob-side-open .ob-left .ob-left-t{ opacity: 1; }
+}
+@media (min-width: 1000px) and (prefers-reduced-motion: reduce){
+  :root .ob-left, :root .ob-body,
+  :root .ob-left .ob-toc, :root .ob-left .ob-left-t{ transition: none; }
+  :root .ob-left .ob-toc, :root .ob-left .ob-left-t{ opacity: 1; }
+}
+
+/* Выключная формула отдельным абзацем. Разворачивается из LaTeX скриптом
+   развернуть_формулы.py: рендерера у нас нет, а сырой TeX виден читателю. */
+.ob-article .formula{
+  margin: 1.3em 0; padding: 12px 16px; text-align: center;
+  background: var(--ob-vrezka-bg); border-radius: var(--ob-radius);
+  font-size: 1.05em; line-height: 1.7;
+}
+.ob-article .formula sub, .ob-article .formula sup{ font-size: .74em; }

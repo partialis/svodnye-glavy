@@ -1,0 +1,66 @@
+/* RADIOPAEDIA · radiopaedia.org/articles/kidney
+   Замерено 31.08: фон страницы rgb(42,41,42) — тёмное поле вокруг белого
+   листа; текст Open Sans 13px/19.5px цветом rgb(61,61,61); колонка 612 px;
+   заголовок статьи rgb(101,65,155) весом 600, кегль 26.9 px; ссылки
+   rgb(65,105,155); правая колонка 300 px с плитками рисунков.
+   Фиолетово-синяя градиентная шапка и разрядка в верхнем меню — со снимка. */
+
+:root{
+  --ob-fs: 13px; --ob-lh: 1.5;
+  --ob-font: "Open Sans", "Segoe UI", system-ui, Arial, sans-serif;
+  --ob-font-h: var(--ob-font);
+  --ob-col: 640px; --ob-left-w: 200px; --ob-right-w: 300px; --ob-gap: 28px;
+
+  --ob-surface: #ffffff; --ob-surface-fg: #3d3d3d;
+  --ob-bg: #2a292a; --ob-sheet: #ffffff;
+  --ob-text: #3d3d3d; --ob-muted: #7b7b7b;
+  --ob-link: #41699b; --ob-link-hover: #2c4a70;
+  --ob-rule: #e0e0e0; --ob-accent: #65419b;
+
+  --ob-h1-fs: 2.07rem; --ob-h1-fw: 600; --ob-h1-col: #65419b;
+  --ob-h2-fs: 1.62rem; --ob-h2-fw: 600; --ob-h2-col: #65419b;
+  --ob-h3-fs: 1.23rem; --ob-h3-fw: 600; --ob-h3-col: #65419b;
+
+  --ob-top-bg: #3b2f66; --ob-top-fg: #ffffff; --ob-top-h: 74px;
+  --ob-sub-bg: #2f2f2f; --ob-sub-fg: #d8d8d8;
+
+  --ob-th-bg: #f2f0f6; --ob-th-col: #4a3272;
+  --ob-td-brd: 1px solid #dcdcdc; --ob-table-fs: 1em;
+  --ob-vrezka-bg: #f5f2fa; --ob-vrezka-brd: 3px solid #65419b; --ob-vrezka-rad: 0;
+  --ob-card-bg: #ffffff; --ob-card-brd: 0; --ob-card-rad: 0; --ob-card-pad: 0 0 14px;
+  --ob-radius: 3px;
+}
+
+/* Белый лист с тенью посреди тёмного поля. Левой колонки у них нет — вся
+   навигация в шапке, оглавление уходит в правую. */
+.ob-body{ background: #fff; max-width: 1240px; padding: 0 26px;
+  box-shadow: 0 0 22px rgba(0,0,0,.45); grid-template-columns: minmax(0, calc(var(--ob-col) * var(--ob-col-k))) var(--ob-right-w);
+  justify-content: center; }
+.ob-left{ display: none; }
+
+.ob-top{ background: linear-gradient(90deg, #3b2f66 0%, #4a3f7d 55%, #3f5a8a 100%); }
+.ob-top-in{ flex-wrap: wrap; padding-bottom: 6px; }
+.ob-mark{ background: rgba(255,255,255,.16); border-radius: 4px; }
+.ob-brand-name{ font-size: 1.35em; font-weight: 400; letter-spacing: -.01em; }
+.ob-topnav{ flex-basis: 100%; gap: 0; margin-top: 4px; }
+.ob-topnav a{ text-transform: uppercase; letter-spacing: .13em; font-size: .84em;
+  font-weight: 600; padding: 10px 26px; border-right: 1px solid rgba(255,255,255,.22); }
+.ob-topnav a:first-child{ padding-left: 0; }
+/* Поиск остаётся в первой строке справа, меню уходит во вторую. */
+.ob-search{ background: rgba(255,255,255,.9); border-radius: 3px; color: #333; order: -1; margin-left: auto; }
+.ob-subnav a{ padding: 9px 0; font-size: .84em; }
+.ob-subnav a:hover{ color: #b9a6e0; }
+
+.ob-crumbs{ display: none; }
+.ob-head h1{ margin-bottom: 6px; }
+.ob-meta{ border-bottom: 1px solid #e6e6e6; padding-bottom: 12px; }
+
+.ob-card-t{ color: #333; font-size: 1.55em; text-transform: none; letter-spacing: -.01em;
+  font-weight: 600; margin-bottom: 12px; }
+.ob-tiles{ gap: 10px; }
+.ob-tile img{ height: 118px; object-fit: contain; background: #000; border: 0; }
+.ob-tile-t{ display: block; background: #f4f4f4; padding: 6px 7px; font-size: .82em; color: #444; }
+
+.ob-article a{ text-decoration: none; }
+.ob-article a:hover{ text-decoration: underline; }
+.ob-article aside strong:first-child{ color: #65419b; }

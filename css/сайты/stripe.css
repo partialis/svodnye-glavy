@@ -1,0 +1,59 @@
+/* STRIPE DOCS · docs.stripe.com/payments/quickstart
+   Замерено 31.08: текст 16px/26px цветом rgb(60,66,87) — фирменный «slate»,
+   а не чёрный; h1 32px/700 чёрным, h2 21px/700 цветом rgb(26,31,54);
+   ссылки rgb(84,105,212) БЕЗ подчёркивания; код Menlo/Consolas 14 px;
+   системный шрифтовой стек — тот же, что здесь (у них он в CSS и стоит,
+   заменять нечего). */
+
+:root{
+  --ob-fs: 16px; --ob-lh: 1.625;
+  --ob-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --ob-font-h: var(--ob-font);
+  --ob-font-mono: Menlo, Consolas, "Cascadia Mono", monospace;
+  --ob-col: 700px; --ob-left-w: 230px; --ob-right-w: 210px; --ob-gap: 44px;
+
+  --ob-bg: #ffffff; --ob-sheet: #ffffff;
+  --ob-text: #3c4257; --ob-muted: #697386;
+  --ob-link: #5469d4; --ob-link-hover: #3d51b5;
+  --ob-rule: #e3e8ee; --ob-accent: #5469d4;
+
+  --ob-h1-fs: 2rem; --ob-h1-fw: 700; --ob-h1-col: #000000;
+  --ob-h2-fs: 1.3125rem; --ob-h2-fw: 700; --ob-h2-col: #1a1f36;
+  --ob-h3-fs: 1.06rem; --ob-h3-fw: 600; --ob-h3-col: #1a1f36;
+
+  --ob-top-bg: #0a2540; --ob-top-fg: #ffffff; --ob-top-h: 56px;
+  --ob-sub-bg: #ffffff; --ob-sub-fg: #3c4257;
+
+  --ob-th-bg: #f7fafc; --ob-th-col: #1a1f36;
+  --ob-td-brd: 1px solid #e3e8ee; --ob-table-fs: .9em;
+  --ob-vrezka-bg: #f7fafc; --ob-vrezka-brd: 3px solid #5469d4; --ob-vrezka-rad: 6px;
+  --ob-card-bg: transparent; --ob-card-brd: 0; --ob-card-rad: 0; --ob-card-pad: 0;
+  --ob-radius: 5px;
+}
+
+.ob-mark{ background: #635bff; border-radius: 5px; }
+.ob-brand-name{ font-weight: 700; letter-spacing: -.02em; }
+.ob-topnav a{ font-weight: 500; font-size: .89em; }
+.ob-search{ background: rgba(255,255,255,.13); border-radius: 5px; }
+.ob-subnav{ border-bottom: 1px solid #e3e8ee; }
+.ob-subnav a{ padding: 12px 0; font-weight: 500; font-size: .86em; color: #697386; }
+.ob-subnav a:hover{ color: #5469d4; }
+
+/* Плотная левая навигация мелким кеглем и правое оглавление тонкой линией —
+   узнаваемая пара этой документации. */
+.ob-left-t{ font-size: .74em; color: #697386; }
+.ob-toc{ font-size: .84em; }
+.ob-toc a{ padding: 5px 0 5px 10px; color: #3c4257; border-left: 2px solid #e3e8ee; }
+.ob-toc a:hover{ color: #5469d4; }
+.ob-toc a.ob-tek{ border-left-color: #5469d4; background: transparent; padding-left: 10px; }
+.ob-toc-3 a{ padding-left: 22px; }
+.ob-card-t{ font-size: .72em; color: #697386; }
+.ob-mini{ font-size: .8em; }
+
+.ob-head h1{ letter-spacing: -.022em; }
+.ob-article a{ text-decoration: none; }
+.ob-article a:hover{ text-decoration: underline; }
+.ob-article code{ background: #f6f9fc; color: #4f566b; border: 1px solid #e3e8ee; border-radius: 4px; padding: .06em .34em; }
+.ob-article aside{ box-shadow: 0 2px 5px rgba(60,66,87,.06); }
+.ob-article aside strong:first-child{ color: #5469d4; }
+.ob-article th{ text-transform: uppercase; font-size: .78em; letter-spacing: .04em; color: #697386; }

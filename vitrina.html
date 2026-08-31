@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Витрина обликов</title>
+<meta name="description" content="Все облики страницы рядом: снимки на компьютере и на телефоне.">
+<link rel="stylesheet" href="css/основа.css">
+<link id="стиль" rel="stylesheet">
+<style>
+.vt{ margin: 0 0 46px; padding-bottom: 34px; border-bottom: 1px solid var(--ob-rule); }
+.vt-p{ color: var(--ob-muted); font-size: .95em; margin: 0 0 14px; }
+.vt-para{ display: grid; grid-template-columns: minmax(0,3fr) minmax(0,1fr); gap: 16px; align-items: start; }
+.vt-para figure{ margin: 0; }
+.vt-para img{ width: 100%; border: 1px solid var(--ob-rule); border-radius: 8px; display: block; }
+.vt-para figcaption{ font-size: .8em; color: var(--ob-muted); margin-top: 6px; }
+.vt-vybor{ font: inherit; font-size: .92em; font-weight: 600; cursor: pointer; padding: 9px 16px;
+  border: 1px solid var(--ob-accent); border-radius: 9px; background: transparent; color: var(--ob-accent); }
+.vt-vybor:hover{ background: var(--ob-accent); color: #fff; }
+@media (max-width: 760px){ .vt-para{ grid-template-columns: 1fr; } .vt-tel img{ max-width: 300px; } }
+</style>
+</head>
+<body>
+
+<main>
+
+<h1>Витрина обликов</h1>
+
+
+
+<section class="vt">
+<h2>Википедия</h2>
+<p class="vt-p">Вид снят с <b>en.wikipedia.org (обложка Vector 2022)</b>. Справочник: узкое левое оглавление, засечный заголовок, таблица с серой шапкой. Замер: текст 16/26, колонка 1117 px.</p>
+<div class="vt-para">
+  <figure><img src="img/obliki/wikipedia-pk.png" alt="Википедия на компьютере" loading="lazy"><figcaption>Компьютер, 1280 px</figcaption></figure>
+  <figure class="vt-tel"><img src="img/obliki/wikipedia-tel.png" alt="Википедия на телефоне" loading="lazy"><figcaption>Телефон, 390 px</figcaption></figure>
+</div>
+<p><button type="button" class="vt-vybor" data-n="0">Включить этот облик</button></p>
+</section>
+
+<section class="vt">
+<h2>NCBI Bookshelf</h2>
+<p class="vt-p">Вид снят с <b>ncbi.nlm.nih.gov/books (StatPearls)</b>. Медицинская база: полоса NIH, белый лист на сером поле, Times New Roman 16/22, коричневые заголовки, правая колонка панелями.</p>
+<div class="vt-para">
+  <figure><img src="img/obliki/bookshelf-pk.png" alt="NCBI Bookshelf на компьютере" loading="lazy"><figcaption>Компьютер, 1280 px</figcaption></figure>
+  <figure class="vt-tel"><img src="img/obliki/bookshelf-tel.png" alt="NCBI Bookshelf на телефоне" loading="lazy"><figcaption>Телефон, 390 px</figcaption></figure>
+</div>
+<p><button type="button" class="vt-vybor" data-n="1">Включить этот облик</button></p>
+</section>
+
+<section class="vt">
+<h2>TeachMeAnatomy</h2>
+<p class="vt-p">Вид снят с <b>teachmeanatomy.info</b>. Учебный сайт для студентов-медиков: чёрная шапка, бирюзовый акцент, крошки, полужирное оглавление слева. Текст 16/28.</p>
+<div class="vt-para">
+  <figure><img src="img/obliki/teachme-pk.png" alt="TeachMeAnatomy на компьютере" loading="lazy"><figcaption>Компьютер, 1280 px</figcaption></figure>
+  <figure class="vt-tel"><img src="img/obliki/teachme-tel.png" alt="TeachMeAnatomy на телефоне" loading="lazy"><figcaption>Телефон, 390 px</figcaption></figure>
+</div>
+<p><button type="button" class="vt-vybor" data-n="2">Включить этот облик</button></p>
+</section>
+
+<section class="vt">
+<h2>Radiopaedia</h2>
+<p class="vt-p">Вид снят с <b>radiopaedia.org</b>. Фиолетовая шапка с разрядкой, белый лист на тёмном поле, плотный текст 13/19.5, плитки рисунков справа.</p>
+<div class="vt-para">
+  <figure><img src="img/obliki/radiopaedia-pk.png" alt="Radiopaedia на компьютере" loading="lazy"><figcaption>Компьютер, 1280 px</figcaption></figure>
+  <figure class="vt-tel"><img src="img/obliki/radiopaedia-tel.png" alt="Radiopaedia на телефоне" loading="lazy"><figcaption>Телефон, 390 px</figcaption></figure>
+</div>
+<p><button type="button" class="vt-vybor" data-n="3">Включить этот облик</button></p>
+</section>
+
+<section class="vt">
+<h2>MkDocs Material</h2>
+<p class="vt-p">Вид снят с <b>squidfunk.github.io/mkdocs-material</b>. Самый распространённый вид документации: три колонки, индиговый акцент, врезки с цветной полосой.</p>
+<div class="vt-para">
+  <figure><img src="img/obliki/material-pk.png" alt="MkDocs Material на компьютере" loading="lazy"><figcaption>Компьютер, 1280 px</figcaption></figure>
+  <figure class="vt-tel"><img src="img/obliki/material-tel.png" alt="MkDocs Material на телефоне" loading="lazy"><figcaption>Телефон, 390 px</figcaption></figure>
+</div>
+<p><button type="button" class="vt-vybor" data-n="4">Включить этот облик</button></p>
+</section>
+
+<section class="vt">
+<h2>MkDocs Material, тёмная</h2>
+<p class="vt-p">Вид снят с <b>squidfunk.github.io/mkdocs-material</b>. Та же тема в тёмном режиме — ровно так она и снята замером: фон #1e2129. Для вечернего чтения.</p>
+<div class="vt-para">
+  <figure><img src="img/obliki/material-dark-pk.png" alt="MkDocs Material, тёмная на компьютере" loading="lazy"><figcaption>Компьютер, 1280 px</figcaption></figure>
+  <figure class="vt-tel"><img src="img/obliki/material-dark-tel.png" alt="MkDocs Material, тёмная на телефоне" loading="lazy"><figcaption>Телефон, 390 px</figcaption></figure>
+</div>
+<p><button type="button" class="vt-vybor" data-n="5">Включить этот облик</button></p>
+</section>
+
+<section class="vt">
+<h2>Notion</h2>
+<p class="vt-p">Вид снят с <b>notion.com/help</b>. Документ, а не сайт: крупный заголовок 42 px, меню слева, никакой правой колонки, много воздуха.</p>
+<div class="vt-para">
+  <figure><img src="img/obliki/notion-pk.png" alt="Notion на компьютере" loading="lazy"><figcaption>Компьютер, 1280 px</figcaption></figure>
+  <figure class="vt-tel"><img src="img/obliki/notion-tel.png" alt="Notion на телефоне" loading="lazy"><figcaption>Телефон, 390 px</figcaption></figure>
+</div>
+<p><button type="button" class="vt-vybor" data-n="6">Включить этот облик</button></p>
+</section>
+
+<section class="vt">
+<h2>Stripe Docs</h2>
+<p class="vt-p">Вид снят с <b>docs.stripe.com</b>. Эталон технической документации: ссылки #5469d4, текст #3c4257, плотная навигация, правое оглавление.</p>
+<div class="vt-para">
+  <figure><img src="img/obliki/stripe-pk.png" alt="Stripe Docs на компьютере" loading="lazy"><figcaption>Компьютер, 1280 px</figcaption></figure>
+  <figure class="vt-tel"><img src="img/obliki/stripe-tel.png" alt="Stripe Docs на телефоне" loading="lazy"><figcaption>Телефон, 390 px</figcaption></figure>
+</div>
+<p><button type="button" class="vt-vybor" data-n="7">Включить этот облик</button></p>
+</section>
+
+<section class="vt">
+<h2>OpenStax</h2>
+<p class="vt-p">Вид снят с <b>openstax.org (учебники)</b>. Настоящий электронный учебник: широкая панель оглавления книги, серо-графитовые заголовки.</p>
+<div class="vt-para">
+  <figure><img src="img/obliki/openstax-pk.png" alt="OpenStax на компьютере" loading="lazy"><figcaption>Компьютер, 1280 px</figcaption></figure>
+  <figure class="vt-tel"><img src="img/obliki/openstax-tel.png" alt="OpenStax на телефоне" loading="lazy"><figcaption>Телефон, 390 px</figcaption></figure>
+</div>
+<p><button type="button" class="vt-vybor" data-n="8">Включить этот облик</button></p>
+</section>
+
+<section class="vt">
+<h2>Osmosis</h2>
+<p class="vt-p">Вид снят с <b>osmosis.org</b>. Синий баннер, скруглённые карточки с тонкой рамкой, левая панель тем, кнопки-таблетки.</p>
+<div class="vt-para">
+  <figure><img src="img/obliki/osmosis-pk.png" alt="Osmosis на компьютере" loading="lazy"><figcaption>Компьютер, 1280 px</figcaption></figure>
+  <figure class="vt-tel"><img src="img/obliki/osmosis-tel.png" alt="Osmosis на телефоне" loading="lazy"><figcaption>Телефон, 390 px</figcaption></figure>
+</div>
+<p><button type="button" class="vt-vybor" data-n="9">Включить этот облик</button></p>
+</section>
+
+<section class="vt">
+<h2>Merck Manual</h2>
+<p class="vt-p">Вид снят с <b>merckmanuals.com/professional</b>. Профессиональный справочник: белая шапка, бордовые ссылки #b12e32, серое поле вокруг листа.</p>
+<div class="vt-para">
+  <figure><img src="img/obliki/merck-pk.png" alt="Merck Manual на компьютере" loading="lazy"><figcaption>Компьютер, 1280 px</figcaption></figure>
+  <figure class="vt-tel"><img src="img/obliki/merck-tel.png" alt="Merck Manual на телефоне" loading="lazy"><figcaption>Телефон, 390 px</figcaption></figure>
+</div>
+<p><button type="button" class="vt-vybor" data-n="10">Включить этот облик</button></p>
+</section>
+
+</main>
+
+<script src="облик.js"></script>
+<script src="настройки.js"></script>
+<script>
+document.querySelectorAll(".vt-vybor").forEach(b => b.addEventListener("click", () => {
+  window.ОБЛИК.применить(Number(b.dataset.n));
+  b.textContent = "Включено";
+  setTimeout(() => { b.textContent = "Включить этот облик"; }, 1800);
+}));
+</script>
+</body>
+</html>

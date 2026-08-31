@@ -1,0 +1,64 @@
+/* MKDOCS MATERIAL · squidfunk.github.io/mkdocs-material — светлый режим
+   Замерено 31.08 (страница отдалась в тёмном режиме, отсюда часть чисел взята
+   оттуда, а светлые значения — из открытой палитры темы): колонка 736 px,
+   левая навигация 234 px, правое «Оглавление», текст Roboto 12.8px/20.48px,
+   ссылки индиговые, врезка-предостережение с цветной левой полосой 1.2 px,
+   скруглением 4 px и padding 0 12px, код Roboto Mono 13.6 px.
+   Светлая палитра темы: индиго #3f51b5, фон #ffffff, текст rgba(0,0,0,.87),
+   боковые подписи rgba(0,0,0,.54), линейки rgba(0,0,0,.07). */
+
+:root{
+  --ob-fs: 16px; --ob-lh: 1.6;
+  --ob-font: Roboto, "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  --ob-font-h: var(--ob-font);
+  --ob-font-mono: "Roboto Mono", Consolas, Menlo, monospace;
+  --ob-col: 736px; --ob-left-w: 234px; --ob-right-w: 230px; --ob-gap: 36px;
+
+  --ob-bg: #ffffff; --ob-sheet: #ffffff;
+  --ob-text: rgba(0,0,0,.87); --ob-muted: rgba(0,0,0,.54);
+  --ob-link: #3f51b5; --ob-link-hover: #536dfe;
+  --ob-rule: rgba(0,0,0,.07); --ob-accent: #3f51b5;
+
+  --ob-h1-fs: 2rem; --ob-h1-fw: 300; --ob-h1-col: rgba(0,0,0,.87);
+  --ob-h2-fs: 1.5625rem; --ob-h2-fw: 300; --ob-h2-col: rgba(0,0,0,.87);
+  --ob-h3-fs: 1.25rem; --ob-h3-fw: 400; --ob-h3-col: rgba(0,0,0,.87);
+
+  --ob-top-bg: #3f51b5; --ob-top-fg: #ffffff; --ob-top-h: 60px;
+  --ob-sub-bg: #3f51b5; --ob-sub-fg: rgba(255,255,255,.85);
+
+  --ob-th-bg: #fafafa; --ob-td-brd: 1px solid rgba(0,0,0,.07); --ob-table-fs: .8em;
+  --ob-vrezka-bg: rgba(68,138,255,.1); --ob-vrezka-brd: 4px solid #448aff; --ob-vrezka-rad: 4px;
+  --ob-card-bg: transparent; --ob-card-brd: 0; --ob-card-rad: 0; --ob-card-pad: 0;
+  --ob-radius: 4px;
+}
+
+.ob-subnav{ border-bottom: 0; box-shadow: 0 2px 4px rgba(0,0,0,.14); }
+.ob-subnav a{ padding: 12px 0; font-weight: 500; }
+.ob-subnav a:hover{ color: #fff; opacity: .8; }
+.ob-mark{ background: rgba(255,255,255,.18); }
+.ob-search{ background: rgba(255,255,255,.16); border-radius: 4px; padding: 7px 12px; }
+.ob-search input{ width: 200px; }
+
+/* Слева — разделы, справа — «Оглавление». Три колонки и есть примета Material. */
+.ob-left-t, .ob-card-t{ text-transform: none; letter-spacing: 0; font-size: .82em;
+  font-weight: 700; color: rgba(0,0,0,.87); }
+.ob-toc{ font-size: .8em; }
+.ob-toc a{ padding: 6px 0; color: rgba(0,0,0,.7); }
+.ob-toc a.ob-tek{ color: #3f51b5; border-left-color: transparent; padding-left: 0; }
+.ob-mini{ font-size: .78em; border-left: 1px solid rgba(0,0,0,.07); padding-left: 12px; }
+.ob-mini a{ color: rgba(0,0,0,.7); }
+.ob-mini a.ob-tek{ color: #3f51b5; }
+
+.ob-article{ font-size: .8em; }
+.ob-article h2{ font-size: 1.95em; }
+.ob-article h3{ font-size: 1.56em; }
+.ob-article a{ text-decoration: none; }
+.ob-article a:hover{ text-decoration: underline; }
+.ob-article code{ background: rgba(0,0,0,.05); border-radius: 2px; padding: 0 4px; }
+
+/* Врезка Material: цветная полоса, подложка того же тона, заголовок строкой
+   с иконкой. Иконку рисуем псевдоэлементом — картинок в теме нет. */
+.ob-article aside{ padding: 12px 16px; box-shadow: 0 2px 2px rgba(0,0,0,.05); font-size: 1em; }
+.ob-article aside strong:first-child{ color: #448aff; display: inline-flex; align-items: center; gap: 6px; }
+.ob-article aside strong:first-child::before{ content: "ⓘ"; font-size: 1.05em; }
+.ob-article th{ font-size: 1em; }

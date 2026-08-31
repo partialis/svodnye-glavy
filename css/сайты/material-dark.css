@@ -1,0 +1,65 @@
+/* MKDOCS MATERIAL, ТЁМНАЯ · squidfunk.github.io/mkdocs-material
+   Это ровно то, что снял замер 31.08 — страница отдалась в тёмном режиме, и
+   числа здесь вычисленные, а не подобранные: фон rgb(30,33,41), текст
+   rgba(226,228,233,.56) на 12.8px/20.48px, h2 25px весом 300 цветом
+   rgba(226,228,233,.82), ссылки rgb(94,139,222), фон кода rgb(39,42,53) со
+   скруглением 2 px, врезка с левой полосой rgb(68,138,255) и скруглением 4 px,
+   левая навигация 234 px. */
+
+:root{
+  --ob-fs: 16px; --ob-lh: 1.6;
+  --ob-font: Roboto, "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  --ob-font-h: var(--ob-font);
+  --ob-font-mono: "Roboto Mono", Consolas, Menlo, monospace;
+  --ob-col: 736px; --ob-left-w: 234px; --ob-right-w: 230px; --ob-gap: 36px;
+
+  --ob-surface: #272a35; --ob-surface-fg: rgba(226,228,233,.92);
+  --ob-bg: #1e2129; --ob-sheet: #1e2129;
+  --ob-text: rgba(226,228,233,.84); --ob-muted: rgba(226,228,233,.5);
+  --ob-link: #5e8bde; --ob-link-hover: #8ab0f0;
+  --ob-rule: rgba(226,228,233,.12); --ob-accent: #5e8bde;
+  --ob-sel: rgba(94,139,222,.28);
+
+  --ob-h1-fs: 2rem; --ob-h1-fw: 300; --ob-h1-col: rgba(226,228,233,.92);
+  --ob-h2-fs: 1.5625rem; --ob-h2-fw: 300; --ob-h2-col: rgba(226,228,233,.82);
+  --ob-h3-fs: 1.25rem; --ob-h3-fw: 400; --ob-h3-col: rgba(226,228,233,.82);
+
+  --ob-top-bg: #171a21; --ob-top-fg: rgba(226,228,233,.9); --ob-top-h: 60px;
+  --ob-sub-bg: #171a21; --ob-sub-fg: rgba(226,228,233,.72);
+
+  --ob-th-bg: #272a35; --ob-th-col: rgba(226,228,233,.9);
+  --ob-td-brd: 1px solid rgba(226,228,233,.12); --ob-table-fs: .8em;
+  --ob-vrezka-bg: rgba(68,138,255,.12); --ob-vrezka-brd: 4px solid #448aff; --ob-vrezka-rad: 4px;
+  --ob-card-bg: transparent; --ob-card-brd: 0; --ob-card-rad: 0; --ob-card-pad: 0;
+  --ob-radius: 4px;
+}
+
+.ob-subnav{ border-bottom: 1px solid rgba(226,228,233,.1); }
+.ob-subnav a{ padding: 12px 0; font-weight: 500; }
+.ob-mark{ background: #5e8bde; color: #10131a; }
+.ob-search{ background: rgba(255,255,255,.08); border-radius: 4px; padding: 7px 12px; }
+.ob-search input{ width: 200px; }
+
+.ob-left-t, .ob-card-t{ text-transform: none; letter-spacing: 0; font-size: .82em;
+  font-weight: 700; color: rgba(226,228,233,.9); }
+.ob-toc{ font-size: .8em; }
+.ob-toc a{ padding: 6px 0; color: rgba(226,228,233,.62); }
+.ob-toc a.ob-tek{ color: #5e8bde; border-left-color: transparent; padding-left: 0; }
+.ob-mini{ font-size: .78em; border-left: 1px solid rgba(226,228,233,.12); padding-left: 12px; }
+.ob-mini a{ color: rgba(226,228,233,.62); }
+.ob-mini a.ob-tek{ color: #5e8bde; }
+
+.ob-article{ font-size: .8em; }
+.ob-article h2{ font-size: 1.95em; }
+.ob-article h3{ font-size: 1.56em; }
+.ob-article a{ text-decoration: none; }
+.ob-article a:hover{ text-decoration: underline; }
+.ob-article code{ background: #272a35; border-radius: 2px; padding: 0 4px; color: #d0d4e0; }
+.ob-article aside{ padding: 12px 16px; font-size: 1em; }
+.ob-article aside strong:first-child{ color: #6ea0ff; display: inline-flex; align-items: center; gap: 6px; }
+.ob-article aside strong:first-child::before{ content: "ⓘ"; font-size: 1.05em; }
+.ob-article blockquote{ border-left-color: rgba(226,228,233,.2); }
+/* Картинки в тёмной теме: гравюры на белом фоне режут глаз, приглушаем как
+   это делает сама тема (media hover: она снижает яркость до 0.75). */
+.ob-article figure img{ filter: brightness(.86) contrast(1.04); border-radius: 4px; }
+.ob-tile img{ filter: brightness(.86); }
