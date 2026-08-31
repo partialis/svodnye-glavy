@@ -49,6 +49,12 @@
   box-shadow: inset 0 -.32em 0 rgba(242,182,64,.55);
 }
 :root .ob-article a:hover{ box-shadow: inset 0 -1.1em 0 rgba(242,182,64,.55); }
+/* Сноска на источник — НЕ ссылка в тексте: жёлтая заливка на надстрочном
+   `[1, с. ?]` выглядит как ошибка вёрстки, особенно когда сноска переносится
+   на следующую строку и заливка рвётся пополам. Поймано снимком. */
+:root .ob-article sup a, :root .ob-article sup a:hover{
+  box-shadow: none; color: #8a6a12; white-space: nowrap;
+}
 :root .ob-article h2{ font-family: "DM Sans", system-ui, sans-serif;
   letter-spacing: -.01em; margin-top: 2.2em; }
 :root .ob-article figcaption{

@@ -47,6 +47,10 @@
 :root .ob-article h2{
   border-top: 1px solid #121212; padding-top: 10px; margin-top: 2em;
 }
+/* У ПЕРВОГО раздела линейки нет: над ним уже стоит линейка, отбивающая лид, и
+   две параллельные черты с пустотой между ними читаются как забытая пустая
+   врезка. Поймано снимком — числа об этом ничего не говорили. */
+:root .ob-article h2:first-of-type{ border-top: 0; padding-top: 0; margin-top: 1.2em; }
 :root .ob-article a{ text-decoration: none; border-bottom: 1px solid rgba(199,70,0,.35); }
 :root .ob-article a:hover{ border-bottom-color: #c74600; }
 :root .ob-article figcaption{
