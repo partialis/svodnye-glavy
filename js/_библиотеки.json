@@ -1,0 +1,19 @@
+{
+ "swiper": {
+  "версия": "14.2.0",
+  "лицензия": "MIT",
+  "зачем": "галерея рисунков: смахивание на телефоне, стрелки на ПК, плавный переход",
+  "файлы": {
+   "js/swiper.min.js": {
+    "байт": 152757,
+    "sha256": "d4e1d888723c80623ed161f220af4734a5735a5dd30abe0b9860fa5b53e6be77",
+    "откуда": "https://cdnjs.cloudflare.com/ajax/libs/Swiper/14.2.0/swiper-bundle.min.js"
+   },
+   "css/swiper.min.css": {
+    "байт": 14612,
+    "sha256": "d3bd7ac4a5cb1eb7c19587255bbba195c3ea726d4aa1e76d3e573f595249fcfd",
+    "откуда": "https://cdnjs.cloudflare.com/ajax/libs/Swiper/14.2.0/swiper-bundle.min.css"
+   }
+  }
+ }
+}

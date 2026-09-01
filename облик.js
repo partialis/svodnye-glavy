@@ -588,40 +588,115 @@ const ХРАНИЛКА = {
   }
 })();
 
-/* ─── увеличение рисунка по клику ────────────────────────────────────────────
-   «Можно было бы при желании нажать и картинка бы увеличилась в размере» —
-   владелец 01.09. Закрывается крестиком, кликом по фону и Escape: одна цель на
-   закрытие мало, а промах по крестику на телефоне обычное дело. */
-(function лупа(){
-  const рисунки = document.querySelectorAll(".ob-article figure img");
+
+/* ─── галерея рисунков ───────────────────────────────────────────────────────
+   «Картинки можно и листать. На многих сайтах можно смахнуть пальцем, а если
+   на пк, то навести на кнопочку ›… там плавная анимация есть перехода фото и
+   там описание логично тоже другое выходит» — владелец 01.09.
+
+   Библиотека Swiper 14.2.0 (MIT), своя копия в js/. Выбрана владельцем из трёх
+   кандидатов разбора: у неё готовы стрелки, клавиатура, ARIA и эффект перехода —
+   у более лёгкой Embla всё это пишется руками.
+
+   Рисунки страницы становятся кадрами ОДНОЙ галереи: открыл любой — листаешь
+   все, и подпись меняется вместе с кадром. Открывается по клику на рисунок.
+   Если библиотека почему-то не загрузилась, клик просто ничего не делает — но
+   страница цела: ради галереи ломать чтение нельзя. */
+(function галерея(){
+  const рисунки = [...document.querySelectorAll(".ob-article figure img")];
   if (!рисунки.length) return;
+  рисунки.forEach(им => { им.style.cursor = "zoom-in"; });
+
+  /* Библиотека подключается ОТСЮДА, а не тегом на каждой странице. Причин две:
+     страницы собирают шесть разных скриптов, и тег пришлось бы вписывать в
+     каждый; а на страницах без рисунков — глоссарий, настройки, дисциплины —
+     150 КБ не грузятся вовсе. */
+  /* Нажатие ДО загрузки библиотеки не должно пропадать. Замер 01.09: клик на
+     третьей секунде уходил в пустоту — слушатели вешались только после того,
+     как скрипт догрузится, а для читателя это просто «нажал, и ничего». */
+  let ждёт = null;
+  const запомнить = е => { ждёт = рисунки.indexOf(е.currentTarget); };
+  рисунки.forEach(им => им.addEventListener("click", запомнить));
+
+  if (typeof Swiper === "undefined") {
+    const с = document.createElement("link");
+    с.rel = "stylesheet"; с.href = "css/swiper.min.css";
+    document.head.appendChild(с);
+    const я = document.createElement("script");
+    я.src = "js/swiper.min.js";
+    я.onload = собрать;
+    я.onerror = () => { рисунки.forEach(им => { им.style.cursor = ""; }); };
+    document.head.appendChild(я);
+    return;
+  }
+  собрать();
+
+  function собрать(){
+
+  const подписьРядом = им => {
+    const ф = им.closest("figure");
+    const п = ф ? ф.querySelector("figcaption") : null;
+    return п ? п.textContent.trim() : "";
+  };
+
   const слой = document.createElement("div");
   слой.className = "ob-lupa";
-  слой.innerHTML = '<img alt=""><div class="ob-lupa-pod"></div>' +
-                   '<button type="button" class="ob-lupa-x" aria-label="Закрыть">×</button>';
+  слой.innerHTML =
+    '<div class="swiper ob-lupa-swiper">' +
+      '<div class="swiper-wrapper">' +
+        рисунки.map(им =>
+          '<div class="swiper-slide">' +
+            '<img src="' + (им.currentSrc || им.src) + '" alt="' +
+            (им.alt || "").replace(/"/g, "&quot;") + '">' +
+            '<div class="ob-lupa-pod">' + подписьРядом(им) + "</div>" +
+          "</div>").join("") +
+      "</div>" +
+      '<div class="swiper-button-prev" aria-label="Предыдущий рисунок"></div>' +
+      '<div class="swiper-button-next" aria-label="Следующий рисунок"></div>' +
+      '<div class="swiper-pagination"></div>' +
+    "</div>" +
+    '<button type="button" class="ob-lupa-x" aria-label="Закрыть">' + "\u00d7" + "</button>";
   document.body.appendChild(слой);
-  const крупно = слой.querySelector("img");
-  const подпись = слой.querySelector(".ob-lupa-pod");
+
+  const лента = new Swiper(слой.querySelector(".ob-lupa-swiper"), {
+    /* Плавный переход просил владелец отдельно: «эффект перехода плавный
+       добавить, круто вроде». `fade` мягче слайда, когда кадры разного размера. */
+    effect: "fade",
+    fadeEffect: {crossFade: true},
+    speed: 320,
+    loop: рисунки.length > 1,
+    keyboard: {enabled: true},
+    navigation: {nextEl: слой.querySelector(".swiper-button-next"),
+                 prevEl: слой.querySelector(".swiper-button-prev")},
+    pagination: {el: слой.querySelector(".swiper-pagination"), type: "fraction"},
+    /* Кто отключил анимацию в системе — тому её не показываем. */
+    ...(matchMedia("(prefers-reduced-motion: reduce)").matches ? {speed: 0} : {}),
+  });
 
   const закрыть = () => {
     слой.classList.remove("ob-vid");
     document.body.style.overflow = "";
   };
-  const открыть = им => {
-    крупно.src = им.currentSrc || им.src;
-    крупно.alt = им.alt || "";
-    const п = им.closest("figure") ? им.closest("figure").querySelector("figcaption") : null;
-    подпись.textContent = п ? п.textContent.trim() : "";
-    подпись.hidden = !подпись.textContent;
+  const открыть = i => {
     слой.classList.add("ob-vid");
-    /* Прокрутку страницы под слоем гасим: иначе колесо крутит текст позади, и
-       закрыв лупу, читатель оказывается не там, где был. */
     document.body.style.overflow = "hidden";
+    лента.slideToLoop ? лента.slideToLoop(i, 0) : лента.slideTo(i, 0);
+    лента.update();
   };
-
-  рисунки.forEach(им => им.addEventListener("click", () => открыть(им)));
-  слой.addEventListener("click", е => { if (е.target !== крупно) закрыть(); });
+  рисунки.forEach(им => им.removeEventListener("click", запомнить));
+  рисунки.forEach((им, i) => им.addEventListener("click", () => открыть(i)));
+  /* Нажатие, случившееся пока грузилась библиотека, отрабатывается сейчас. */
+  if (ждёт !== null && ждёт >= 0) открыть(ждёт);
+  слой.querySelector(".ob-lupa-x").addEventListener("click", закрыть);
+  слой.addEventListener("click", е => {
+    /* Клик мимо кадра закрывает. Стрелки и сам рисунок из этого исключены —
+       иначе листать нельзя: первый же клик по стрелке закрывал бы галерею. */
+    if (е.target.closest(".swiper-slide img, .swiper-button-prev, " +
+                         ".swiper-button-next, .ob-lupa-pod")) return;
+    закрыть();
+  });
   document.addEventListener("keydown", е => {
     if (е.key === "Escape" && слой.classList.contains("ob-vid")) закрыть();
   });
+  }
 })();

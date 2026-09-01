@@ -1451,13 +1451,16 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
    ПЕРЕД меню, поэтому автоотступ на ней уводил вправо и само меню — оно
    уезжало в правый угол вместе с ней. Меню слева, справа группа «Содержание +
    Поиск»; автоотступ висит на первой из правой группы. */
+/* «СОДЕРЖАНИЕ» — СЛЕВА, рядом с панелью, которую оно открывает. Панель
+   выезжает от левого края, и кнопка к ней у правого края экрана — это кнопка
+   в другом конце от того, чем она управляет. Владелец 01.09: «всё ещё не вижу
+   как плашка содержание вернулась в свой родной дом… хули она с
+   противоположной стороны».
+   Вправо уходит только поиск — он ни к чему на странице не привязан. */
 :root .ob-top-in > .ob-burger{ order: 0; }
-:root .ob-top-in > .ob-topnav{ order: 1; }
-:root .ob-top-in > .ob-side-btn{ order: 2; margin-left: auto; flex: 0 0 auto; align-self: center; }
-:root .ob-top-in > .ob-search{ order: 3; flex: 0 0 auto; align-self: center; margin-left: 12px; }
-/* Кнопки содержания нет (страница не глава) — вправо уводит сам поиск. */
-:root .ob-top-in > .ob-side-btn[hidden] + .ob-search,
-:root .ob-top-in:not(:has(.ob-side-btn:not([hidden]))) > .ob-search{ margin-left: auto; }
+:root .ob-top-in > .ob-side-btn{ order: 1; flex: 0 0 auto; align-self: center; }
+:root .ob-top-in > .ob-topnav{ order: 2; }
+:root .ob-top-in > .ob-search{ order: 3; margin-left: auto; flex: 0 0 auto; align-self: center; }
 
 /* ─── шапка держится при прокрутке и на компьютере ────────────────────────────
    Липкой она была ТОЛЬКО на телефоне: правило стояло внутри `max-width: 700px`.
@@ -1469,43 +1472,53 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
   :root .ob-top{ position: sticky; top: 0; z-index: 80; }
 }
 
-/* ─── размер рисунков и увеличение по клику ───────────────────────────────────
-   «Фото на пк сейчас несуразно огромными выглядят. Прям пиздос какими
-   огромными… было бы хорошо, выгляди они хоть как-то удобно поменьше в
-   середине и можно было бы при желании нажать и картинка бы увеличилась» —
-   владелец 01.09. Причина: колонка стала во всю ширину, а рисунки шли
-   `width: 100%` и растягивались вместе с ней.
-
-   Предел в 720 px — не выдумка: столько же держат в теле статьи разобранные
-   издания, и рисунок при этом остаётся уже строки, а не спорит с ней. */
+/* ─── размер рисунков и галерея ───────────────────────────────────────────────
+   «Фото на пк несуразно огромными выглядят… было бы хорошо, выгляди они хоть
+   как-то удобно поменьше в середине и можно было бы при желании нажать и
+   картинка бы увеличилась» — владелец 01.09. Причина была в том, что колонка
+   стала во всю ширину, а рисунки шли `width: 100%` и растягивались с ней. */
 :root .ob-article figure{ text-align: center; }
 :root .ob-article figure img{
   max-width: min(100%, 720px); height: auto; margin-inline: auto;
-  cursor: zoom-in;
 }
 :root .ob-article figcaption{ max-width: min(100%, 720px); margin-inline: auto; }
 
-/* Увеличенный рисунок поверх страницы. Своё, а не библиотека: нужен один
-   размер и одно закрытие, а любая галерея тянет за собой свой набор кнопок. */
+/* Галерея поверх страницы. Разметка от Swiper, наши только слой и подпись. */
+/* Фон почти непрозрачный: при .9 текст страницы читался сквозь галерею и
+   спорил с рисунком. Размытие добавлено на случай светлых обликов. */
 .ob-lupa{
   position: fixed; inset: 0; z-index: 200; display: none;
-  align-items: center; justify-content: center;
-  background: rgba(0,0,0,.86); padding: 24px; cursor: zoom-out;
+  background: rgba(8,8,10,.97); backdrop-filter: blur(6px);
 }
-.ob-lupa.ob-vid{ display: flex; }
-.ob-lupa img{ max-width: 96vw; max-height: 88vh; width: auto; height: auto; display: block; }
+.ob-lupa.ob-vid{ display: block; }
+.ob-lupa-swiper{ width: 100%; height: 100%; }
+.ob-lupa .swiper-slide{
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 46px 56px 80px;
+}
+.ob-lupa .swiper-slide img{
+  max-width: min(94vw, 1400px); max-height: 78vh;
+  width: auto; height: auto; display: block; background: #fff; border-radius: 4px;
+}
 .ob-lupa-pod{
-  position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 20px;
-  color: #fff; font-size: .92em; line-height: 1.4; text-align: center;
-  background: linear-gradient(transparent, rgba(0,0,0,.7));
+  margin-top: 14px; max-width: min(94vw, 900px);
+  color: #f2f2f2; font-size: .95em; line-height: 1.45; text-align: center;
+}
+/* Стрелки и счётчик — светлые: фон галереи всегда тёмный, у Swiper они синие. */
+.ob-lupa .swiper-button-prev, .ob-lupa .swiper-button-next{ color: #fff; }
+.ob-lupa .swiper-pagination{
+  color: #dcdcdc; font-size: .88em; bottom: 18px;
+  font-variant-numeric: tabular-nums;
 }
 .ob-lupa-x{
-  position: absolute; top: 14px; right: 16px; width: 42px; height: 42px;
-  border: 0; border-radius: 10px; background: rgba(255,255,255,.16); color: #fff;
+  position: absolute; top: 14px; right: 16px; z-index: 12;
+  width: 44px; height: 44px; border: 0; border-radius: 10px;
+  background: rgba(255,255,255,.16); color: #fff;
   font: inherit; font-size: 24px; line-height: 1; cursor: pointer;
 }
 .ob-lupa-x:hover{ background: rgba(255,255,255,.3); }
-@media (prefers-reduced-motion: no-preference){
-  .ob-lupa.ob-vid img{ animation: ob-lupa-vsplyt .18s ease-out; }
-  @keyframes ob-lupa-vsplyt{ from{ transform: scale(.96); opacity: 0; } }
+/* На телефоне стрелки лишние: там смахивают пальцем, а места мало. */
+@media (max-width: 700px){
+  :root .ob-lupa .swiper-button-prev, :root .ob-lupa .swiper-button-next{ display: none; }
+  :root .ob-lupa .swiper-slide{ padding: 46px 12px 74px; }
 }
