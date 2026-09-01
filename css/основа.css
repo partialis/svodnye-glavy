@@ -282,7 +282,7 @@
    пустого поля. Владелец 01.09: «Я использую ctrl− и отдаляю на пк. И видно
    вот эту хрень между. Текст просто должен растягиваться». С долей окна
    отдаление ведёт себя как надо: колонка растёт вместе с окном, а на главной
-   в ряд помещается больше карточек — сетка там на auto-fill. */
+   в ряд помещается больше карточек — сетка там на auto-fit. */
 :root[data-shirina="uzkaya"]   { --ob-col-k: 1;    --ob-col-min: max(680px, 46vw); }
 :root[data-shirina="obychnaya"]{ --ob-col-k: 1.28; --ob-col-min: max(900px, 62vw); }
 :root[data-shirina="shirokaya"]{ --ob-col-k: 1.7;  --ob-col-min: 97vw; }
@@ -644,7 +644,7 @@ main input[type="search"]:focus{ outline: 2px solid var(--ob-accent); outline-of
 .ns-t{ font-size: .78em; font-weight: 700; text-transform: uppercase; letter-spacing: .07em;
   color: var(--ob-muted); margin-bottom: 9px; }
 .ns-ryad{ display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.ns-setka{ display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 7px; }
+.ns-setka{ display: grid; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: 7px; }
 .ns-knopka, .ns-az, .ns-znak{
   font: inherit; font-size: .92em; cursor: pointer; color: var(--ob-text);
   background: transparent; border: 1px solid var(--ob-rule); border-radius: 9px; padding: 9px 12px;
@@ -850,8 +850,15 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
 .gl-dei{ display: flex; gap: 18px; font-size: .92em; }
 .gl-dei a{ font-weight: 600; }
 
+/* auto-FIT, А НЕ auto-FILL. Разница в том, что делает сетка с ПУСТЫМИ треками:
+   auto-fill их сохраняет, и на широком экране карточки жмутся к левому краю, а
+   справа висит пустое поле; auto-fit пустые треки схлопывает, и карточки
+   растягиваются на всю ширину. Владелец 01.09: «схера ли при уменьшении оно
+   как-то удобно не встало? Почему оно вообще вот так встало? Это же неудобно».
+   Разобрано по гайдам 01.09 (CSS-Tricks, GeeksforGeeks, Hoverify) — источники
+   в заметке «Гайды по вёрстке сайта — что советуют». */
 .gl-setka{
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
   gap: 26px 24px;
 }
 .gl-karta-kart{ display: block; }
@@ -879,7 +886,7 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
 .ob-article .gl-lenta li:last-child{ border-bottom: 0; }
 .ob-article .gl-karty{
   list-style: none; padding: 0; margin: 0 0 1.6em;
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;
 }
 .ob-article .gl-karty li{
   margin: 0; padding: 15px 17px; line-height: 1.5;
@@ -1401,7 +1408,7 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
    владелец 01.09. Поэтому лентой в одну колонку на телефоне и сеткой с
    переносом на широком экране. */
 :root .pr-setka{
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 26px 24px; margin: 0 0 1.6em;
 }
 :root .pr-tema-kart{ display: block; text-decoration: none; }
