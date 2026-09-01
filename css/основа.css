@@ -1522,3 +1522,25 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
   :root .ob-lupa .swiper-button-prev, :root .ob-lupa .swiper-button-next{ display: none; }
   :root .ob-lupa .swiper-slide{ padding: 46px 12px 74px; }
 }
+
+/* Ключ к пронумерованной схеме — отдельной строкой под подписью, помельче.
+   «Почему цифры есть, а пояснения к рисунку нет кроме названия?» */
+:root .ob-klyuch{
+  display: block; margin-top: .35em; font-size: .92em; color: var(--ob-muted);
+}
+
+/* ─── знакомство с сайтом на главной ──────────────────────────────────────────
+   «Описание сайта и прочее должно же быть. Для людей, которые будут на него
+   заходить» — владелец 01.09. Стоит ПОД лентой, а не над ней: постоянному
+   читателю нужны свежие темы, а объяснение — тому, кто зашёл впервые и
+   долистал. Текст простой и без слов «платформа» и «уникальный». */
+:root .gl-vstuplenie{
+  margin: 2.4em 0 0; padding: 26px 0 0; border-top: 1px solid var(--ob-rule);
+}
+:root .gl-vstuplenie h2{ margin: 0 0 .5em; }
+:root .gl-vstuplenie p{ margin: 0 0 1em; max-width: 62ch; }
+:root .gl-vstup-spisok{
+  display: flex; flex-wrap: wrap; gap: 10px 28px;
+  list-style: none; margin: 0; padding: 0; color: var(--ob-muted);
+}
+:root .gl-vstup-spisok li::before{ content: "— "; color: var(--ob-accent); }
