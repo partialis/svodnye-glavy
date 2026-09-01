@@ -587,3 +587,41 @@ const ХРАНИЛКА = {
     });
   }
 })();
+
+/* ─── увеличение рисунка по клику ────────────────────────────────────────────
+   «Можно было бы при желании нажать и картинка бы увеличилась в размере» —
+   владелец 01.09. Закрывается крестиком, кликом по фону и Escape: одна цель на
+   закрытие мало, а промах по крестику на телефоне обычное дело. */
+(function лупа(){
+  const рисунки = document.querySelectorAll(".ob-article figure img");
+  if (!рисунки.length) return;
+  const слой = document.createElement("div");
+  слой.className = "ob-lupa";
+  слой.innerHTML = '<img alt=""><div class="ob-lupa-pod"></div>' +
+                   '<button type="button" class="ob-lupa-x" aria-label="Закрыть">×</button>';
+  document.body.appendChild(слой);
+  const крупно = слой.querySelector("img");
+  const подпись = слой.querySelector(".ob-lupa-pod");
+
+  const закрыть = () => {
+    слой.classList.remove("ob-vid");
+    document.body.style.overflow = "";
+  };
+  const открыть = им => {
+    крупно.src = им.currentSrc || им.src;
+    крупно.alt = им.alt || "";
+    const п = им.closest("figure") ? им.closest("figure").querySelector("figcaption") : null;
+    подпись.textContent = п ? п.textContent.trim() : "";
+    подпись.hidden = !подпись.textContent;
+    слой.classList.add("ob-vid");
+    /* Прокрутку страницы под слоем гасим: иначе колесо крутит текст позади, и
+       закрыв лупу, читатель оказывается не там, где был. */
+    document.body.style.overflow = "hidden";
+  };
+
+  рисунки.forEach(им => им.addEventListener("click", () => открыть(им)));
+  слой.addEventListener("click", е => { if (е.target !== крупно) закрыть(); });
+  document.addEventListener("keydown", е => {
+    if (е.key === "Escape" && слой.classList.contains("ob-vid")) закрыть();
+  });
+})();

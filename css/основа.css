@@ -307,7 +307,7 @@ body{
 /* ─── шапка ───────────────────────────────────────────────────────────────*/
 .ob-top{ background: var(--ob-top-bg); color: var(--ob-top-fg); border-bottom: var(--ob-top-brd); }
 .ob-top-in{
-  max-width: 1360px; margin: 0 auto; padding: 0 24px;
+  max-width: min(100%, max(calc(var(--ob-col) * var(--ob-col-k)), var(--ob-col-min)) + 48px + var(--ob-side-pad)); margin: 0 auto; padding: 0 24px;
   min-height: var(--ob-top-h); display: flex; align-items: center; gap: 28px;
 }
 .ob-brand{ display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; flex: 0 0 auto; }
@@ -331,13 +331,13 @@ body{
 }
 .ob-search input::placeholder{ color: currentColor; opacity: .55; }
 .ob-subnav{ background: var(--ob-sub-bg); color: var(--ob-sub-fg); border-bottom: 1px solid var(--ob-rule); }
-.ob-subnav-in{ max-width: 1360px; margin: 0 auto; padding: 0 24px; display: flex; gap: 24px; flex-wrap: wrap; }
+.ob-subnav-in{ max-width: min(100%, max(calc(var(--ob-col) * var(--ob-col-k)), var(--ob-col-min)) + 48px + var(--ob-side-pad)); margin: 0 auto; padding: 0 24px; display: flex; gap: 24px; flex-wrap: wrap; }
 .ob-subnav a{ color: inherit; text-decoration: none; font-size: .88em; padding: 11px 0; display: inline-block; }
 .ob-subnav a:hover{ color: var(--ob-accent); }
 
 /* ─── три колонки ─────────────────────────────────────────────────────────*/
 .ob-body{
-  max-width: 1360px; margin: 0 auto; padding: 0 24px;
+  max-width: min(100%, max(calc(var(--ob-col) * var(--ob-col-k)), var(--ob-col-min)) + 48px + var(--ob-side-pad)); margin: 0 auto; padding: 0 24px;
   display: grid;
   grid-template-columns: var(--ob-left-w)
     minmax(0, min(100%, max(calc(var(--ob-col) * var(--ob-col-k)), var(--ob-col-min))))
@@ -1428,4 +1428,77 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
 :root a.gl-rubrika:hover, :root a.gl-rubrika:focus-visible{ text-decoration: underline; }
 @media (max-width: 700px){
   :root a.gl-rubrika{ display: inline-block; padding: 4px 0; }
+}
+
+/* ─── поиск у правого края шапки ──────────────────────────────────────────────
+   «Кнопка поиск криво стоит в отличие от остальных кнопок. Типа она выше
+   зачем-то в уголку спряталась. Она конечно с другого бока должна быть» —
+   владелец 01.09. Прижимаем к правому краю и выравниваем по центру ряда:
+   меню занимает всё свободное место, поиск — последний. */
+/* НЕ `flex: 1 1 auto` на меню: с ним оно занимало всю строку и выталкивало
+   поиск с кнопкой содержания на вторую — шапка разъезжалась на два этажа.
+   Меню только СЖИМАЕТСЯ, а вправо всё уводит один автоотступ. */
+:root .ob-top-in{ flex-wrap: nowrap; }
+:root .ob-top-in > .ob-topnav{ flex: 0 1 auto; min-width: 0; }
+/* ПОРЯДКОМ, А НЕ ПОЛОЖЕНИЕМ В РАЗМЕТКЕ. В разметке кнопка «Содержание» стоит
+   ПЕРЕД меню, поэтому автоотступ на ней уводил вправо и само меню — оно
+   уезжало в правый угол вместе с ней. Меню слева, справа группа «Содержание +
+   Поиск»; автоотступ висит на первой из правой группы. */
+:root .ob-top-in > .ob-burger{ order: 0; }
+:root .ob-top-in > .ob-topnav{ order: 1; }
+:root .ob-top-in > .ob-side-btn{ order: 2; margin-left: auto; flex: 0 0 auto; align-self: center; }
+:root .ob-top-in > .ob-search{ order: 3; flex: 0 0 auto; align-self: center; margin-left: 12px; }
+/* Кнопки содержания нет (страница не глава) — вправо уводит сам поиск. */
+:root .ob-top-in > .ob-side-btn[hidden] + .ob-search,
+:root .ob-top-in:not(:has(.ob-side-btn:not([hidden]))) > .ob-search{ margin-left: auto; }
+
+/* ─── шапка держится при прокрутке и на компьютере ────────────────────────────
+   Липкой она была ТОЛЬКО на телефоне: правило стояло внутри `max-width: 700px`.
+   На компьютере шапка уезжала вверх вместе с текстом, и владелец 01.09 написал:
+   «если на компьютере прокрутить вниз, то на пк плашка пропадает куда-то. На
+   телефоне такой херни вроде нет». Ровно так и было — на телефоне правило
+   действовало, на компьютере нет. */
+@media (min-width: 701px){
+  :root .ob-top{ position: sticky; top: 0; z-index: 80; }
+}
+
+/* ─── размер рисунков и увеличение по клику ───────────────────────────────────
+   «Фото на пк сейчас несуразно огромными выглядят. Прям пиздос какими
+   огромными… было бы хорошо, выгляди они хоть как-то удобно поменьше в
+   середине и можно было бы при желании нажать и картинка бы увеличилась» —
+   владелец 01.09. Причина: колонка стала во всю ширину, а рисунки шли
+   `width: 100%` и растягивались вместе с ней.
+
+   Предел в 720 px — не выдумка: столько же держат в теле статьи разобранные
+   издания, и рисунок при этом остаётся уже строки, а не спорит с ней. */
+:root .ob-article figure{ text-align: center; }
+:root .ob-article figure img{
+  max-width: min(100%, 720px); height: auto; margin-inline: auto;
+  cursor: zoom-in;
+}
+:root .ob-article figcaption{ max-width: min(100%, 720px); margin-inline: auto; }
+
+/* Увеличенный рисунок поверх страницы. Своё, а не библиотека: нужен один
+   размер и одно закрытие, а любая галерея тянет за собой свой набор кнопок. */
+.ob-lupa{
+  position: fixed; inset: 0; z-index: 200; display: none;
+  align-items: center; justify-content: center;
+  background: rgba(0,0,0,.86); padding: 24px; cursor: zoom-out;
+}
+.ob-lupa.ob-vid{ display: flex; }
+.ob-lupa img{ max-width: 96vw; max-height: 88vh; width: auto; height: auto; display: block; }
+.ob-lupa-pod{
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 20px;
+  color: #fff; font-size: .92em; line-height: 1.4; text-align: center;
+  background: linear-gradient(transparent, rgba(0,0,0,.7));
+}
+.ob-lupa-x{
+  position: absolute; top: 14px; right: 16px; width: 42px; height: 42px;
+  border: 0; border-radius: 10px; background: rgba(255,255,255,.16); color: #fff;
+  font: inherit; font-size: 24px; line-height: 1; cursor: pointer;
+}
+.ob-lupa-x:hover{ background: rgba(255,255,255,.3); }
+@media (prefers-reduced-motion: no-preference){
+  .ob-lupa.ob-vid img{ animation: ob-lupa-vsplyt .18s ease-out; }
+  @keyframes ob-lupa-vsplyt{ from{ transform: scale(.96); opacity: 0; } }
 }
