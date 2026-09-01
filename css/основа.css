@@ -1585,3 +1585,29 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
   font-weight: 600; color: var(--ob-link); text-decoration: none;
 }
 :root .ob-kratko:hover{ text-decoration: underline; }
+
+/* ─── карточки ленты: ровный низ и обрезанное описание ───────────────────────
+   «Криво, очень криво. Конец всегда на одном и том же расстоянии должен быть.
+   Вот это описание текстовое после названия? Если оно слишком большое, то
+   дальше оно должно идти троеточьим и выглядеть бледнее?» — владелец 01.09.
+
+   Карточка становится колонкой на всю высоту ячейки сетки, описание тянется, а
+   строка ссылок прижимается к низу — поэтому низ у всех карточек ряда на одной
+   линии независимо от длины текста. Описание обрезается тремя строками с
+   многоточием: `line-clamp` делает это на уровне браузера, без счёта знаков в
+   скрипте, и потому не врёт при другом кегле или шрифте. */
+:root .gl-setka{ align-items: stretch; }
+:root .gl-karta{ display: flex; flex-direction: column; height: 100%; }
+:root .gl-karta > p:not(.gl-dei){
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;
+  overflow: hidden; flex: 1 1 auto;
+  color: color-mix(in srgb, var(--ob-muted) 82%, transparent);
+}
+/* Ссылки внизу: своя строка, отделённая воздухом, а не прижатая к линейке.
+   «Сливаются между нижние надписи с этой линией тёмной. Ужасно близко к ней». */
+:root .gl-karta .gl-dei{
+  margin: 14px 0 0; padding-top: 12px;
+  border-top: 1px solid var(--ob-rule);
+  display: flex; gap: 18px;
+}
+:root .gl-lid .gl-dei{ margin-top: 16px; }
