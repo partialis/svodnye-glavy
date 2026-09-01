@@ -557,11 +557,13 @@ main input[type="search"]:focus{ outline: 2px solid var(--ob-accent); outline-of
    Липнет НИЖЕ шапки, а не под её край: шапка закреплена своей высотой
    (--ob-top-h), и без этого смещения полоса уехала бы под неё. */
 :root .ob-azbuka{
-  /* `top: 0`, а НЕ высота шапки: на большом экране шапка не липкая (липкой её
-     делает только телефонный медиазапрос), и отступ в 58 px оставлял над
-     полосой щель, сквозь которую ехал чужой текст. На телефоне отступ
-     возвращается — там шапка действительно висит сверху. */
-  position: sticky; top: 0; z-index: 30;
+  /* Отступ РАВЕН ВЫСОТЕ ШАПКИ. Прежний комментарий обещал обратное — «на
+     большом экране шапка не липкая» — и это было правдой ровно до того, как
+     сегодня же шапку сделали липкой и на компьютере. Полоса букв тогда поехала
+     ПОД шапку и обрезалась наполовину: владелец 01.09 прислал снимок с
+     наполовину срезанным латинским рядом.
+     Высота берётся из токена облика, а не числом: у обликов она разная. */
+  position: sticky; top: var(--ob-top-h); z-index: 30;
   display: flex; flex-wrap: wrap; gap: 4px; align-items: center;
   margin: 1.2em 0 1.6em; padding: 8px 0;
   background: var(--ob-surface); border-bottom: 1px solid var(--ob-rule);
@@ -644,7 +646,12 @@ main input[type="search"]:focus{ outline: 2px solid var(--ob-accent); outline-of
 .ns-t{ font-size: .78em; font-weight: 700; text-transform: uppercase; letter-spacing: .07em;
   color: var(--ob-muted); margin-bottom: 9px; }
 .ns-ryad{ display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.ns-setka{ display: grid; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: 7px; }
+/* Ячейка ужимается и ПЕРЕНОСИТ длинное имя. Без `min-width: 0` элемент сетки
+   не сжимается ниже своего содержимого, и «TeachMeAnatomy» вылезал на соседа —
+   владелец 01.09: «буквы с плашкой криво встали». Порог поднят со 148 до 168:
+   при 148 самое длинное имя не помещалось даже в одну строку. */
+.ns-setka{ display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 7px; }
+.ns-setka > .ns-knopka{ min-width: 0; overflow-wrap: anywhere; hyphens: auto; }
 .ns-knopka, .ns-az, .ns-znak{
   font: inherit; font-size: .92em; cursor: pointer; color: var(--ob-text);
   background: transparent; border: 1px solid var(--ob-rule); border-radius: 9px; padding: 9px 12px;
@@ -946,6 +953,7 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
      чем на большом экране, а места мало. */
   :root .ob-top{ position: sticky; top: 0; z-index: 80; }
   /* Здесь шапка липкая — значит азбука липнет ПОД ней, а не под самый верх. */
+  /* На телефоне шапка ниже — свой отступ. */
   :root .ob-azbuka{ top: 52px; }
   :root .ob-top-in{ min-height: 52px; padding: 0 14px; gap: 10px; }
   :root .ob-mark{ width: 30px; height: 30px; }
@@ -1544,3 +1552,20 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
   list-style: none; margin: 0; padding: 0; color: var(--ob-muted);
 }
 :root .gl-vstup-spisok li::before{ content: "— "; color: var(--ob-accent); }
+
+/* ─── что нового на сайте ─────────────────────────────────────────────────────
+   «Новости тоже не пишутся. Тут последние новости видны это темы, а новые фичи
+   сайта для людей не видны» — владелец 01.09. Отдельным блоком под лентой тем,
+   а не вперемешку: вперемешку они вытеснили бы темы с первого экрана, ради
+   которых сюда и заходят. */
+:root .gl-sayt{ margin: 2.4em 0 0; padding: 26px 0 0; border-top: 1px solid var(--ob-rule); }
+:root .gl-sayt > h2{ margin: 0 0 1em; }
+:root .gl-sayt-setka{
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px 24px;
+}
+:root .gl-novost h3{ margin: 0 0 .3em; font-size: 1rem; line-height: 1.3; text-wrap: balance; }
+:root .gl-novost p{ margin: 0; font-size: .92em; color: var(--ob-muted); line-height: 1.5; }
+/* Рубрика «Сайт» другого цвета, чем рубрика дисциплины: это разные роды
+   записей, и путать их не надо. */
+:root .gl-rubrika-sayt{ color: var(--ob-muted); }
