@@ -1542,6 +1542,12 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
    Владелец просил отдельно: «нужна рабочая система возможности включить режим,
    когда у тебя текст в двух колонках идёт».
 
+   ТОЛЬКО НА ТЕМАХ, широком экране и по выбору. Владелец 01.09: «колонки
+   должны были быть только у тем, нафиг они мне везде» — правило по классу
+   `.ob-article` цепляло и глоссарий, и список дисциплин, и настройки, где
+   две колонки бессмысленны. Признак темы ставит `облик.js` атрибутом
+   `data-tema`, а не ширина или имя файла.
+
    ВКЛЮЧАЕТСЯ ТОЛЬКО НА ШИРОКОМ ЭКРАНЕ И ТОЛЬКО ПО ВЫБОРУ. Разбор 01.09 нашёл у
    CSS-колонок известную беду: страница прокручивается вниз до конца первой
    колонки, потом читатель возвращается наверх ко второй — на длинном тексте это
@@ -1552,23 +1558,30 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
    разорванная пополам таблица нечитаема, а заголовок в конце колонки отрывается
    от своего текста. */
 @media (min-width: 1100px){
-  :root[data-kolonki="dve"] .ob-article{
+  :root[data-tema][data-kolonki="dve"] .ob-article{
     column-count: 2; column-gap: 46px;
     column-rule: 1px solid var(--ob-rule);
   }
-  :root[data-kolonki="dve"] .ob-article h2,
-  :root[data-kolonki="dve"] .ob-article h3,
-  :root[data-kolonki="dve"] .ob-article figure,
-  :root[data-kolonki="dve"] .ob-article table,
-  :root[data-kolonki="dve"] .ob-article aside,
-  :root[data-kolonki="dve"] .ob-article .ob-table-wrap,
-  :root[data-kolonki="dve"] .ob-article .formula{
+  :root[data-tema][data-kolonki="dve"] .ob-article h2,
+  :root[data-tema][data-kolonki="dve"] .ob-article h3,
+  :root[data-tema][data-kolonki="dve"] .ob-article figure,
+  :root[data-tema][data-kolonki="dve"] .ob-article table,
+  :root[data-tema][data-kolonki="dve"] .ob-article aside,
+  :root[data-tema][data-kolonki="dve"] .ob-article .ob-table-wrap,
+  :root[data-tema][data-kolonki="dve"] .ob-article .formula{
     break-inside: avoid;
   }
   /* Заголовок раздела начинает новую колонку, а не висит в хвосте предыдущей. */
-  :root[data-kolonki="dve"] .ob-article h2{ break-before: column; }
-  :root[data-kolonki="dve"] .ob-article h2:first-child{ break-before: auto; }
+  :root[data-tema][data-kolonki="dve"] .ob-article h2{ break-before: column; }
+  :root[data-tema][data-kolonki="dve"] .ob-article h2:first-child{ break-before: auto; }
   /* Первый абзац после заголовка держится с ним. */
-  :root[data-kolonki="dve"] .ob-article h2 + p,
-  :root[data-kolonki="dve"] .ob-article h3 + p{ break-before: avoid; }
+  :root[data-tema][data-kolonki="dve"] .ob-article h2 + p,
+  :root[data-tema][data-kolonki="dve"] .ob-article h3 + p{ break-before: avoid; }
 }
+
+/* Переключатель полной и краткой версии — первым в строке меты, до счётчиков.
+   «Вот бы здесь до счётчика слов была надпись „краткое содержание“». */
+:root .ob-kratko{
+  font-weight: 600; color: var(--ob-link); text-decoration: none;
+}
+:root .ob-kratko:hover{ text-decoration: underline; }
