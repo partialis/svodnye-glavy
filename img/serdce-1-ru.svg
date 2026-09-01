@@ -289,12 +289,12 @@
     <switch style="text-anchor:start;" transform="translate(51.25,1.25) translate(490 160)">
       <text id="text707-se" systemLanguage="se"><tspan id="tspan708-se">Легочная артерия</tspan><tspan x="0" y="20" id="tspan712-se">Артерия</tspan></text>
       
-    <text id="text707-fr" systemLanguage="fr"><tspan id="tspan708-fr">FR1</tspan><tspan x="0" y="20" id="tspan712-fr">FR1</tspan></text><text id="text707-ms" systemLanguage="ms"><tspan id="tspan708-ms">Артерия</tspan><tspan x="0" y="20" id="tspan712-ms">Легочная</tspan></text><text id="text707-hi" systemLanguage="hi"><tspan id="tspan708-hi">फुप्फुस</tspan><tspan x="0" y="20" id="tspan712-hi">धमनी</tspan></text><text id="text707-ks" systemLanguage="ks"><tspan id="tspan708-ks">پلمنری</tspan><tspan x="0" y="20" id="tspan712-ks">آٹری</tspan></text><text id="text707"><tspan id="tspan708">Легочная</tspan><tspan x="0" y="20" id="tspan712">Артерия</tspan></text></switch>
+    <text id="text707-fr" systemLanguage="fr"><tspan id="tspan708-fr">FR1</tspan><tspan x="0" y="20" id="tspan712-fr">FR1</tspan></text><text id="text707-ms" systemLanguage="ms"><tspan id="tspan708-ms">Артерия</tspan><tspan x="0" y="20" id="tspan712-ms">Легочный</tspan></text><text id="text707-hi" systemLanguage="hi"><tspan id="tspan708-hi">फुप्फुस</tspan><tspan x="0" y="20" id="tspan712-hi">धमनी</tspan></text><text id="text707-ks" systemLanguage="ks"><tspan id="tspan708-ks">پلمنری</tspan><tspan x="0" y="20" id="tspan712-ks">آٹری</tspan></text><text id="text707"><tspan id="tspan708">Легочный</tspan><tspan x="0" y="20" id="tspan712">Артерия</tspan></text></switch>
     
     <switch style="text-anchor:start;" transform="translate(51.25,1.25) translate(525 224)">
       <text id="text714-se" systemLanguage="se"><tspan id="tspan715-se">Легочные вены</tspan><tspan x="0" y="20" id="tspan717-se">Вена</tspan></text>
       
-    <text id="text714-ms" systemLanguage="ms"><tspan id="tspan715-ms">Вена</tspan><tspan x="0" y="20" id="tspan717-ms">Легочная</tspan></text><text id="text714-hi" systemLanguage="hi"><tspan id="tspan715-hi">फुप्फुस</tspan><tspan x="0" y="20" id="tspan717-hi">शिरा</tspan></text><text id="text714-ks" systemLanguage="ks"><tspan id="tspan715-ks">پلمنری </tspan><tspan x="0" y="20" id="tspan717-ks">وین</tspan></text><text id="text714"><tspan id="tspan715">Легочная</tspan><tspan x="0" y="20" id="tspan717">Вена</tspan></text></switch>
+    <text id="text714-ms" systemLanguage="ms"><tspan id="tspan715-ms">Вена</tspan><tspan x="0" y="20" id="tspan717-ms">Легочный</tspan></text><text id="text714-hi" systemLanguage="hi"><tspan id="tspan715-hi">फुप्फुस</tspan><tspan x="0" y="20" id="tspan717-hi">शिरा</tspan></text><text id="text714-ks" systemLanguage="ks"><tspan id="tspan715-ks">پلمنری </tspan><tspan x="0" y="20" id="tspan717-ks">وین</tspan></text><text id="text714"><tspan id="tspan715">Легочный</tspan><tspan x="0" y="20" id="tspan717">Вена</tspan></text></switch>
     
     <path class="leader" transform="translate(51.25,1.25)" inkscape:connector-curvature="0" d="m 530.9461,342.01425 -116.6557,2.11362" id="path764" sodipodi:nodetypes="cc">
       <title>mitral valve leader</title>
@@ -331,9 +331,9 @@
       <title>tricuspid valve leader</title>
     </path>
     <switch style="text-anchor:end" transform="translate(156 508.02618)">
-      <text id="text752-se" systemLanguage="se"><tspan id="tspan753-se">Трикуспидальный</tspan><tspan x="0" y="20" id="tspan755-se">Клапаны</tspan></text>
+      <text id="text752-se" systemLanguage="se"><tspan id="tspan753-se">Трехстворчатый</tspan><tspan x="0" y="20" id="tspan755-se">Клапаны</tspan></text>
       
-    <text id="text752-ms" systemLanguage="ms"><tspan id="tspan753-ms">Клапан</tspan><tspan x="0" y="20" id="tspan755-ms">Трикуспидальный</tspan></text><text id="text752-hi" systemLanguage="hi"><tspan id="tspan753-hi">त्रिवलन</tspan><tspan x="0" y="20" id="tspan755-hi">कपाट</tspan></text><text id="text752-ks" systemLanguage="ks"><tspan id="tspan753-ks">ٹرٛاےکسپِڈ</tspan><tspan x="0" y="20" id="tspan755-ks">والٕو </tspan></text><text id="text752"><tspan id="tspan753">Трехстворчатый</tspan><tspan x="0" y="20" id="tspan755">Клапан</tspan></text></switch>
+    <text id="text752-ms" systemLanguage="ms"><tspan id="tspan753-ms">Клапан</tspan><tspan x="0" y="20" id="tspan755-ms">Трехстворчатый</tspan></text><text id="text752-hi" systemLanguage="hi"><tspan id="tspan753-hi">त्रिवलन</tspan><tspan x="0" y="20" id="tspan755-hi">कपाट</tspan></text><text id="text752-ks" systemLanguage="ks"><tspan id="tspan753-ks">ٹرٛاےکسپِڈ</tspan><tspan x="0" y="20" id="tspan755-ks">والٕو </tspan></text><text id="text752"><tspan id="tspan753">Трехстворчатый</tspan><tspan x="0" y="20" id="tspan755">Клапан</tspan></text></switch>
     
     <path class="leader" inkscape:connector-curvature="0" d="m 159.38317,443.61836 185.197,-51.01299" id="path762">
       <title>pulmonary valve leader</title>
@@ -341,7 +341,7 @@
     <switch style="text-anchor:end" transform="translate(156 439.28314)">
       <text id="text757-se" systemLanguage="se"><tspan id="tspan758-se">Легочная артерия</tspan><tspan x="0" y="20" id="tspan760-se">Клапаны</tspan></text>
       
-    <text id="text757-ms" systemLanguage="ms"><tspan id="tspan758-ms">Клапан</tspan><tspan x="0" y="20" id="tspan760-ms">Легочная</tspan></text><text id="text757-hi" systemLanguage="hi"><tspan id="tspan758-hi">फुप्फुस</tspan><tspan x="0" y="20" id="tspan760-hi">कपाट</tspan></text><text id="text757-ks" systemLanguage="ks"><tspan id="tspan758-ks">پلمنری </tspan><tspan x="0" y="20" id="tspan760-ks">والٕو </tspan></text><text id="text757"><tspan id="tspan758">Легочная</tspan><tspan x="0" y="20" id="tspan760">Клапан</tspan></text></switch>
+    <text id="text757-ms" systemLanguage="ms"><tspan id="tspan758-ms">Клапан</tspan><tspan x="0" y="20" id="tspan760-ms">Легочный</tspan></text><text id="text757-hi" systemLanguage="hi"><tspan id="tspan758-hi">फुप्फुस</tspan><tspan x="0" y="20" id="tspan760-hi">कपाट</tspan></text><text id="text757-ks" systemLanguage="ks"><tspan id="tspan758-ks">پلمنری </tspan><tspan x="0" y="20" id="tspan760-ks">والٕو </tspan></text><text id="text757"><tspan id="tspan758">Легочный</tspan><tspan x="0" y="20" id="tspan760">Клапан</tspan></text></switch>
 
     <switch style="text-anchor:middle" transform="translate(494.21408 442.26968)">
       <text id="text724-se" systemLanguage="se"><tspan id="tspan725-se">Левый</tspan><tspan x="0" y="20" id="tspan727-se">Желудочек</tspan></text>

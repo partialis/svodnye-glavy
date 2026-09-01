@@ -9,7 +9,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="-289.896 0 2066.44 1188.77"
+   viewBox="-133.798 0 1754.24 1188.77"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -106,7 +106,7 @@
          sodipodi:role="line"
          id="tspan4165"
          x="460.78476"
-         y="783.95898">Парциальное давление кислорода (мм рт. ст.)</tspan></text>
+         y="783.95898">Парциальное давление O2 (мм рт. ст.)</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"

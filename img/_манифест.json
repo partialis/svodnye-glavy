@@ -13,21 +13,21 @@
   "глава": "serdce",
   "файл": "serdce-2.png",
   "подпись": "Диаграмма Виггерса: давления, объём желудочка, тоны и ЭКГ за один цикл",
-  "исходник": "File:Wiggers diagram with jugular venous waveform.png",
-  "автор": "Nootherone321",
+  "исходник": "File:Wiggers Diagram 2.svg",
+  "автор": "adh30 revised work by DanielChangMD who revised original work of DestinyQx; Redrawn as SVG by xavax",
   "лицензия": "CC BY-SA 4.0",
-  "страница": "https://commons.wikimedia.org/wiki/File%3AWiggers_diagram_with_jugular_venous_waveform.png",
-  "байт": 172356
+  "страница": "https://commons.wikimedia.org/wiki/File:Wiggers_Diagram_2.svg",
+  "байт": 14598
  },
  {
   "глава": "serdce",
   "файл": "serdce-3.png",
   "подпись": "Фазы сердечного цикла",
-  "исходник": "File:07 Hegasy Cardiac Cycle Wiki EN CCBYSA.png",
-  "автор": "Guido4",
+  "исходник": "File:Phases of the cardiac cycle.svg",
+  "автор": "Usien6",
   "лицензия": "CC BY-SA 4.0",
-  "страница": "https://commons.wikimedia.org/wiki/File%3A07_Hegasy_Cardiac_Cycle_Wiki_EN_CCBYSA.png",
-  "байт": 376696
+  "страница": "https://commons.wikimedia.org/wiki/File:Phases_of_the_cardiac_cycle.svg",
+  "байт": 224665
  },
  {
   "глава": "dyhanie",
@@ -73,11 +73,11 @@
   "глава": "vozbudimost",
   "файл": "vozbudimost-2.png",
   "подпись": "Нервно-мышечный синапс",
-  "исходник": "File:Neuro Muscular Junction.png",
-  "автор": "Doctor Jana",
-  "лицензия": "CC BY 4.0",
-  "страница": "https://commons.wikimedia.org/wiki/File%3ANeuro_Muscular_Junction.png",
-  "байт": 805617
+  "исходник": "File:Neuromuscular junction.svg",
+  "автор": "Paul Hege",
+  "лицензия": "CC BY-SA 4.0",
+  "страница": "https://commons.wikimedia.org/wiki/File:Neuromuscular_junction.svg",
+  "байт": 42359
  },
  {
   "глава": "vozbudimost",
@@ -93,11 +93,11 @@
   "глава": "gemostaz",
   "файл": "gemostaz-1.jpg",
   "подпись": "Каскад свёртывания",
-  "исходник": "File:Coagulation cascade.jpg",
-  "автор": "డా. గన్నవరపు నరసింహమూర్తి",
-  "лицензия": "CC0",
-  "страница": "https://commons.wikimedia.org/wiki/File%3ACoagulation_cascade.jpg",
-  "байт": 62517
+  "исходник": "File:Coagulation Cascade Diagram.svg",
+  "автор": "Jonathan Dyhr",
+  "лицензия": "CC BY-SA 3.0",
+  "страница": "https://commons.wikimedia.org/wiki/File:Coagulation_Cascade_Diagram.svg",
+  "байт": 64800
  },
  {
   "глава": "gemostaz",
