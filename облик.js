@@ -346,15 +346,23 @@ const ХРАНИЛКА = {
   статья.querySelectorAll("figure").forEach(ф => {
     const п = ф.querySelector("figcaption");
     if (!п) return;
+    /* Таблица, завёрнутая в figure, — ТАБЛИЦА, а не рисунок. Иначе она получала
+       оба номера сразу: «Рис. 4. Таблица 1. Сравнительная характеристика…».
+       Владелец 01.09: «Это таблица 2? Таблица 1? Почему таблица это рисунок???» */
+    if (ф.querySelector("table")) return;
     нр += 1;
     if (!/^\s*Рис/i.test(п.textContent))
       п.insertBefore(document.createTextNode("Рис. " + нр + ". "), п.firstChild);
   });
   let нт = 0;
   статья.querySelectorAll("table").forEach(т => {
-    let п = т.querySelector("caption");
+    const обёртка = т.closest("figure");
+    let п = т.querySelector("caption") ||
+            (обёртка ? обёртка.querySelector("figcaption") : null);
     if (!п) { п = document.createElement("caption"); т.insertBefore(п, т.firstChild); }
     нт += 1;
+    /* Признак «уже пронумерована» смотрит и на слово «Таблица» целиком: часть
+       подписей написана вручную именно так, и короткое «Табл» их не узнавало. */
     if (!/^\s*Табл/i.test(п.textContent))
       п.insertBefore(document.createTextNode("Табл. " + нт + ". "), п.firstChild);
   });

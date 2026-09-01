@@ -260,10 +260,26 @@
 /* Ширина колонки — кнопкой. Множитель, а не абсолютное число: у Radiopaedia
    колонка 612 px, у Википедии 1117, и общий «широкий» размер стёр бы разницу
    между обликами, ради которой всё и затевалось. */
-:root[data-shirina="uzkaya"]   { --ob-col-k: .82; }
-:root[data-shirina="obychnaya"]{ --ob-col-k: 1; }
-:root[data-shirina="shirokaya"]{ --ob-col-k: 1.3; }
-:root                          { --ob-col-k: 1; }
+/* Множители ПОДНЯТЫ и снабжены полом. Замер 01.09 на экране 1905 px: у облика
+   Merck «узкая» давала колонку 334 px — восемнадцать процентов экрана и около
+   сорока знаков в строке, — а «широкая» всего 708 px, то есть 1200 px уходило
+   в пустые поля. Владелец: «Что это за вообще пустоты с двух сторон? Текст
+   такой сжатый между ними, бред какой-то».
+
+   Пол в `em` держит нижнюю границу независимо от облика: облики сняты с чужих
+   сайтов, и у части из них колонка узкая ПО ЗАМЫСЛУ их дизайнеров, но
+   умножение такой колонки на 0.82 давало нечитаемую ленту.
+   Пол В ПИКСЕЛЯХ, а не в em: em считается от кегля КОРНЯ, а он у обликов
+   разный, и «42em» дало у Merck 471 px вместо ожидаемых 672 — то есть пол
+   проседал ровно там, где он и нужен.
+   Значения из типографики при кегле 16: 680 px ≈ 65 знаков в строке,
+   900 ≈ 90, 1240 ≈ 120. Первое — классическая норма, последнее — для тех,
+   кто хочет меньше прокрутки на большом мониторе. */
+:root[data-shirina="uzkaya"]   { --ob-col-k: 1;    --ob-col-min: 680px; }
+:root[data-shirina="obychnaya"]{ --ob-col-k: 1.28; --ob-col-min: 900px; }
+:root[data-shirina="shirokaya"]{ --ob-col-k: 1.7;  --ob-col-min: 1240px; }
+:root                          { --ob-col-k: 1.28; --ob-col-min: 900px; }
+:root                          { --ob-side-pad: 0px; }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -315,7 +331,9 @@ body{
 .ob-body{
   max-width: 1360px; margin: 0 auto; padding: 0 24px;
   display: grid;
-  grid-template-columns: var(--ob-left-w) minmax(0, calc(var(--ob-col) * var(--ob-col-k))) var(--ob-right-w);
+  grid-template-columns: var(--ob-left-w)
+    minmax(0, min(100%, max(calc(var(--ob-col) * var(--ob-col-k)), var(--ob-col-min))))
+    var(--ob-right-w);
   gap: var(--ob-gap);
   align-items: start;
   justify-content: center;
@@ -1046,7 +1064,10 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
    и Nielsen Norman. Замер после правки: 60 знаков в строке у газеты. */
 :root .ob-body{
   grid-template-columns: minmax(0, 1fr);
-  max-width: calc(var(--ob-col) * var(--ob-col-k) + 48px);
+  /* Отступ под панель ПРИБАВЛЯЕТСЯ к пределу, а не вычитается из него:
+     иначе открытая панель сужает текст, хотя должна лишь сдвинуть его. */
+  max-width: min(100%, max(calc(var(--ob-col) * var(--ob-col-k)),
+                           var(--ob-col-min)) + 48px + var(--ob-side-pad));
 }
 :root .ob-left, :root .ob-right{ display: none; }
 :root .ob-toc-mob{ display: block; }
@@ -1123,7 +1144,8 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
   }
   :root .ob-side-open .ob-left{ transform: none; }
   :root .ob-body{ transition: padding-left .26s ease; }
-  :root .ob-side-open .ob-body{ padding-left: 252px; }
+  :root .ob-side-open{ --ob-side-pad: 252px; }
+  :root .ob-side-open .ob-body{ padding-left: var(--ob-side-pad); }
   /* Свёрнутый блок над текстом на широком экране не нужен: его работу делает
      панель, а два оглавления сразу — то, на что владелец уже ругался. */
   :root .ob-side-open .ob-toc-mob{ display: none; }
