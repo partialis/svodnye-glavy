@@ -91,7 +91,7 @@ const НАСТРОЙКИ = (() => {
   const место = document.getElementById("настройки-тут");
   if (!место) return;
 
-  const {РАЗМЕРЫ, ШИРИНЫ, ШРИФТЫ, БЕРУ} = НАСТРОЙКИ;
+  const {РАЗМЕРЫ, ШИРИНЫ, ШРИФТЫ, БЕРУ, ДАЮ} = НАСТРОЙКИ;
   const эл = (тег, кл, текст) => {
     const e = document.createElement(тег);
     if (кл) e.className = кл;
@@ -185,6 +185,20 @@ const НАСТРОЙКИ = (() => {
   const выбранный = ряд3.querySelector('[aria-pressed="true"]');
   if (выбранный) выбранный.scrollIntoView({block: "nearest"});
 
+  /* всплывашки: наведением или только кликом */
+  const б5 = блок("Подсказки к терминам",
+                  "Как открывать объяснение подчёркнутого слова.");
+  const ряд5 = эл("div", "ns-ryad");
+  [{к: "navedenie", т: "При наведении"}, {к: "klik", т: "Только по клику"}].forEach(в => {
+    const b = эл("button", "ns-knopka", в.т);
+    b.type = "button"; b.dataset.знач = в.к;
+    b.addEventListener("click", () => { ДАЮ("чтение-подсказки", в.к); отметить(ряд5, в.к); });
+    ряд5.appendChild(b);
+  });
+  б5.appendChild(ряд5);
+  место.appendChild(б5);
+  отметить(ряд5, БЕРУ("чтение-подсказки", "navedenie"));
+
   /* облик */
   if (window.ОБЛИК) {
     const б4 = блок("Внешний вид",
@@ -216,6 +230,7 @@ const НАСТРОЙКИ = (() => {
     НАСТРОЙКИ.применитьШирину("shirokaya"); отметить(ряд2, "shirokaya");
     подпись2.textContent = ШИРИНЫ[2].т + " — " + ШИРИНЫ[2].п;
     НАСТРОЙКИ.применитьШрифт(""); отметить(ряд3, "");
+    ДАЮ("чтение-подсказки", "navedenie"); отметить(ряд5, "navedenie");
     if (window.ОБЛИК) { window.ОБЛИК.применить(0); location.reload(); }
   });
   низ.appendChild(сброс);
