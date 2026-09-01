@@ -453,7 +453,11 @@ const ХРАНИЛКА = {
   const цели = [...document.querySelectorAll(".ob-article h2, .ob-article h3")]
         .filter(з => з.id);
   const ссылки = new Map();
-  document.querySelectorAll(".ob-toc a, .ob-mini a, .ob-toc-mob a").forEach(a => {
+  /* Азбука глоссария подсвечивается ТЕМ ЖЕ механизмом, а не своим: буквы —
+     это обычные h2, и их идентификаторы уже собраны в `цели`. Отдельный
+     наблюдатель за прокруткой пришлось бы держать в согласии с этим, и однажды
+     они разошлись бы. */
+  document.querySelectorAll(".ob-toc a, .ob-mini a, .ob-toc-mob a, .ob-azbuka a").forEach(a => {
     const ид = decodeURIComponent(a.getAttribute("href") || "").slice(1);
     if (!ссылки.has(ид)) ссылки.set(ид, []);
     ссылки.get(ид).push(a);
