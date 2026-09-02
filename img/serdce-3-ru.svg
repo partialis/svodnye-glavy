@@ -423,7 +423,7 @@
              id="tspan8525-1"
              x="1608.5366"
              y="424.92252"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.407px;line-height:111%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle">Изоволюметрическое/</tspan><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.407px;line-height:111%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle">Изометрическое/</tspan><tspan
              sodipodi:role="line"
              x="1608.5366"
              y="466.44427"
@@ -490,7 +490,7 @@
              sodipodi:role="line"
              x="1877.4402"
              y="984.09906"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.407px;line-height:111%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle">изгнание</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.407px;line-height:111%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle">Изгнание</tspan></text>
         <text
            id="text8545-4-0"
            y="1022.5131"
@@ -527,12 +527,12 @@
              sodipodi:role="line"
              x="1877.4402"
              y="942.57727"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.407px;line-height:111%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle">Изоволюметрическое</tspan><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.407px;line-height:111%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle">Изометрическое/</tspan><tspan
              id="tspan8808"
              sodipodi:role="line"
              x="1877.4402"
              y="984.09906"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.407px;line-height:111%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle">расслабление</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.407px;line-height:111%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle">изоволюметрическое</tspan></text>
         <text
            id="text8545-4-0-0"
            y="1022.5131"
@@ -543,7 +543,7 @@
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.4074px;line-height:111%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle"
              y="1022.5131"
              x="1875.7324"
-             sodipodi:role="line">(диастола желудочков—ранняя)</tspan></text>
+             sodipodi:role="line">расслабление</tspan></text>
       </g>
       <g
          transform="translate(-1548.368,112.88639)"
@@ -564,7 +564,7 @@
              sodipodi:role="line"
              x="1877.4402"
              y="984.09906"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.407px;line-height:111%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle">наполнение</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.407px;line-height:111%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle">(раннее наполнение</tspan></text>
         <text
            id="text8545-4-0-9"
            y="1022.5131"
@@ -580,7 +580,7 @@
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.4074px;line-height:111%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle"
              y="1064.0353"
              x="1875.7324"
-             sodipodi:role="line">диастола—поздняя)</tspan></text>
+             sodipodi:role="line">желудочков)</tspan></text>
       </g>
     </g>
     <text

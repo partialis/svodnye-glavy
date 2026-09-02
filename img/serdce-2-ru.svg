@@ -126,11 +126,11 @@
 
 	c-1.946,0-2.122-39.812-3.714-39.812c-1.681,0-2.21,23.901-3.893,23.901c-2.37,0-96.828,0-101.094,0"/>
 
-<text id="text99" transform="matrix(0.7071 -0.7071 0.7071 0.7071 266.0203 190.1355)" font-family="'ArialMT'" font-size="19.9998">Изоволюмическое сокращение</text>
+<text id="text99" transform="matrix(0.7071 -0.7071 0.7071 0.7071 266.0203 190.1355)" font-family="'ArialMT'" font-size="19.9998">Изометрическое сокращение</text>
 
-<text id="text103" transform="matrix(0.7071 -0.7071 0.7071 0.7071 332.3396 190.1345)" font-family="'ArialMT'" font-size="19.9998">Изгнание</text>
+<text id="text103" transform="matrix(0.7071 -0.7071 0.7071 0.7071 332.3396 190.1345)" font-family="'ArialMT'" font-size="19.9998">Выброс</text>
 
-<text id="text101" transform="matrix(0.7071 -0.7071 0.7071 0.7071 399.4539 190.1345)" font-family="'ArialMT'" font-size="19.9998">Изоволюмическое расслабление</text>
+<text id="text101" transform="matrix(0.7071 -0.7071 0.7071 0.7071 399.4539 190.1345)" font-family="'ArialMT'" font-size="19.9998">Изометрическая релаксация</text>
 
 <text id="text201" transform="matrix(0.7071 -0.7071 0.7071 0.7071 452.1189 190.1335)" font-family="'ArialMT'" font-size="19.9998">Быстрое наполнение</text>
 
@@ -178,7 +178,7 @@
 
 <text id="text131" transform="matrix(1 0 0 1 752.448 398.2439)" font-family="'ArialMT'" font-size="20">v</text>
 
-<text transform="matrix(0 -1 1 0 47.6121 405.8396)" font-family="'ArialMT'" font-size="20">Давление (мм рт. ст.)</text>
+<text transform="matrix(0 -1 1 0 47.6121 405.8396)" font-family="'ArialMT'" font-size="20">Давление (мм рт.ст.)</text>
 
 <text transform="matrix(1 0 0 1 71.5549 232.9861)" font-family="'ArialMT'" font-size="20">120</text>
 

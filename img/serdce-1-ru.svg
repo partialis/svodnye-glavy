@@ -282,82 +282,82 @@
   <g inkscape:groupmode="layer" id="layer7" inkscape:label="Text" transform="translate(-36.720675,-21.949664)" font-family="Nimbus Sans L, Arial, sans-serif" font-size="20">
     
     <switch style="text-anchor:middle;" transform="translate(51.25,1.25) translate(326.78055 141.20251)">
-      <text id="text704-se" systemLanguage="se"><tspan id="tspan705-se">Аорта</tspan></text>
+      <text id="text704-se" systemLanguage="se"><tspan id="tspan705-se">полость сердца</tspan></text>
       
-    <text id="text704-fr" systemLanguage="fr"><tspan id="tspan705-fr">FR1</tspan></text><text id="text704-ms" systemLanguage="ms"><tspan id="tspan705-ms">Аорта</tspan></text><text id="text704-hi" systemLanguage="hi"><tspan id="tspan705-hi">महाधमनी</tspan></text><text id="text704-ks" systemLanguage="ks"><tspan id="tspan705-ks">اَیوٹا </tspan></text><text id="text704"><tspan id="tspan705">Аорта</tspan></text></switch>
+    <text id="text704-fr" systemLanguage="fr"><tspan id="tspan705-fr">ФВ (фракция выброса)</tspan></text><text id="text704-ms" systemLanguage="ms"><tspan id="tspan705-ms">Аорта</tspan></text><text id="text704-hi" systemLanguage="hi"><tspan id="tspan705-hi">महाधमनी</tspan></text><text id="text704-ks" systemLanguage="ks"><tspan id="tspan705-ks">اَیوٹا </tspan></text><text id="text704"><tspan id="tspan705">Аорта</tspan></text></switch>
     
     <switch style="text-anchor:start;" transform="translate(51.25,1.25) translate(490 160)">
-      <text id="text707-se" systemLanguage="se"><tspan id="tspan708-se">Легочная артерия</tspan><tspan x="0" y="20" id="tspan712-se">Артерия</tspan></text>
+      <text id="text707-se" systemLanguage="se"><tspan id="tspan708-se">полость лёгкого</tspan><tspan x="0" y="20" id="tspan712-se">артерия</tspan></text>
       
-    <text id="text707-fr" systemLanguage="fr"><tspan id="tspan708-fr">FR1</tspan><tspan x="0" y="20" id="tspan712-fr">FR1</tspan></text><text id="text707-ms" systemLanguage="ms"><tspan id="tspan708-ms">Артерия</tspan><tspan x="0" y="20" id="tspan712-ms">Легочный</tspan></text><text id="text707-hi" systemLanguage="hi"><tspan id="tspan708-hi">फुप्फुस</tspan><tspan x="0" y="20" id="tspan712-hi">धमनी</tspan></text><text id="text707-ks" systemLanguage="ks"><tspan id="tspan708-ks">پلمنری</tspan><tspan x="0" y="20" id="tspan712-ks">آٹری</tspan></text><text id="text707"><tspan id="tspan708">Легочный</tspan><tspan x="0" y="20" id="tspan712">Артерия</tspan></text></switch>
+    <text id="text707-fr" systemLanguage="fr"><tspan id="tspan708-fr">ФВ (фракция выброса)</tspan><tspan x="0" y="20" id="tspan712-fr">ФВ (фракция выброса)</tspan></text><text id="text707-ms" systemLanguage="ms"><tspan id="tspan708-ms">артерия</tspan><tspan x="0" y="20" id="tspan712-ms">лёгочная артерия</tspan></text><text id="text707-hi" systemLanguage="hi"><tspan id="tspan708-hi">फुप्फुस</tspan><tspan x="0" y="20" id="tspan712-hi">धमनी</tspan></text><text id="text707-ks" systemLanguage="ks"><tspan id="tspan708-ks">پلمنری</tspan><tspan x="0" y="20" id="tspan712-ks">آٹری</tspan></text><text id="text707"><tspan id="tspan708">лёгочный</tspan><tspan x="0" y="20" id="tspan712">артерия</tspan></text></switch>
     
     <switch style="text-anchor:start;" transform="translate(51.25,1.25) translate(525 224)">
-      <text id="text714-se" systemLanguage="se"><tspan id="tspan715-se">Легочные вены</tspan><tspan x="0" y="20" id="tspan717-se">Вена</tspan></text>
+      <text id="text714-se" systemLanguage="se"><tspan id="tspan715-se">полость сердца</tspan><tspan x="0" y="20" id="tspan717-se">вена</tspan></text>
       
-    <text id="text714-ms" systemLanguage="ms"><tspan id="tspan715-ms">Вена</tspan><tspan x="0" y="20" id="tspan717-ms">Легочный</tspan></text><text id="text714-hi" systemLanguage="hi"><tspan id="tspan715-hi">फुप्फुस</tspan><tspan x="0" y="20" id="tspan717-hi">शिरा</tspan></text><text id="text714-ks" systemLanguage="ks"><tspan id="tspan715-ks">پلمنری </tspan><tspan x="0" y="20" id="tspan717-ks">وین</tspan></text><text id="text714"><tspan id="tspan715">Легочный</tspan><tspan x="0" y="20" id="tspan717">Вена</tspan></text></switch>
+    <text id="text714-ms" systemLanguage="ms"><tspan id="tspan715-ms">вена</tspan><tspan x="0" y="20" id="tspan717-ms">лёгочная артерия</tspan></text><text id="text714-hi" systemLanguage="hi"><tspan id="tspan715-hi">फुप्फुस</tspan><tspan x="0" y="20" id="tspan717-hi">शिरा</tspan></text><text id="text714-ks" systemLanguage="ks"><tspan id="tspan715-ks">پلمنری </tspan><tspan x="0" y="20" id="tspan717-ks">وین</tspan></text><text id="text714"><tspan id="tspan715">лёгочный</tspan><tspan x="0" y="20" id="tspan717">вена</tspan></text></switch>
     
     <path class="leader" transform="translate(51.25,1.25)" inkscape:connector-curvature="0" d="m 530.9461,342.01425 -116.6557,2.11362" id="path764" sodipodi:nodetypes="cc">
       <title>mitral valve leader</title>
     </path>
     <switch style="text-anchor:start;" transform="translate(590 339.46069)">
-      <text id="text742-se" systemLanguage="se"><tspan id="tspan743-se">Митральный клапан</tspan><tspan x="0" y="20" id="tspan745-se">Клапан</tspan></text>
+      <text id="text742-se" systemLanguage="se"><tspan id="tspan743-se">митральный клапан</tspan><tspan x="0" y="20" id="tspan745-se">клапан</tspan></text>
       
-    <text id="text742-ms" systemLanguage="ms"><tspan id="tspan743-ms">Клапан</tspan><tspan x="0" y="20" id="tspan745-ms">Митральный</tspan></text><text id="text742-hi" systemLanguage="hi"><tspan id="tspan743-hi">द्विकपर्दी</tspan><tspan x="0" y="20" id="tspan745-hi">कपाट</tspan></text><text id="text742-ks" systemLanguage="ks"><tspan id="tspan743-ks">مِٹرل</tspan><tspan x="0" y="20" id="tspan745-ks">والٕو</tspan></text><text id="text742"><tspan id="tspan743">Митральный</tspan><tspan x="0" y="20" id="tspan745">Клапан</tspan></text></switch>
+    <text id="text742-ms" systemLanguage="ms"><tspan id="tspan743-ms">впускной клапан</tspan><tspan x="0" y="20" id="tspan745-ms">митральный</tspan></text><text id="text742-hi" systemLanguage="hi"><tspan id="tspan743-hi">द्विकपर्दी</tspan><tspan x="0" y="20" id="tspan745-hi">कपाट</tspan></text><text id="text742-ks" systemLanguage="ks"><tspan id="tspan743-ks">مِٹرل</tspan><tspan x="0" y="20" id="tspan745-ks">والٕو</tspan></text><text id="text742"><tspan id="tspan743">митральный</tspan><tspan x="0" y="20" id="tspan745">клапан</tspan></text></switch>
     
     <path class="leader" transform="translate(51.25,1.25)" inkscape:connector-curvature="0" d="M 556.76392,410.56409 361.6018,367.97219" id="path765" sodipodi:nodetypes="cc">
       <title>aortic valve leader</title>
     </path>
     <switch style="text-anchor:start;" transform="translate(610 410.59152)">
-      <text id="text747-se" systemLanguage="se"><tspan id="tspan748-se">Аорта</tspan><tspan x="0" y="20" id="tspan750-se">Клапаны</tspan></text>
+      <text id="text747-se" systemLanguage="se"><tspan id="tspan748-se">полость сердца</tspan><tspan x="0" y="20" id="tspan750-se">клапан</tspan></text>
       
-    <text id="text747-ms" systemLanguage="ms"><tspan id="tspan748-ms">Клапан</tspan><tspan x="0" y="20" id="tspan750-ms">Аорта</tspan></text><text id="text747-hi" systemLanguage="hi"><tspan id="tspan748-hi">महाधमनी</tspan><tspan x="0" y="20" id="tspan750-hi">कपाट</tspan></text><text id="text747-ks" systemLanguage="ks"><tspan id="tspan748-ks">اوٹِک</tspan><tspan x="0" y="20" id="tspan750-ks">والٕو </tspan></text><text id="text747"><tspan id="tspan748">Аортальный</tspan><tspan x="0" y="20" id="tspan750">Клапан</tspan></text></switch>
+    <text id="text747-ms" systemLanguage="ms"><tspan id="tspan748-ms">впускной клапан</tspan><tspan x="0" y="20" id="tspan750-ms">Аорта</tspan></text><text id="text747-hi" systemLanguage="hi"><tspan id="tspan748-hi">महाधमनी</tspan><tspan x="0" y="20" id="tspan750-hi">कपाट</tspan></text><text id="text747-ks" systemLanguage="ks"><tspan id="tspan748-ks">اوٹِک</tspan><tspan x="0" y="20" id="tspan750-ks">والٕو </tspan></text><text id="text747"><tspan id="tspan748">аортальный</tspan><tspan x="0" y="20" id="tspan750">клапан</tspan></text></switch>
     
     <switch style="text-anchor:middle" transform="translate(422.8959 281.37704)">
-      <text id="text734-se" systemLanguage="se"><tspan id="tspan735-se">Левый</tspan><tspan x="0" y="20" id="tspan737-se">Предсердие</tspan></text>
+      <text id="text734-se" systemLanguage="se"><tspan id="tspan735-se">нижний</tspan><tspan x="0" y="20" id="tspan737-se">верхний</tspan></text>
       
-    <text id="text734-ms" systemLanguage="ms"><tspan id="tspan735-ms">Предсердие</tspan><tspan x="0" y="20" id="tspan737-ms">Левый</tspan></text><text id="text734-hi" systemLanguage="hi"><tspan id="tspan735-hi">वाम</tspan><tspan x="0" y="20" id="tspan737-hi">आलिंद</tspan></text><text id="text734-ks" systemLanguage="ks"><tspan id="tspan735-ks">کھووُر </tspan><tspan x="0" y="20" id="tspan737-ks">آٹرِیِم</tspan></text><text id="text734"><tspan id="tspan735">Левый</tspan><tspan x="0" y="20" id="tspan737">Предсердие</tspan></text></switch>
+    <text id="text734-ms" systemLanguage="ms"><tspan id="tspan735-ms">предсердие</tspan><tspan x="0" y="20" id="tspan737-ms">левое</tspan></text><text id="text734-hi" systemLanguage="hi"><tspan id="tspan735-hi">वाम</tspan><tspan x="0" y="20" id="tspan737-hi">आलिंद</tspan></text><text id="text734-ks" systemLanguage="ks"><tspan id="tspan735-ks">کھووُر </tspan><tspan x="0" y="20" id="tspan737-ks">آٹرِیِم</tspan></text><text id="text734"><tspan id="tspan735">левый</tspan><tspan x="0" y="20" id="tspan737">предсердие</tspan></text></switch>
     
     <switch style="text-anchor:middle" transform="translate(364.0994 492.75)">
-      <text id="text719-se" systemLanguage="se"><tspan id="tspan720-se">Правый</tspan><tspan x="0" y="20" id="tspan722-se">Желудочек</tspan></text>
+      <text id="text719-se" systemLanguage="se"><tspan id="tspan720-se">наружный</tspan><tspan x="0" y="20" id="tspan722-se">нижний</tspan></text>
       
-    <text id="text719-ms" systemLanguage="ms"><tspan id="tspan720-ms">Желудочек</tspan><tspan x="0" y="20" id="tspan722-ms">Правый</tspan></text><text id="text719-hi" systemLanguage="hi"><tspan id="tspan720-hi">दक्षिण</tspan><tspan x="0" y="20" id="tspan722-hi">निलय</tspan></text><text id="text719-ks" systemLanguage="ks"><tspan id="tspan720-ks">دٔچھُن </tspan><tspan x="0" y="20" id="tspan722-ks">وینٹریکل</tspan></text><text id="text719"><tspan id="tspan720">Правый</tspan><tspan x="0" y="20" id="tspan722">Желудочек</tspan></text></switch>
+    <text id="text719-ms" systemLanguage="ms"><tspan id="tspan720-ms">желудочек</tspan><tspan x="0" y="20" id="tspan722-ms">правое</tspan></text><text id="text719-hi" systemLanguage="hi"><tspan id="tspan720-hi">दक्षिण</tspan><tspan x="0" y="20" id="tspan722-hi">निलय</tspan></text><text id="text719-ks" systemLanguage="ks"><tspan id="tspan720-ks">دٔچھُن </tspan><tspan x="0" y="20" id="tspan722-ks">وینٹریکل</tspan></text><text id="text719"><tspan id="tspan720">правый</tspan><tspan x="0" y="20" id="tspan722">желудочек</tspan></text></switch>
     
     <switch style="text-anchor:middle" transform="translate(243.9476 343.71841)">
-      <text id="text729-se" systemLanguage="se"><tspan id="tspan730-se">Правый</tspan><tspan x="0" y="20" id="tspan732-se">Предсердие</tspan></text>
+      <text id="text729-se" systemLanguage="se"><tspan id="tspan730-se">наружный</tspan><tspan x="0" y="20" id="tspan732-se">верхний</tspan></text>
       
-    <text id="text729-ms" systemLanguage="ms"><tspan id="tspan730-ms">Предсердие</tspan><tspan x="0" y="20" id="tspan732-ms">Правый</tspan></text><text id="text729-hi" systemLanguage="hi"><tspan id="tspan730-hi">दायाँ</tspan><tspan x="0" y="20" id="tspan732-hi">आलिंद</tspan></text><text id="text729-ks" systemLanguage="ks"><tspan id="tspan730-ks">دٔچھُن</tspan><tspan x="0" y="20" id="tspan732-ks">آٹرِیِم</tspan></text><text id="text729"><tspan id="tspan730">Правый</tspan><tspan x="0" y="20" id="tspan732">Предсердие</tspan></text></switch>
+    <text id="text729-ms" systemLanguage="ms"><tspan id="tspan730-ms">предсердие</tspan><tspan x="0" y="20" id="tspan732-ms">правое</tspan></text><text id="text729-hi" systemLanguage="hi"><tspan id="tspan730-hi">दायाँ</tspan><tspan x="0" y="20" id="tspan732-hi">आलिंद</tspan></text><text id="text729-ks" systemLanguage="ks"><tspan id="tspan730-ks">دٔچھُن</tspan><tspan x="0" y="20" id="tspan732-ks">آٹرِیِم</tspan></text><text id="text729"><tspan id="tspan730">правый</tspan><tspan x="0" y="20" id="tspan732">предсердие</tspan></text></switch>
     
     <path class="leader" inkscape:connector-curvature="0" d="m 163.81117,496.99336 121.361,-44.131" id="path763">
       <title>tricuspid valve leader</title>
     </path>
     <switch style="text-anchor:end" transform="translate(156 508.02618)">
-      <text id="text752-se" systemLanguage="se"><tspan id="tspan753-se">Трехстворчатый</tspan><tspan x="0" y="20" id="tspan755-se">Клапаны</tspan></text>
+      <text id="text752-se" systemLanguage="se"><tspan id="tspan753-se">трехстворчатый</tspan><tspan x="0" y="20" id="tspan755-se">клапан</tspan></text>
       
-    <text id="text752-ms" systemLanguage="ms"><tspan id="tspan753-ms">Клапан</tspan><tspan x="0" y="20" id="tspan755-ms">Трехстворчатый</tspan></text><text id="text752-hi" systemLanguage="hi"><tspan id="tspan753-hi">त्रिवलन</tspan><tspan x="0" y="20" id="tspan755-hi">कपाट</tspan></text><text id="text752-ks" systemLanguage="ks"><tspan id="tspan753-ks">ٹرٛاےکسپِڈ</tspan><tspan x="0" y="20" id="tspan755-ks">والٕو </tspan></text><text id="text752"><tspan id="tspan753">Трехстворчатый</tspan><tspan x="0" y="20" id="tspan755">Клапан</tspan></text></switch>
+    <text id="text752-ms" systemLanguage="ms"><tspan id="tspan753-ms">впускной клапан</tspan><tspan x="0" y="20" id="tspan755-ms">трехстворчатый</tspan></text><text id="text752-hi" systemLanguage="hi"><tspan id="tspan753-hi">त्रिवलन</tspan><tspan x="0" y="20" id="tspan755-hi">कपाट</tspan></text><text id="text752-ks" systemLanguage="ks"><tspan id="tspan753-ks">ٹرٛاےکسپِڈ</tspan><tspan x="0" y="20" id="tspan755-ks">والٕو </tspan></text><text id="text752"><tspan id="tspan753">трехстворчатый</tspan><tspan x="0" y="20" id="tspan755">клапан</tspan></text></switch>
     
     <path class="leader" inkscape:connector-curvature="0" d="m 159.38317,443.61836 185.197,-51.01299" id="path762">
       <title>pulmonary valve leader</title>
     </path>
     <switch style="text-anchor:end" transform="translate(156 439.28314)">
-      <text id="text757-se" systemLanguage="se"><tspan id="tspan758-se">Легочная артерия</tspan><tspan x="0" y="20" id="tspan760-se">Клапаны</tspan></text>
+      <text id="text757-se" systemLanguage="se"><tspan id="tspan758-se">полость сердца</tspan><tspan x="0" y="20" id="tspan760-se">клапан</tspan></text>
       
-    <text id="text757-ms" systemLanguage="ms"><tspan id="tspan758-ms">Клапан</tspan><tspan x="0" y="20" id="tspan760-ms">Легочный</tspan></text><text id="text757-hi" systemLanguage="hi"><tspan id="tspan758-hi">फुप्फुस</tspan><tspan x="0" y="20" id="tspan760-hi">कपाट</tspan></text><text id="text757-ks" systemLanguage="ks"><tspan id="tspan758-ks">پلمنری </tspan><tspan x="0" y="20" id="tspan760-ks">والٕو </tspan></text><text id="text757"><tspan id="tspan758">Легочный</tspan><tspan x="0" y="20" id="tspan760">Клапан</tspan></text></switch>
+    <text id="text757-ms" systemLanguage="ms"><tspan id="tspan758-ms">впускной клапан</tspan><tspan x="0" y="20" id="tspan760-ms">лёгочная артерия</tspan></text><text id="text757-hi" systemLanguage="hi"><tspan id="tspan758-hi">फुप्फुस</tspan><tspan x="0" y="20" id="tspan760-hi">कपाट</tspan></text><text id="text757-ks" systemLanguage="ks"><tspan id="tspan758-ks">پلمنری </tspan><tspan x="0" y="20" id="tspan760-ks">والٕو </tspan></text><text id="text757"><tspan id="tspan758">лёгочный</tspan><tspan x="0" y="20" id="tspan760">клапан</tspan></text></switch>
 
     <switch style="text-anchor:middle" transform="translate(494.21408 442.26968)">
-      <text id="text724-se" systemLanguage="se"><tspan id="tspan725-se">Левый</tspan><tspan x="0" y="20" id="tspan727-se">Желудочек</tspan></text>
+      <text id="text724-se" systemLanguage="se"><tspan id="tspan725-se">нижний</tspan><tspan x="0" y="20" id="tspan727-se">нижний</tspan></text>
       
-    <text id="text724-ms" systemLanguage="ms"><tspan id="tspan725-ms">Желудочек</tspan><tspan x="0" y="20" id="tspan727-ms">Левый</tspan></text><text id="text724-hi" systemLanguage="hi"><tspan id="tspan725-hi">वाम</tspan><tspan x="0" y="20" id="tspan727-hi">निलय</tspan></text><text id="text724-ks" systemLanguage="ks"><tspan id="tspan725-ks">کھووُر </tspan><tspan x="0" y="20" id="tspan727-ks">وینٹریکل </tspan></text><text id="text724"><tspan id="tspan725">Левый</tspan><tspan x="0" y="20" id="tspan727">Желудочек</tspan></text></switch>
+    <text id="text724-ms" systemLanguage="ms"><tspan id="tspan725-ms">желудочек</tspan><tspan x="0" y="20" id="tspan727-ms">левое</tspan></text><text id="text724-hi" systemLanguage="hi"><tspan id="tspan725-hi">वाम</tspan><tspan x="0" y="20" id="tspan727-hi">निलय</tspan></text><text id="text724-ks" systemLanguage="ks"><tspan id="tspan725-ks">کھووُر </tspan><tspan x="0" y="20" id="tspan727-ks">وینٹریکل </tspan></text><text id="text724"><tspan id="tspan725">левый</tspan><tspan x="0" y="20" id="tspan727">желудочек</tspan></text></switch>
     
     <path class="leader" inkscape:connector-curvature="0" d="M 233.32995,181.44158 175.37562,133.33437" id="path1042" sodipodi:nodetypes="cc">
       <title>superior vena cava leader</title>
     </path>
     <switch style="text-anchor:end" transform="translate(170 132.38277)">
-      <text id="text680-se" systemLanguage="se"><tspan id="tspan697-se">Верхняя полая вена</tspan><tspan x="0" y="20" id="tspan699-se">Полая вена</tspan></text>
+      <text id="text680-se" systemLanguage="se"><tspan id="tspan697-se">нижняя полая вена</tspan><tspan x="0" y="20" id="tspan699-se">Верхняя полая вена</tspan></text>
       
-    <text id="text680-ms" systemLanguage="ms"><tspan id="tspan697-ms">Полая вена</tspan><tspan x="0" y="20" id="tspan699-ms">Верхняя</tspan></text><text id="text680-hi" systemLanguage="hi"><tspan id="tspan697-hi">ऊर्ध्व </tspan><tspan x="0" y="20" id="tspan699-hi">महाशिरा</tspan></text><text id="text680-ks" systemLanguage="ks"><tspan id="tspan697-ks">تھۆد</tspan><tspan x="0" y="20" id="tspan699-ks">وینا کاوا</tspan></text><text id="text680"><tspan id="tspan697">Верхняя</tspan><tspan x="0" y="20" id="tspan699">Полая вена</tspan></text></switch>
+    <text id="text680-ms" systemLanguage="ms"><tspan id="tspan697-ms">Верхняя полая вена</tspan><tspan x="0" y="20" id="tspan699-ms">верхняя</tspan></text><text id="text680-hi" systemLanguage="hi"><tspan id="tspan697-hi">ऊर्ध्व </tspan><tspan x="0" y="20" id="tspan699-hi">महाशिरा</tspan></text><text id="text680-ks" systemLanguage="ks"><tspan id="tspan697-ks">تھۆد</tspan><tspan x="0" y="20" id="tspan699-ks">وینا کاوا</tspan></text><text id="text680"><tspan id="tspan697">верхняя</tspan><tspan x="0" y="20" id="tspan699">Верхняя полая вена</tspan></text></switch>
     
     <switch style="text-anchor:middle" transform="translate(225.25082 636.64783)">
-      <text id="text739-se" systemLanguage="se"><tspan id="tspan740-se">Нижняя полая вена</tspan></text>
+      <text id="text739-se" systemLanguage="se"><tspan id="tspan740-se">нижняя полая вена</tspan></text>
       
     <text id="text739-ms" systemLanguage="ms"><tspan id="tspan740-ms">Нижняя полая вена</tspan></text><text id="text739-hi" systemLanguage="hi"><tspan id="tspan740-hi">निम्न महाशिरा</tspan></text><text id="text739-ks" systemLanguage="ks"><tspan id="tspan740-ks">بۄن وینا کاوا </tspan></text><text id="text739"><tspan id="tspan740">Нижняя полая вена</tspan></text></switch>
     
@@ -365,8 +365,8 @@
       <title>pericardium leader</title>
     </path>
     <switch style="text-anchor:start" transform="translate(550 636.64783)">
-      <text id="text4121-se" systemLanguage="se"><tspan id="tspan4123-se">Перикард</tspan></text>
+      <text id="text4121-se" systemLanguage="se"><tspan id="tspan4123-se">полость сердца</tspan></text>
       
-    <text id="text4121-ms" systemLanguage="ms"><tspan id="tspan4123-ms">Перикард</tspan></text><text id="text4121-hi" systemLanguage="hi"><tspan id="tspan4123-hi">हृदयावरण</tspan></text><text id="text4121-ks" systemLanguage="ks"><tspan id="tspan4123-ks">پیریکارڈِیَم</tspan></text><text id="text4121"><tspan id="tspan4123">Перикард</tspan></text></switch>
+    <text id="text4121-ms" systemLanguage="ms"><tspan id="tspan4123-ms">перикард</tspan></text><text id="text4121-hi" systemLanguage="hi"><tspan id="tspan4123-hi">हृदयावरण</tspan></text><text id="text4121-ks" systemLanguage="ks"><tspan id="tspan4123-ks">پیریکارڈِیَم</tspan></text><text id="text4121"><tspan id="tspan4123">перикард</tspan></text></switch>
   </g>
 </svg>

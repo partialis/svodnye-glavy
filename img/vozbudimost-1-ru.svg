@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg viewBox="-133.65 0 1455.3 839" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+<svg viewBox="-56.2737 0 1300.55 839" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
     <rect x="615.825" y="648.421" width="348.839" height="190.07" style="fill-opacity:0.1;"/>
     <rect x="484.313" y="0" width="115.336" height="708.192" style="fill-opacity:0.1;"/>
     <rect x="352.8" y="0" width="115.336" height="708.192" style="fill-opacity:0.1;"/>
@@ -15,10 +15,10 @@
     <path d="M225.171,239.731L225.171,294.649" style="fill:none;stroke:black;stroke-width:4.04px;"/>
     <text x="191.523px" y="49.979px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:34.667px;">Деполяризация</text>
     <text x="539.26px" y="49.979px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:34.667px;">Реполяризация</text>
-    <text x="-2.282px" y="520.483px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:34.623px;">Мембранный</text>
-    <text x="-2.282px" y="556.24px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:34.623px;">потенциал</text>
-    <text x="91.201px" y="690.777px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:34.623px;">-70 мВ</text>
+    <text x="-2.282px" y="520.483px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:34.623px;">Мембрана</text>
+    <text x="-2.282px" y="556.24px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:34.623px;">Потенциал</text>
+    <text x="91.201px" y="690.777px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:34.623px;">-70 мВ</text>
     <text x="900.532px" y="781.635px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:34.623px;">Гиперполяризация</text>
-    <text x="900.532px" y="817.392px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:34.623px;">(Рефрактерный период)</text>
+    <text x="900.532px" y="817.392px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:34.623px;">(рефрактерный период)</text>
     <text x="257.219px" y="746.966px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:34.623px;">Время</text>
 </svg>
