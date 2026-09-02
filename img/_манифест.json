@@ -118,5 +118,75 @@
   "лицензия": "CC BY-SA 3.0",
   "страница": "https://commons.wikimedia.org/wiki/File%3ABlood_clot_formation.svg",
   "байт": 219939
+ },
+ {
+  "глава": "anatomiya-zhpo",
+  "файл": "gin-taz-sagittal.svg",
+  "подпись": "Женские половые органы: сагиттальный разрез малого таза",
+  "исходник": "File:Scheme female reproductive system-ru.svg",
+  "автор": "CDC, Mysid",
+  "лицензия": "Public domain",
+  "страница": "https://commons.wikimedia.org/wiki/File:Scheme_female_reproductive_system-ru.svg",
+  "байт": 461779
+ },
+ {
+  "глава": "anatomiya-zhpo",
+  "файл": "gin-stenka-matki.svg",
+  "подпись": "Слои стенки матки: эндометрий, миометрий и периметрий",
+  "исходник": "File:Uterine wall layers.svg",
+  "автор": "RWhitwam",
+  "лицензия": "CC BY-SA 4.0",
+  "страница": "https://commons.wikimedia.org/wiki/File:Uterine_wall_layers.svg",
+  "байт": 3231775
+ },
+ {
+  "глава": "anatomiya-zhpo",
+  "файл": "gin-sheyka.svg",
+  "подпись": "Шейка матки и цервикальный канал",
+  "исходник": "File:Illu cervix.svg",
+  "автор": "Original: ‍US Government Vector: Pixelsquid 🎱",
+  "лицензия": "Public domain",
+  "страница": "https://commons.wikimedia.org/wiki/File:Illu_cervix.svg",
+  "байт": 186534
+ },
+ {
+  "глава": "anatomiya-zhpo",
+  "файл": "gin-zona-transformacii.svg",
+  "подпись": "Зона трансформации шейки матки и её положение с возрастом",
+  "исходник": "File:Transformation zone types.svg",
+  "автор": "Mikael Häggström , M.D. Author info - Reusing images - Conflicts of interest: No",
+  "лицензия": "CC0",
+  "страница": "https://commons.wikimedia.org/wiki/File:Transformation_zone_types.svg",
+  "байт": 36672
+ },
+ {
+  "глава": "anatomiya-zhpo",
+  "файл": "gin-krovosnabzhenie.svg",
+  "подпись": "Артериальное кровоснабжение матки и придатков",
+  "исходник": "File:Uterine arterial vasculature.svg",
+  "автор": "Mikael Häggström",
+  "лицензия": "Public domain",
+  "страница": "https://commons.wikimedia.org/wiki/File:Uterine_arterial_vasculature.svg",
+  "байт": 30230
+ },
+ {
+  "глава": "abscess-legkogo",
+  "файл": "hir-patogenez-bronhoektazov.png",
+  "подпись": "Порочный круг патогенеза бронхоэктазов",
+  "исходник": "File:Bronchiectasis Vicious Cycle Pathogenesis.png",
+  "автор": "Surajkapoor94",
+  "лицензия": "CC BY-SA 4.0",
+  "страница": "https://commons.wikimedia.org/wiki/File:Bronchiectasis_Vicious_Cycle_Pathogenesis.png",
+  "байт": 78032
+ },
+ {
+  "глава": "abscess-legkogo",
+  "файл": "hir-abscess-rentgen.png",
+  "подпись": "Абсцесс лёгкого: полость с горизонтальным уровнем жидкости",
+  "исходник": "File:Pulmonaryabs.png",
+  "автор": "James Heilman, MD",
+  "лицензия": "CC BY-SA 4.0",
+  "страница": "https://commons.wikimedia.org/wiki/File:Pulmonaryabs.png",
+  "байт": 565420
  }
 ]
