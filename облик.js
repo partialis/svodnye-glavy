@@ -81,6 +81,14 @@ const ПРЕДМЕТЫ_ТЕМ = {
     темы: ["pochka.html", "serdce.html", "dyhanie.html",
            "vozbudimost.html", "gemostaz.html"],
   },
+  "Госпитальная хирургия": {
+    файл: "predmet-gospitalnaya-hirurgiya.html",
+    темы: ["abscess-legkogo.html"],
+  },
+  "Гинекология": {
+    файл: "predmet-ginekologiya.html",
+    темы: ["anatomiya-zhpo.html"],
+  },
 };
 
 const ГЛАВЫ_САЙТА = [
@@ -89,6 +97,8 @@ const ГЛАВЫ_САЙТА = [
   {а: "dyhanie.html",     т: "Дыхание"},
   {а: "vozbudimost.html", т: "Возбудимые ткани"},
   {а: "gemostaz.html",    т: "Гемостаз"},
+  {а: "abscess-legkogo.html", т: "Абсцесс лёгкого"},
+  {а: "anatomiya-zhpo.html", т: "Анатомия женских половых органов"},
 ];
 
 /* Ряд шапки: ПРОСТЫЕ КНОПКИ, без единого выпадающего списка. Дословно:

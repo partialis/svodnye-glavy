@@ -1571,9 +1571,38 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
   :root[data-tema][data-kolonki="dve"] .ob-article .formula{
     break-inside: avoid;
   }
-  /* Заголовок раздела начинает новую колонку, а не висит в хвосте предыдущей. */
-  :root[data-tema][data-kolonki="dve"] .ob-article h2{ break-before: column; }
-  :root[data-tema][data-kolonki="dve"] .ob-article h2:first-child{ break-before: auto; }
+  /* Таблица и рисунок ШИРЕ колонки — и в многоколоночной раскладке они не
+     ужимаются, а вылезают за край: замер на теме про абсцесс лёгкого дал
+     документ 8134 px при окне 1500, то есть впятеро шире экрана, при семи
+     таблицах. `break-inside: avoid` этого не лечит — он про разрыв, а не про
+     ширину. Пускаем широкое поперёк обеих колонок, как это делают в вебе с
+     иллюстрациями в многоколоночном тексте. */
+  :root[data-tema][data-kolonki="dve"] .ob-article figure,
+  :root[data-tema][data-kolonki="dve"] .ob-article .ob-table-wrap{
+    column-span: all;
+    max-width: 100%;
+  }
+  /* Поперёк колонок пускается ОБЁРТКА, а не сама таблица: у обёртки уже стоит
+     `overflow-x: auto`, и она прокручивает широкое внутри себя. Первая редакция
+     дала спан и таблице тоже — та вырвалась из обёртки, и документ остался шире
+     окна на 702 px вместо 6634 исходных, то есть дефект уменьшился, но не ушёл.
+     `min-width: 0` нужен отдельно: без него содержимое не даёт блоку ужаться. */
+  :root[data-tema][data-kolonki="dve"] .ob-article .ob-table-wrap{ min-width: 0; }
+  :root[data-tema][data-kolonki="dve"] .ob-article table{
+    column-span: none;
+    max-width: none;
+  }
+
+  /* Заголовок раздела НЕ начинает новую колонку принудительно.
+     Здесь стояло `break-before: column`, и это был настоящий дефект, а не вкус:
+     в контейнере с автоматической высотой каждый принудительный разрыв создаёт
+     ЕЩЁ ОДНУ колонку, а не переносит текст во вторую. Замер 02.09: у «Почки» с
+     четырнадцатью разделами документ становился 4427 px при окне 1500, у темы
+     про абсцесс с одиннадцатью — 2202 px; ширина росла ровно по числу
+     заголовков. То есть двухколоночный режим уезжал вбок на КАЖДОЙ теме с того
+     дня, как появился, и проба колонок этого не видела: она мерила
+     `column-count`, а не ширину документа. */
+  :root[data-tema][data-kolonki="dve"] .ob-article h2{ break-after: avoid; }
   /* Первый абзац после заголовка держится с ним. */
   :root[data-tema][data-kolonki="dve"] .ob-article h2 + p,
   :root[data-tema][data-kolonki="dve"] .ob-article h3 + p{ break-before: avoid; }
