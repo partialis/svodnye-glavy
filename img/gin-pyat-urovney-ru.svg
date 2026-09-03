@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" width="900" height="720"
+     role="img" aria-labelledby="zagolovok opisanie">
+  <title id="zagolovok">Пять уровней регуляции репродуктивной системы</title>
+  <desc id="opisanie">Сверху вниз: кора головного мозга и надгипоталамические структуры;
+    гипоталамус с пульсирующей секрецией гонадолиберина; передняя доля гипофиза с
+    фолликулостимулирующим и лютеинизирующим гормонами; яичники, вырабатывающие эстрадиол,
+    прогестерон и ингибин; органы-мишени — матка, маточные трубы, влагалище, молочная железа.
+    Слева показана длинная отрицательная обратная связь от яичников к гипоталамусу и гипофизу,
+    справа — положительная обратная связь эстрадиола перед овуляцией.</desc>
+
+  <rect width="900" height="720" fill="#ffffff"/>
+
+  <defs>
+    <marker id="strelka" viewBox="0 0 26 26" refX="7" refY="13"
+            markerWidth="26" markerHeight="26" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M 0 1 L 24 13 L 0 25 z" fill="#8a8f98"/>
+    </marker>
+    <marker id="strelka-otr" viewBox="0 0 26 26" refX="7" refY="13"
+            markerWidth="26" markerHeight="26" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M 0 1 L 24 13 L 0 25 z" fill="#c0504d"/>
+    </marker>
+    <marker id="strelka-pol" viewBox="0 0 26 26" refX="7" refY="13"
+            markerWidth="26" markerHeight="26" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M 0 1 L 24 13 L 0 25 z" fill="#4472c4"/>
+    </marker>
+  </defs>
+
+  <g font-family="Golos Text, Segoe UI, Arial, sans-serif">
+
+    <!-- Пять уровней -->
+    <g>
+      <rect x="232" y="30" width="436" height="82" rx="10" fill="#eef1f7" stroke="#9aa4b5" stroke-width="2"/>
+      <text x="450" y="63" text-anchor="middle" font-size="25" font-weight="600" fill="#1b1b1b">V. Кора и надгипоталамические</text>
+      <text x="450" y="94" text-anchor="middle" font-size="25" font-weight="600" fill="#1b1b1b">структуры</text>
+    </g>
+
+    <g>
+      <rect x="250" y="160" width="400" height="82" rx="10" fill="#eef1f7" stroke="#9aa4b5" stroke-width="2"/>
+      <text x="450" y="193" text-anchor="middle" font-size="27" font-weight="600" fill="#1b1b1b">IV. Гипоталамус</text>
+      <text x="450" y="224" text-anchor="middle" font-size="23" fill="#41474f">пульсирующий выброс ГнРГ</text>
+    </g>
+
+    <g>
+      <rect x="250" y="290" width="400" height="82" rx="10" fill="#eef1f7" stroke="#9aa4b5" stroke-width="2"/>
+      <text x="450" y="323" text-anchor="middle" font-size="27" font-weight="600" fill="#1b1b1b">III. Передняя доля гипофиза</text>
+      <text x="450" y="354" text-anchor="middle" font-size="23" fill="#41474f">ФСГ и ЛГ</text>
+    </g>
+
+    <g>
+      <rect x="250" y="420" width="400" height="82" rx="10" fill="#eef1f7" stroke="#9aa4b5" stroke-width="2"/>
+      <text x="450" y="453" text-anchor="middle" font-size="27" font-weight="600" fill="#1b1b1b">II. Яичники</text>
+      <text x="450" y="484" text-anchor="middle" font-size="23" fill="#41474f">эстрадиол, прогестерон, ингибин</text>
+    </g>
+
+    <g>
+      <rect x="250" y="550" width="400" height="102" rx="10" fill="#eef1f7" stroke="#9aa4b5" stroke-width="2"/>
+      <text x="450" y="583" text-anchor="middle" font-size="27" font-weight="600" fill="#1b1b1b">I. Органы-мишени</text>
+      <text x="450" y="614" text-anchor="middle" font-size="23" fill="#41474f">матка, маточные трубы,</text>
+      <text x="450" y="642" text-anchor="middle" font-size="23" fill="#41474f">влагалище, молочная железа</text>
+    </g>
+
+    <!-- Прямые связи сверху вниз -->
+    <g stroke="#8a8f98" stroke-width="4" marker-end="url(#strelka)" fill="none">
+      <path d="M 450 112 L 450 152"/>
+      <path d="M 450 242 L 450 282"/>
+      <path d="M 450 372 L 450 412"/>
+      <path d="M 450 502 L 450 542"/>
+    </g>
+
+    <!-- Длинная отрицательная обратная связь: яичники → гипоталамус и гипофиз -->
+    <g stroke="#c0504d" stroke-width="4" fill="none" marker-end="url(#strelka-otr)"
+       stroke-dasharray="10 7">
+      <path d="M 250 461 L 150 461 L 150 201 L 242 201"/>
+      <path d="M 250 461 L 190 461 L 190 331 L 242 331"/>
+    </g>
+    <text x="24" y="530" font-size="22" font-weight="600" fill="#c0504d">Отрицательная</text>
+    <text x="24" y="556" font-size="22" font-weight="600" fill="#c0504d">обратная связь</text>
+
+    <!-- Положительная обратная связь перед овуляцией -->
+    <g stroke="#4472c4" stroke-width="4" fill="none" marker-end="url(#strelka-pol)"
+       stroke-dasharray="10 7">
+      <path d="M 650 445 L 760 445 L 760 315 L 658 315"/>
+    </g>
+    <text x="700" y="228" font-size="23" font-weight="600" fill="#4472c4">Положительная</text>
+    <text x="700" y="256" font-size="23" font-weight="600" fill="#4472c4">связь перед</text>
+    <text x="700" y="284" font-size="23" font-weight="600" fill="#4472c4">овуляцией</text>
+  </g>
+</svg>
