@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 470" width="920" height="470"
+     role="img" aria-labelledby="zagolovok opisanie">
+  <title id="zagolovok">Ритм пульсовой секреции ГнРГ по фазам цикла</title>
+  <desc id="opisanie">Три полосы импульсов. В ранней фолликулярной фазе импульсы частые и невысокие,
+    интервал 40–90 минут. Перед овуляцией они учащаются и становятся мощнее, что и запускает
+    предовуляторный выброс лютеинизирующего гормона. В лютеиновой фазе прогестерон тормозит
+    генератор, импульсы редкие и интервал вырастает до 90–180 минут.</desc>
+
+  <rect width="920" height="470" fill="#ffffff"/>
+
+  <g font-family="Golos Text, Segoe UI, Arial, sans-serif">
+
+    <!-- Ранняя фолликулярная фаза -->
+    <text x="24" y="46" font-size="25" font-weight="600" fill="#1b1b1b">Ранняя фолликулярная фаза</text>
+    <text x="24" y="76" font-size="22" fill="#41474f">импульс каждые 40—90 минут</text>
+    <g stroke="#4472c4" stroke-width="5" fill="none" stroke-linejoin="round">
+      <path d="M 470 122 L 500 122 L 512 74 L 524 122 L 566 122 L 578 74 L 590 122
+               L 632 122 L 644 74 L 656 122 L 698 122 L 710 74 L 722 122
+               L 764 122 L 776 74 L 788 122 L 830 122 L 842 74 L 854 122 L 896 122"/>
+    </g>
+    <line x1="470" y1="122" x2="896" y2="122" stroke="#c9ced8" stroke-width="2"/>
+
+    <!-- Предовуляторный подъём -->
+    <text x="24" y="216" font-size="25" font-weight="600" fill="#1b1b1b">Перед овуляцией</text>
+    <text x="24" y="246" font-size="22" fill="#41474f">чаще и мощнее — выброс ЛГ</text>
+    <g stroke="#c0504d" stroke-width="5" fill="none" stroke-linejoin="round">
+      <path d="M 470 292 L 488 292 L 498 214 L 508 292 L 538 292 L 548 214 L 558 292
+               L 588 292 L 598 206 L 608 292 L 638 292 L 648 206 L 658 292
+               L 688 292 L 698 200 L 708 292 L 738 292 L 748 200 L 758 292
+               L 788 292 L 798 196 L 808 292 L 838 292 L 848 196 L 858 292 L 896 292"/>
+    </g>
+    <line x1="470" y1="292" x2="896" y2="292" stroke="#c9ced8" stroke-width="2"/>
+
+    <!-- Лютеиновая фаза -->
+    <text x="24" y="386" font-size="25" font-weight="600" fill="#1b1b1b">Лютеиновая фаза</text>
+    <text x="24" y="416" font-size="22" fill="#41474f">прогестерон тормозит: 90—180 минут</text>
+    <g stroke="#548235" stroke-width="5" fill="none" stroke-linejoin="round">
+      <path d="M 470 442 L 546 442 L 558 386 L 570 442 L 676 442 L 688 386 L 700 442
+               L 806 442 L 818 386 L 830 442 L 896 442"/>
+    </g>
+    <line x1="470" y1="442" x2="896" y2="442" stroke="#c9ced8" stroke-width="2"/>
+
+    <text x="683" y="466" text-anchor="middle" font-size="20" fill="#6b7280">время →</text>
+  </g>
+</svg>
