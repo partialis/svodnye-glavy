@@ -75,31 +75,39 @@ const ОБЛИКИ = [
 
    Держится списком здесь, а не собирается обходом папки: при `file://` браузер
    каталог не читает. */
+/* ТЕМЫ-НАЧАЛО — не править руками: список пишет `сборка_каркаса.py`.
+   Пока он был написан руками, заведение темы требовало правки в ШЕСТИ
+   местах, и 04.09 `reproduktivnaya-sistema` осталась без оглавления,
+   хлебных крошек и боковой панели — её просто забыли сюда вписать.
+   Собирать обходом папки нельзя: при `file://` браузер каталог не читает,
+   поэтому список именно вписывается в файл при сборке. */
 const ПРЕДМЕТЫ_ТЕМ = {
   "Нормальная физиология": {
     файл: "predmet-normalnaya-fiziologiya.html",
-    темы: ["pochka.html", "serdce.html", "dyhanie.html",
-           "vozbudimost.html", "gemostaz.html"],
+    темы: ["pochka.html", "serdce.html", "dyhanie.html", "vozbudimost.html", "gemostaz.html"],
   },
   "Госпитальная хирургия": {
     файл: "predmet-gospitalnaya-hirurgiya.html",
-    темы: ["abscess-legkogo.html"],
+    темы: ["abscess-legkogo.html", "gnoynyy-plevrit.html"],
   },
   "Гинекология": {
     файл: "predmet-ginekologiya.html",
-    темы: ["anatomiya-zhpo.html"],
+    темы: ["anatomiya-zhpo.html", "reproduktivnaya-sistema.html"],
   },
 };
 
 const ГЛАВЫ_САЙТА = [
-  {а: "pochka.html",      т: "Почка"},
-  {а: "serdce.html",      т: "Сердце"},
-  {а: "dyhanie.html",     т: "Дыхание"},
+  {а: "pochka.html", т: "Почка"},
+  {а: "serdce.html", т: "Сердце"},
+  {а: "dyhanie.html", т: "Дыхание"},
   {а: "vozbudimost.html", т: "Возбудимые ткани"},
-  {а: "gemostaz.html",    т: "Гемостаз"},
-  {а: "abscess-legkogo.html", т: "Абсцесс лёгкого"},
+  {а: "gemostaz.html", т: "Гемостаз"},
+  {а: "abscess-legkogo.html", т: "Абсцесс и гангрена лёгкого"},
+  {а: "gnoynyy-plevrit.html", т: "Гнойный плеврит"},
+  {а: "reproduktivnaya-sistema.html", т: "Физиология репродуктивной системы"},
   {а: "anatomiya-zhpo.html", т: "Анатомия женских половых органов"},
 ];
+/* ТЕМЫ-КОНЕЦ */
 
 /* Ряд шапки: ПРОСТЫЕ КНОПКИ, без единого выпадающего списка. Дословно:
    «Материалы это тоже лишь кнопка! Там не должен появиться список, если на неё

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Синтопия осумкованных эмпием</title><desc id="desc">Схема грудной клетки с междолевым, парамедиастинальным и многокамерным скоплением гноя.</desc>
+  <rect width="1200" height="600" fill="#f8fafc"/><style>text{font-family:Arial,sans-serif;fill:#172554}.h{font-size:30px;font-weight:bold}.l{font-size:21px;font-weight:bold}.s{font-size:18px}.thor{fill:#dbeafe;stroke:#1e3a8a;stroke-width:4}.lung{fill:#e0f2fe;stroke:#0369a1;stroke-width:3}.heart{fill:#fca5a5;stroke:#be123c;stroke-width:3}.pus{fill:#dc2626;stroke:#991b1b;stroke-width:2}.lead{stroke:#475569;stroke-width:3}</style>
+  <text x="600" y="45" text-anchor="middle" class="h">Где располагаются осумкованные скопления гноя</text>
+  <path class="thor" d="M390 90 Q600 10 810 90 L870 500 Q600 565 330 500Z"/><ellipse class="lung" cx="500" cy="300" rx="105" ry="185"/><ellipse class="lung" cx="700" cy="300" rx="105" ry="185"/><path class="heart" d="M600 250 C550 195 475 265 600 420 C725 265 650 195 600 250Z"/>
+  <path class="pus" d="M480 190 L560 305 L520 335 L445 220Z"/><line class="lead" x1="505" y1="245" x2="185" y2="145"/><text x="50" y="132" class="l">Междолевая</text><text x="50" y="158" class="s">по ходу междолевой щели</text>
+  <path class="pus" d="M620 170 Q657 200 650 355 L615 350 Q600 245 620 170Z"/><line class="lead" x1="635" y1="245" x2="960" y2="165"/><text x="965" y="152" class="l">Парамедиастинальная</text><text x="965" y="178" class="s">рядом с перикардом и сосудами</text>
+  <g class="pus"><ellipse cx="760" cy="220" rx="32" ry="45"/><ellipse cx="782" cy="305" rx="38" ry="50"/><ellipse cx="745" cy="385" rx="30" ry="38"/></g><line class="lead" x1="785" y1="320" x2="945" y2="415"/><text x="950" y="405" class="l">Многокамерная</text><text x="950" y="431" class="s">несколько изолированных полостей</text>
+  <text x="600" y="575" text-anchor="middle" class="s">Близость к средостению повышает риск гнойного медиастинита.</text>
+</svg>
