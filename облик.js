@@ -89,11 +89,11 @@ const ПРЕДМЕТЫ_ТЕМ = {
   },
   "Госпитальная хирургия": {
     файл: "predmet-gospitalnaya-hirurgiya.html",
-    темы: ["abscess-legkogo.html", "gnoynyy-plevrit.html", "rak-legkogo.html"],
+    темы: ["abscess-legkogo.html", "gnoynyy-plevrit.html", "rak-legkogo.html", "zabolevaniya-arteriy.html"],
   },
   "Гинекология": {
     файл: "predmet-ginekologiya.html",
-    темы: ["anatomiya-zhpo.html", "reproduktivnaya-sistema.html"],
+    темы: ["anatomiya-zhpo.html", "reproduktivnaya-sistema.html", "metody-obsledovaniya.html", "instrumentalnye-metody.html"],
   },
 };
 
@@ -108,6 +108,9 @@ const ГЛАВЫ_САЙТА = [
   {а: "anatomiya-zhpo.html", т: "Анатомия женских половых органов"},
   {а: "gnoynyy-plevrit.html", т: "Гнойный плеврит"},
   {а: "rak-legkogo.html", т: "Рак лёгкого"},
+  {а: "zabolevaniya-arteriy.html", т: "Заболевания артерий"},
+  {а: "metody-obsledovaniya.html", т: "Методы обследования в гинекологии"},
+  {а: "instrumentalnye-metody.html", т: "Инструментальные, эндоскопические методы исследования в гинекологии"},
 ];
 /* ТЕМЫ-КОНЕЦ */
 
