@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 660" width="900" height="660"
+     role="img" aria-labelledby="zagolovok opisanie">
+  <title id="zagolovok">Центральный и периферический рак лёгкого: анатомическая граница</title>
+  <desc id="opisanie">Фронтальная схема трахеобронхиального дерева. Красным выделены бронхи
+    крупного калибра — трахея, главные, промежуточный, долевые и сегментарные бронхи, то есть
+    бронхи первого-третьего порядков. Опухоль, растущая здесь, называется центральным раком.
+    Синим выделены субсегментарные бронхи четвёртого порядка и дистальнее, бронхиолы и
+    альвеолярная паренхима; опухоль этой зоны называют периферическим раком. Условная граница
+    проходит пунктиром по устьям сегментарных бронхов.</desc>
+
+  <rect width="900" height="660" fill="#ffffff"/>
+
+  <g font-family="Golos Text, Segoe UI, Arial, sans-serif">
+
+    <!-- Периферическая зона: паренхима обоих лёгких -->
+    <path d="M 258 132 C 292 108, 396 112, 412 168 L 412 470 C 412 508, 272 512, 258 470 Z"
+          fill="#e8eef6" stroke="#5b8bb0" stroke-width="2.5"/>
+    <path d="M 642 132 C 608 108, 504 112, 488 168 L 488 470 C 488 508, 628 512, 642 470 Z"
+          fill="#e8eef6" stroke="#5b8bb0" stroke-width="2.5"/>
+
+    <!-- Трахея -->
+    <path d="M 434 62 L 466 62 L 466 176 L 434 176 Z" fill="#f2d9d3" stroke="#bf6a58" stroke-width="3"/>
+    <text x="450" y="52" text-anchor="middle" font-size="18" fill="#8c4a3c">трахея</text>
+
+    <!-- Бифуркация и главные бронхи -->
+    <path d="M 440 176 L 348 232" stroke="#bf6a58" stroke-width="13" stroke-linecap="round" fill="none"/>
+    <path d="M 460 176 L 552 232" stroke="#bf6a58" stroke-width="13" stroke-linecap="round" fill="none"/>
+
+    <!-- Долевые бронхи слева на схеме -->
+    <path d="M 348 232 L 306 268" stroke="#bf6a58" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <path d="M 348 232 L 344 300" stroke="#bf6a58" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <!-- Промежуточный и долевые справа на схеме -->
+    <path d="M 552 232 L 594 268" stroke="#bf6a58" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <path d="M 552 232 L 556 300" stroke="#bf6a58" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <path d="M 556 300 L 600 336" stroke="#bf6a58" stroke-width="10" stroke-linecap="round" fill="none"/>
+
+    <!-- Сегментарные бронхи: последние «крупные» -->
+    <g stroke="#bf6a58" stroke-width="7" stroke-linecap="round" fill="none">
+      <path d="M 306 268 L 282 300"/>
+      <path d="M 344 300 L 320 340"/>
+      <path d="M 344 300 L 366 342"/>
+      <path d="M 594 268 L 618 300"/>
+      <path d="M 600 336 L 626 366"/>
+      <path d="M 556 300 L 534 342"/>
+    </g>
+
+    <!-- Субсегментарные и мельче: уже периферическая зона -->
+    <g stroke="#5b8bb0" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M 282 300 L 266 336"/><path d="M 282 300 L 302 340"/>
+      <path d="M 320 340 L 306 378"/><path d="M 320 340 L 338 376"/>
+      <path d="M 366 342 L 360 384"/><path d="M 366 342 L 388 372"/>
+      <path d="M 618 300 L 634 336"/><path d="M 618 300 L 598 340"/>
+      <path d="M 626 366 L 640 402"/><path d="M 626 366 L 606 398"/>
+      <path d="M 534 342 L 540 384"/><path d="M 534 342 L 512 372"/>
+    </g>
+    <g stroke="#5b8bb0" stroke-width="2.2" stroke-linecap="round" fill="none">
+      <path d="M 266 336 L 256 366"/><path d="M 302 340 L 310 372"/>
+      <path d="M 306 378 L 296 410"/><path d="M 338 376 L 346 408"/>
+      <path d="M 360 384 L 354 418"/><path d="M 388 372 L 398 404"/>
+      <path d="M 634 336 L 644 366"/><path d="M 598 340 L 590 372"/>
+      <path d="M 640 402 L 650 432"/><path d="M 606 398 L 598 430"/>
+      <path d="M 540 384 L 546 418"/><path d="M 512 372 L 502 404"/>
+    </g>
+
+    <!-- Условная граница: устья сегментарных бронхов -->
+    <path d="M 246 320 C 330 292, 372 300, 450 316 C 528 300, 570 292, 654 320"
+          fill="none" stroke="#4a5260" stroke-width="2.5" stroke-dasharray="9 7"/>
+    <text x="450" y="616" text-anchor="middle" font-size="17" fill="#4a5260">
+      пунктир — условная граница по устьям сегментарных бронхов (бронхи 3-го порядка)
+    </text>
+
+    <!-- Подписи зон -->
+    <rect x="24" y="150" width="196" height="118" rx="10" fill="#fbeeea" stroke="#bf6a58" stroke-width="2"/>
+    <text x="122" y="180" text-anchor="middle" font-size="20" font-weight="600" fill="#8c4a3c">Центральный рак</text>
+    <text x="122" y="208" text-anchor="middle" font-size="16" fill="#6d4237">бронхи крупного калибра:</text>
+    <text x="122" y="230" text-anchor="middle" font-size="16" fill="#6d4237">главные, промежуточный,</text>
+    <text x="122" y="252" text-anchor="middle" font-size="16" fill="#6d4237">долевые, сегментарные</text>
+    <path d="M 220 210 L 330 226" stroke="#bf6a58" stroke-width="2" fill="none"/>
+
+    <rect x="680" y="360" width="200" height="118" rx="10" fill="#eaf1f8" stroke="#5b8bb0" stroke-width="2"/>
+    <text x="780" y="390" text-anchor="middle" font-size="20" font-weight="600" fill="#3d6182">Периферический рак</text>
+    <text x="780" y="418" text-anchor="middle" font-size="16" fill="#3f5265">бронхи мелкого калибра:</text>
+    <text x="780" y="440" text-anchor="middle" font-size="16" fill="#3f5265">субсегментарные и далее,</text>
+    <text x="780" y="462" text-anchor="middle" font-size="16" fill="#3f5265">бронхиолы, паренхима</text>
+    <path d="M 680 408 L 622 392" stroke="#5b8bb0" stroke-width="2" fill="none"/>
+  </g>
+</svg>

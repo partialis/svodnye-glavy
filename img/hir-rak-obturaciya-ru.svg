@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 560" width="1020" height="560"
+     role="img" aria-labelledby="zagolovok opisanie">
+  <title id="zagolovok">Четыре стадии обтурации бронха при центральном раке</title>
+  <desc id="opisanie">Слева направо показано, как растущая эндобронхиальная опухоль последовательно
+    суживает просвет бронха и что при этом чувствует больной. Ранняя стадия: небольшая опухоль
+    раздражает рецепторы слизистой, отсюда сухой надсадный кашель и прожилки алой крови в мокроте.
+    Частичная обтурация даёт клапанный стеноз: воздух входит, но не выходит, доля вздувается,
+    появляется экспираторная одышка и вторичное воспаление с субфебрилитетом. Полная обтурация:
+    воздух за опухолью рассасывается, доля спадается — ателектаз, выраженная одышка, притупление
+    перкуторного звука и ослабленное дыхание. Дальше присоединяется инфекция: обтурационный
+    пневмонит и абсцедирование с гнойной мокротой и фебрильной лихорадкой.</desc>
+
+  <rect width="1020" height="560" fill="#ffffff"/>
+
+  <g font-family="Golos Text, Segoe UI, Arial, sans-serif">
+
+    <!-- Блок 1: ранняя стадия -->
+    <rect x="24" y="60" width="216" height="416" rx="12" fill="#fdfaf8" stroke="#c9a898" stroke-width="2"/>
+    <text x="132" y="94" text-anchor="middle" font-size="19" font-weight="600" fill="#8c4a3c">Ранняя стадия</text>
+    <circle cx="132" cy="168" r="46" fill="#f7f8fa" stroke="#9aa4b5" stroke-width="3"/>
+    <circle cx="132" cy="168" r="34" fill="#ffffff" stroke="#c3cbd8" stroke-width="2"/>
+    <path d="M 132 202 A 34 34 0 0 1 104 186 L 132 168 Z" fill="#d98b76"/>
+    <text x="132" y="240" text-anchor="middle" font-size="15" fill="#5b626c">просвет свободен</text>
+    <text x="132" y="286" text-anchor="middle" font-size="16" fill="#3f4550">опухоль раздражает</text>
+    <text x="132" y="308" text-anchor="middle" font-size="16" fill="#3f4550">рецепторы слизистой</text>
+    <line x1="52" y1="330" x2="212" y2="330" stroke="#dfe3ea" stroke-width="2"/>
+    <text x="132" y="360" text-anchor="middle" font-size="16" font-weight="600" fill="#8c4a3c">сухой надсадный</text>
+    <text x="132" y="382" text-anchor="middle" font-size="16" font-weight="600" fill="#8c4a3c">кашель</text>
+    <text x="132" y="412" text-anchor="middle" font-size="16" fill="#3f4550">прожилки алой крови</text>
+    <text x="132" y="434" text-anchor="middle" font-size="16" fill="#3f4550">в мокроте</text>
+
+    <!-- Блок 2: частичная обтурация -->
+    <rect x="264" y="60" width="216" height="416" rx="12" fill="#fdf7f4" stroke="#c9a898" stroke-width="2"/>
+    <text x="372" y="94" text-anchor="middle" font-size="19" font-weight="600" fill="#8c4a3c">Частичная обтурация</text>
+    <circle cx="372" cy="168" r="46" fill="#f7f8fa" stroke="#9aa4b5" stroke-width="3"/>
+    <circle cx="372" cy="168" r="34" fill="#ffffff" stroke="#c3cbd8" stroke-width="2"/>
+    <path d="M 372 202 A 34 34 0 0 1 348 134 L 372 168 Z" fill="#d98b76"/>
+    <path d="M 372 202 A 34 34 0 0 0 400 138 L 372 168 Z" fill="#d98b76"/>
+    <text x="372" y="240" text-anchor="middle" font-size="15" fill="#5b626c">клапанный стеноз</text>
+    <text x="372" y="286" text-anchor="middle" font-size="16" fill="#3f4550">воздух входит,</text>
+    <text x="372" y="308" text-anchor="middle" font-size="16" fill="#3f4550">но не выходит</text>
+    <line x1="292" y1="330" x2="452" y2="330" stroke="#dfe3ea" stroke-width="2"/>
+    <text x="372" y="360" text-anchor="middle" font-size="16" font-weight="600" fill="#8c4a3c">экспираторная одышка</text>
+    <text x="372" y="390" text-anchor="middle" font-size="16" fill="#3f4550">вздутие сегмента</text>
+    <text x="372" y="412" text-anchor="middle" font-size="16" fill="#3f4550">или доли, вторичное</text>
+    <text x="372" y="434" text-anchor="middle" font-size="15" fill="#3f4550">воспаление, субфебрилитет</text>
+
+    <!-- Блок 3: полная обтурация -->
+    <rect x="504" y="60" width="216" height="416" rx="12" fill="#fbf1ec" stroke="#c08a76" stroke-width="2"/>
+    <text x="612" y="94" text-anchor="middle" font-size="19" font-weight="600" fill="#8c4a3c">Полная обтурация</text>
+    <circle cx="612" cy="168" r="46" fill="#f7f8fa" stroke="#9aa4b5" stroke-width="3"/>
+    <circle cx="612" cy="168" r="34" fill="#d98b76" stroke="#bf6a58" stroke-width="2"/>
+    <text x="612" y="240" text-anchor="middle" font-size="15" fill="#5b626c">просвет закрыт</text>
+    <text x="612" y="286" text-anchor="middle" font-size="16" fill="#3f4550">воздух за опухолью</text>
+    <text x="612" y="308" text-anchor="middle" font-size="16" fill="#3f4550">рассасывается</text>
+    <line x1="532" y1="330" x2="692" y2="330" stroke="#e6d5cd" stroke-width="2"/>
+    <text x="612" y="360" text-anchor="middle" font-size="16" font-weight="600" fill="#8c4a3c">ателектаз доли</text>
+    <text x="612" y="390" text-anchor="middle" font-size="16" fill="#3f4550">выраженная одышка,</text>
+    <text x="612" y="412" text-anchor="middle" font-size="15" fill="#3f4550">притупление перкуторного</text>
+    <text x="612" y="434" text-anchor="middle" font-size="15" fill="#3f4550">звука, дыхание ослаблено</text>
+
+    <!-- Блок 4: осложнения -->
+    <rect x="744" y="60" width="252" height="416" rx="12" fill="#f8ece7" stroke="#b3705b" stroke-width="2.5"/>
+    <text x="870" y="94" text-anchor="middle" font-size="19" font-weight="600" fill="#7d3b2d">Осложнения обтурации</text>
+    <circle cx="870" cy="168" r="46" fill="#f7f8fa" stroke="#9aa4b5" stroke-width="3"/>
+    <circle cx="870" cy="168" r="34" fill="#d98b76" stroke="#bf6a58" stroke-width="2"/>
+    <circle cx="870" cy="168" r="15" fill="#f0e2a8" stroke="#b39a3f" stroke-width="2"/>
+    <text x="870" y="240" text-anchor="middle" font-size="15" fill="#5b626c">гной за обтурацией</text>
+    <text x="870" y="286" text-anchor="middle" font-size="16" fill="#3f4550">длительный ателектаз</text>
+    <text x="870" y="308" text-anchor="middle" font-size="16" fill="#3f4550">плюс инфекция</text>
+    <line x1="772" y1="330" x2="968" y2="330" stroke="#e6d5cd" stroke-width="2"/>
+    <text x="870" y="360" text-anchor="middle" font-size="16" font-weight="600" fill="#7d3b2d">обтурационный пневмонит,</text>
+    <text x="870" y="382" text-anchor="middle" font-size="16" font-weight="600" fill="#7d3b2d">абсцедирование</text>
+    <text x="870" y="412" text-anchor="middle" font-size="16" fill="#3f4550">гнойная мокрота,</text>
+    <text x="870" y="434" text-anchor="middle" font-size="16" fill="#3f4550">фебрильная лихорадка</text>
+
+    <!-- Стрелки между блоками -->
+    <g fill="#b3705b">
+      <path d="M 240 162 L 258 162 L 258 154 L 272 168 L 258 182 L 258 174 L 240 174 Z"/>
+      <path d="M 480 162 L 498 162 L 498 154 L 512 168 L 498 182 L 498 174 L 480 174 Z"/>
+      <path d="M 720 162 L 738 162 L 738 154 L 752 168 L 738 182 L 738 174 L 720 174 Z"/>
+    </g>
+
+    <text x="510" y="34" text-anchor="middle" font-size="21" font-weight="600" fill="#3f4550">
+      Рост опухоли в просвете бронха: от кашля до нагноения
+    </text>
+    <text x="510" y="516" text-anchor="middle" font-size="16" fill="#5b626c">
+      Клиника центрального рака — это клиника нарастающей обтурации, а не самой опухоли
+    </text>
+  </g>
+</svg>
