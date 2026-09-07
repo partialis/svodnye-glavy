@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560"
+     role="img" aria-labelledby="zagolovok opisanie">
+  <title id="zagolovok">Патогенез абсцесса лёгкого: от аспирации до дренирования в бронх</title>
+  <desc id="opisanie">Слева направо. Содержимое ротоглотки попадает в бронх — чаще всего во сне,
+    при опьянении, наркозе или нарушении глотания. Бронх закупоривается, участок лёгкого за
+    закупоркой спадается и лишается воздуха. В безвоздушной ткани размножается смешанная флора,
+    прежде всего анаэробы; развивается воспаление и гнойное расплавление. Расплавленная ткань
+    образует полость, отграниченную от здорового лёгкого пиогенной оболочкой. Когда полость
+    вскрывается в бронх, гной откашливается — отходит обильная зловонная мокрота «полным ртом»,
+    и на снимке появляется полость с горизонтальным уровнем жидкости.</desc>
+
+  <rect width="980" height="560" fill="#ffffff"/>
+
+  <g font-family="Golos Text, Segoe UI, Arial, sans-serif">
+    <text x="490" y="36" text-anchor="middle" font-size="21" font-weight="600" fill="#3f4550">
+      Почему в лёгком появляется полость с уровнем жидкости
+    </text>
+
+    <!-- Шаг 1: аспирация -->
+    <rect x="24" y="66" width="212" height="356" rx="12" fill="#fdfaf8" stroke="#c9a898" stroke-width="2"/>
+    <text x="130" y="100" text-anchor="middle" font-size="18" font-weight="600" fill="#8c4a3c">Аспирация</text>
+    <path d="M 106 128 C 106 118, 154 118, 154 128 L 158 196 C 158 210, 102 210, 102 196 Z"
+          fill="#f7f8fa" stroke="#9aa4b5" stroke-width="2"/>
+    <path d="M 122 128 L 138 128 L 138 170 L 122 170 Z" fill="#e3e7ee" stroke="#9aa4b5" stroke-width="1.5"/>
+    <circle cx="130" cy="150" r="7" fill="#c9a898"/>
+    <circle cx="130" cy="166" r="5" fill="#c9a898"/>
+    <text x="130" y="236" text-anchor="middle" font-size="16" fill="#3f4550">содержимое ротоглотки</text>
+    <text x="130" y="258" text-anchor="middle" font-size="16" fill="#3f4550">попадает в бронх</text>
+    <line x1="48" y1="278" x2="212" y2="278" stroke="#e6d5cd" stroke-width="2"/>
+    <text x="130" y="306" text-anchor="middle" font-size="15" fill="#5b626c">во сне, при опьянении,</text>
+    <text x="130" y="328" text-anchor="middle" font-size="15" fill="#5b626c">наркозе, нарушении</text>
+    <text x="130" y="350" text-anchor="middle" font-size="15" fill="#5b626c">глотания</text>
+
+    <!-- Шаг 2: обтурация и ателектаз -->
+    <rect x="260" y="66" width="212" height="356" rx="12" fill="#fdf7f4" stroke="#c9a898" stroke-width="2"/>
+    <text x="366" y="100" text-anchor="middle" font-size="18" font-weight="600" fill="#8c4a3c">Ателектаз</text>
+    <path d="M 342 128 C 342 118, 390 118, 390 128 L 394 196 C 394 210, 338 210, 338 196 Z"
+          fill="#eceff4" stroke="#9aa4b5" stroke-width="2"/>
+    <path d="M 358 128 L 374 128 L 374 156 L 358 156 Z" fill="#d98b76" stroke="#bf6a58" stroke-width="1.5"/>
+    <path d="M 348 168 C 360 158, 380 158, 388 172 L 386 194 C 372 202, 356 200, 346 192 Z"
+          fill="#c9ced8" stroke="#8f98a6" stroke-width="1.5"/>
+    <text x="366" y="236" text-anchor="middle" font-size="16" fill="#3f4550">бронх закупорен,</text>
+    <text x="366" y="258" text-anchor="middle" font-size="16" fill="#3f4550">участок спался</text>
+    <line x1="284" y1="278" x2="448" y2="278" stroke="#e6d5cd" stroke-width="2"/>
+    <text x="366" y="306" text-anchor="middle" font-size="15" fill="#5b626c">воздуха нет — условия</text>
+    <text x="366" y="328" text-anchor="middle" font-size="15" fill="#5b626c">для анаэробов</text>
+
+    <!-- Шаг 3: гнойное расплавление -->
+    <rect x="496" y="66" width="212" height="356" rx="12" fill="#fbf1ec" stroke="#c08a76" stroke-width="2"/>
+    <text x="602" y="100" text-anchor="middle" font-size="18" font-weight="600" fill="#8c4a3c">Расплавление</text>
+    <path d="M 578 128 C 578 118, 626 118, 626 128 L 630 196 C 630 210, 574 210, 574 196 Z"
+          fill="#eceff4" stroke="#9aa4b5" stroke-width="2"/>
+    <circle cx="602" cy="168" r="26" fill="#e8c98f" stroke="#b3894a" stroke-width="2"/>
+    <circle cx="602" cy="168" r="26" fill="none" stroke="#8c6b3a" stroke-width="4" stroke-dasharray="3 4"/>
+    <text x="602" y="236" text-anchor="middle" font-size="16" fill="#3f4550">полость гноя внутри</text>
+    <text x="602" y="258" text-anchor="middle" font-size="16" fill="#3f4550">пиогенной оболочки</text>
+    <line x1="520" y1="278" x2="684" y2="278" stroke="#e6d5cd" stroke-width="2"/>
+    <text x="602" y="306" text-anchor="middle" font-size="15" fill="#5b626c">лихорадка, интоксикация,</text>
+    <text x="602" y="328" text-anchor="middle" font-size="15" fill="#5b626c">мокроты почти нет</text>
+
+    <!-- Шаг 4: прорыв в бронх -->
+    <rect x="732" y="66" width="224" height="356" rx="12" fill="#f8ece7" stroke="#b3705b" stroke-width="2.5"/>
+    <text x="844" y="100" text-anchor="middle" font-size="18" font-weight="600" fill="#7d3b2d">Прорыв в бронх</text>
+    <path d="M 820 128 C 820 118, 868 118, 868 128 L 872 196 C 872 210, 816 210, 816 196 Z"
+          fill="#eceff4" stroke="#9aa4b5" stroke-width="2"/>
+    <circle cx="844" cy="170" r="26" fill="#ffffff" stroke="#8c6b3a" stroke-width="2"/>
+    <path d="M 818 174 A 26 26 0 0 0 870 174 Z" fill="#e8c98f" stroke="#b3894a" stroke-width="1.5"/>
+    <line x1="818" y1="174" x2="870" y2="174" stroke="#8c6b3a" stroke-width="2.5"/>
+    <path d="M 838 144 L 838 128 L 850 128 L 850 144" fill="none" stroke="#bf6a58" stroke-width="3"/>
+    <text x="844" y="236" text-anchor="middle" font-size="16" font-weight="600" fill="#7d3b2d">гной откашливается</text>
+    <text x="844" y="258" text-anchor="middle" font-size="16" fill="#3f4550">«полным ртом»</text>
+    <line x1="756" y1="278" x2="932" y2="278" stroke="#e6d5cd" stroke-width="2"/>
+    <text x="844" y="306" text-anchor="middle" font-size="15" fill="#5b626c">на снимке — полость</text>
+    <text x="844" y="328" text-anchor="middle" font-size="15" fill="#5b626c">с горизонтальным</text>
+    <text x="844" y="350" text-anchor="middle" font-size="15" fill="#5b626c">уровнем жидкости</text>
+
+    <!-- Стрелки -->
+    <g fill="#b3705b">
+      <path d="M 236 162 L 250 162 L 250 154 L 262 168 L 250 182 L 250 174 L 236 174 Z"/>
+      <path d="M 472 162 L 486 162 L 486 154 L 498 168 L 486 182 L 486 174 L 472 174 Z"/>
+      <path d="M 708 162 L 722 162 L 722 154 L 734 168 L 722 182 L 722 174 L 708 174 Z"/>
+    </g>
+
+    <text x="490" y="466" text-anchor="middle" font-size="16" fill="#5b626c">
+      Резкое улучшение самочувствия после откашливания гноя — не выздоровление,
+    </text>
+    <text x="490" y="490" text-anchor="middle" font-size="16" fill="#5b626c">
+      а момент, когда полость нашла выход. Именно отсюда начинается отсчёт лечения.
+    </text>
+  </g>
+</svg>
