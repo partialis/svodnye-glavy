@@ -107,10 +107,10 @@ const ГЛАВЫ_САЙТА = [
   {а: "reproduktivnaya-sistema.html", т: "Физиология репродуктивной системы", к: true},
   {а: "anatomiya-zhpo.html", т: "Анатомия женских половых органов", к: true},
   {а: "gnoynyy-plevrit.html", т: "Гнойный плеврит", к: true},
-  {а: "rak-legkogo.html", т: "Рак лёгкого", к: false},
+  {а: "rak-legkogo.html", т: "Рак лёгкого", к: true},
   {а: "zabolevaniya-arteriy.html", т: "Заболевания артерий", к: true},
-  {а: "metody-obsledovaniya.html", т: "Методы обследования в гинекологии", к: false},
-  {а: "instrumentalnye-metody.html", т: "Инструментальные, эндоскопические методы исследования в гинекологии", к: false},
+  {а: "metody-obsledovaniya.html", т: "Методы обследования в гинекологии", к: true},
+  {а: "instrumentalnye-metody.html", т: "Инструментальные, эндоскопические методы исследования в гинекологии", к: true},
 ];
 /* ТЕМЫ-КОНЕЦ */
 
