@@ -93,7 +93,7 @@ const ПРЕДМЕТЫ_ТЕМ = {
   },
   "Гинекология": {
     файл: "predmet-ginekologiya.html",
-    темы: ["anatomiya-zhpo.html", "reproduktivnaya-sistema.html", "metody-obsledovaniya.html", "instrumentalnye-metody.html"],
+    темы: ["anatomiya-zhpo.html", "reproduktivnaya-sistema.html", "metody-obsledovaniya.html", "instrumentalnye-metody.html", "vzomt.html"],
   },
 };
 
@@ -115,6 +115,7 @@ const ГЛАВЫ_САЙТА = [
   {а: "tromboflebit.html", т: "Тромбофлебит", к: true},
   {а: "gryzhi.html", т: "Грыжи", к: true},
   {а: "rak-pishchevoda.html", т: "Рак пищевода и желудка", к: true},
+  {а: "vzomt.html", т: "Воспалительные заболевания женских половых органов неспецифической этиологии", к: true},
 ];
 /* ТЕМЫ-КОНЕЦ */
 
