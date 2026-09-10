@@ -89,7 +89,7 @@ const ПРЕДМЕТЫ_ТЕМ = {
   },
   "Госпитальная хирургия": {
     файл: "predmet-gospitalnaya-hirurgiya.html",
-    темы: ["abscess-legkogo.html", "gnoynyy-plevrit.html", "rak-legkogo.html", "zabolevaniya-arteriy.html"],
+    темы: ["abscess-legkogo.html", "gnoynyy-plevrit.html", "rak-legkogo.html", "zabolevaniya-arteriy.html", "zabolevaniya-ven.html", "tromboflebit.html", "gryzhi.html", "rak-pishchevoda.html"],
   },
   "Гинекология": {
     файл: "predmet-ginekologiya.html",
@@ -111,6 +111,10 @@ const ГЛАВЫ_САЙТА = [
   {а: "zabolevaniya-arteriy.html", т: "Заболевания артерий", к: true},
   {а: "metody-obsledovaniya.html", т: "Методы обследования в гинекологии", к: true},
   {а: "instrumentalnye-metody.html", т: "Инструментальные, эндоскопические методы исследования в гинекологии", к: true},
+  {а: "zabolevaniya-ven.html", т: "Заболевания вен", к: true},
+  {а: "tromboflebit.html", т: "Тромбофлебит", к: true},
+  {а: "gryzhi.html", т: "Грыжи", к: true},
+  {а: "rak-pishchevoda.html", т: "Рак пищевода и желудка", к: true},
 ];
 /* ТЕМЫ-КОНЕЦ */
 
