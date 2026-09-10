@@ -359,7 +359,17 @@ body{
 /* ─── сам текст главы ─────────────────────────────────────────────────────
    Селекторы бьют по ГОЛЫМ тегам внутри .ob-article: в разметке главы нет ни
    одного класса, и это условие всей затеи — иначе облик не сменить. */
-.ob-article{ }
+.ob-article{
+  /* Длинное неразрывное слово — адрес источника, формула, длинный термин —
+     не обязано раздвигать всю страницу. Замер 10.09 на 360 px: семь адресов
+     `https://europepmc.org/article/PMC/…` в «Источниках» давали +75 px внутри
+     своего <li> и уводили ВЕСЬ документ вбок на 61 px, отчего справа на
+     телефоне и была видна полоса фона. Таблицы к этому отношения не имели:
+     их `облик.js` оборачивает в .ob-table-wrap со своей прокруткой.
+     `break-word`, а не `anywhere`: второй меняет min-content ширину и
+     пересобрал бы раскладку таблиц. */
+  overflow-wrap: break-word;
+}
 .ob-article h2{
   font-family: var(--ob-h2-font); font-size: var(--ob-h2-fs); font-weight: var(--ob-h2-fw);
   color: var(--ob-h2-col); line-height: 1.25; margin: 2.1em 0 .62em;
@@ -935,6 +945,12 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
   :root .ob-article figure{ margin-left: -15px; margin-right: -15px; padding: 0; border: 0; background: none; }
   :root .ob-article figcaption{ padding: 0 15px; }
   :root .ob-table-wrap{ margin-left: -15px; margin-right: -15px; padding: 0 15px; }
+  /* Обёртка таблицы ВНУТРИ рисунка не выступает второй раз: у figure
+     выше стоит тот же вылет -15/-15, и сложение двух даёт 390 px в
+     окне 360. Замер 10.09: ровно этот остаток (+16 px) держал
+     «Гемостаз» вбок после починки переносов. Поля таблице остаются —
+     отменяются только отрицательные отступы. */
+  :root .ob-article figure .ob-table-wrap{ margin-left: 0; margin-right: 0; }
   :root .ob-article table{ font-size: .92em; }
 
   /* Карточки, в которые часть обликов заворачивает текст (Osmosis), на узком
