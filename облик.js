@@ -93,7 +93,7 @@ const ПРЕДМЕТЫ_ТЕМ = {
   },
   "Гинекология": {
     файл: "predmet-ginekologiya.html",
-    темы: ["anatomiya-zhpo.html", "reproduktivnaya-sistema.html", "metody-obsledovaniya.html", "instrumentalnye-metody.html", "vzomt.html", "vzpo-specificheskaya.html"],
+    темы: ["anatomiya-zhpo.html", "reproduktivnaya-sistema.html", "metody-obsledovaniya.html", "instrumentalnye-metody.html", "vzomt.html", "vzpo-specificheskaya.html", "amk-urgentnaya.html", "amk-klassifikaciya.html"],
   },
 };
 
@@ -117,6 +117,8 @@ const ГЛАВЫ_САЙТА = [
   {а: "rak-pishchevoda.html", т: "Рак пищевода и желудка", к: true},
   {а: "vzomt.html", т: "Воспалительные заболевания женских половых органов неспецифической этиологии", к: true},
   {а: "vzpo-specificheskaya.html", т: "Воспалительные заболевания женских половых органов специфической этиологии", к: true},
+  {а: "amk-urgentnaya.html", т: "Аномальные маточные кровотечения", к: true},
+  {а: "amk-klassifikaciya.html", т: "Аномальные маточные кровотечения", к: true},
   {а: "yazvennaya-bolezn.html", т: "Язвенная болезнь желудка и двенадцатиперстной кишки", к: true},
 ];
 /* ТЕМЫ-КОНЕЦ */
