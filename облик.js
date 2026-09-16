@@ -89,7 +89,7 @@ const ПРЕДМЕТЫ_ТЕМ = {
   },
   "Госпитальная хирургия": {
     файл: "predmet-gospitalnaya-hirurgiya.html",
-    темы: ["abscess-legkogo.html", "gnoynyy-plevrit.html", "rak-legkogo.html", "zabolevaniya-arteriy.html", "zabolevaniya-ven.html", "tromboflebit.html", "gryzhi.html", "rak-pishchevoda.html"],
+    темы: ["abscess-legkogo.html", "gnoynyy-plevrit.html", "rak-legkogo.html", "zabolevaniya-arteriy.html", "zabolevaniya-ven.html", "tromboflebit.html", "gryzhi.html", "rak-pishchevoda.html", "yazvennaya-bolezn.html"],
   },
   "Гинекология": {
     файл: "predmet-ginekologiya.html",
@@ -117,6 +117,7 @@ const ГЛАВЫ_САЙТА = [
   {а: "rak-pishchevoda.html", т: "Рак пищевода и желудка", к: true},
   {а: "vzomt.html", т: "Воспалительные заболевания женских половых органов неспецифической этиологии", к: true},
   {а: "vzpo-specificheskaya.html", т: "Воспалительные заболевания женских половых органов специфической этиологии", к: true},
+  {а: "yazvennaya-bolezn.html", т: "Язвенная болезнь желудка и двенадцатиперстной кишки", к: true},
 ];
 /* ТЕМЫ-КОНЕЦ */
 
