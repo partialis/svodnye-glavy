@@ -89,11 +89,11 @@ const ПРЕДМЕТЫ_ТЕМ = {
   },
   "Госпитальная хирургия": {
     файл: "predmet-gospitalnaya-hirurgiya.html",
-    темы: ["abscess-legkogo.html", "gnoynyy-plevrit.html", "rak-legkogo.html", "zabolevaniya-arteriy.html", "zabolevaniya-ven.html", "tromboflebit.html", "gryzhi.html", "rak-pishchevoda.html", "portalnaya-gipertenziya.html", "ostryy-pankreatit.html", "zhkb-kholecistit.html", "zabolevaniya-pryamoy-kishki.html", "kishechnaya-neprokhodimost.html", "appendicit.html", "bolezn-operirovannogo-zheludka.html", "yazvennaya-bolezn.html"],
+    темы: ["abscess-legkogo.html", "gnoynyy-plevrit.html", "rak-legkogo.html", "zabolevaniya-arteriy.html", "zabolevaniya-ven.html", "tromboflebit.html", "gryzhi.html", "rak-pishchevoda.html", "yazvennaya-bolezn.html", "bolezn-operirovannogo-zheludka.html", "appendicit.html", "kishechnaya-neprokhodimost.html", "zabolevaniya-pryamoy-kishki.html", "zhkb-kholecistit.html", "ostryy-pankreatit.html", "portalnaya-gipertenziya.html"],
   },
   "Гинекология": {
     файл: "predmet-ginekologiya.html",
-    темы: ["anatomiya-zhpo.html", "reproduktivnaya-sistema.html", "metody-obsledovaniya.html", "instrumentalnye-metody.html", "vzomt.html", "vzpo-specificheskaya.html", "neyroendokrinnye-sindromy.html", "amk-urgentnaya.html", "amk-klassifikaciya.html"],
+    темы: ["anatomiya-zhpo.html", "reproduktivnaya-sistema.html", "metody-obsledovaniya.html", "instrumentalnye-metody.html", "vzomt.html", "vzpo-specificheskaya.html", "amk-klassifikaciya.html", "amk-urgentnaya.html", "neyroendokrinnye-sindromy.html"],
   },
 };
 
@@ -117,17 +117,17 @@ const ГЛАВЫ_САЙТА = [
   {а: "rak-pishchevoda.html", т: "Рак пищевода и желудка", к: true},
   {а: "vzomt.html", т: "Воспалительные заболевания женских половых органов неспецифической этиологии", к: true},
   {а: "vzpo-specificheskaya.html", т: "Воспалительные заболевания женских половых органов специфической этиологии", к: true},
-  {а: "neyroendokrinnye-sindromy.html", т: "Нейроэндокринные синдромы", к: true},
-  {а: "portalnaya-gipertenziya.html", т: "Заболевания печени", к: true},
-  {а: "ostryy-pankreatit.html", т: "Острый панкреатит", к: true},
-  {а: "zhkb-kholecistit.html", т: "Желчнокаменная болезнь", к: true},
-  {а: "zabolevaniya-pryamoy-kishki.html", т: "Заболевания прямой кишки", к: true},
-  {а: "kishechnaya-neprokhodimost.html", т: "Кишечная непроходимость", к: true},
-  {а: "appendicit.html", т: "Аппендицит", к: true},
-  {а: "bolezn-operirovannogo-zheludka.html", т: "Болезнь оперированного желудка", к: true},
-  {а: "amk-urgentnaya.html", т: "Аномальные маточные кровотечения", к: true},
   {а: "amk-klassifikaciya.html", т: "Аномальные маточные кровотечения", к: true},
+  {а: "amk-urgentnaya.html", т: "Аномальные маточные кровотечения", к: true},
+  {а: "neyroendokrinnye-sindromy.html", т: "Нейроэндокринные синдромы", к: true},
   {а: "yazvennaya-bolezn.html", т: "Язвенная болезнь желудка и двенадцатиперстной кишки", к: true},
+  {а: "bolezn-operirovannogo-zheludka.html", т: "Болезнь оперированного желудка", к: true},
+  {а: "appendicit.html", т: "Аппендицит", к: true},
+  {а: "kishechnaya-neprokhodimost.html", т: "Кишечная непроходимость", к: true},
+  {а: "zabolevaniya-pryamoy-kishki.html", т: "Заболевания прямой кишки", к: true},
+  {а: "zhkb-kholecistit.html", т: "Желчнокаменная болезнь", к: true},
+  {а: "ostryy-pankreatit.html", т: "Острый панкреатит", к: true},
+  {а: "portalnaya-gipertenziya.html", т: "Заболевания печени", к: true},
 ];
 /* ТЕМЫ-КОНЕЦ */
 
