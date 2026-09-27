@@ -132,7 +132,7 @@ const ГЛАВЫ_САЙТА = [
   {а: "zhkb-kholecistit.html", т: "Желчнокаменная болезнь", к: true},
   {а: "ostryy-pankreatit.html", т: "Острый панкреатит", к: true},
   {а: "portalnaya-gipertenziya.html", т: "Заболевания печени", к: true},
-  {а: "stroenie-kozhi.html", т: "Строение кожи", к: false},
+  {а: "stroenie-kozhi.html", т: "Строение кожи", к: true},
 ];
 /* ТЕМЫ-КОНЕЦ */
 
