@@ -95,6 +95,10 @@ const ПРЕДМЕТЫ_ТЕМ = {
     файл: "predmet-ginekologiya.html",
     темы: ["anatomiya-zhpo.html", "reproduktivnaya-sistema.html", "metody-obsledovaniya.html", "instrumentalnye-metody.html", "vzomt.html", "vzpo-specificheskaya.html", "amk-klassifikaciya.html", "amk-urgentnaya.html", "neyroendokrinnye-sindromy.html"],
   },
+  "Дерматовенерология": {
+    файл: "predmet-dermatovenerologiya.html",
+    темы: ["stroenie-kozhi.html"],
+  },
 };
 
 const ГЛАВЫ_САЙТА = [
@@ -128,6 +132,7 @@ const ГЛАВЫ_САЙТА = [
   {а: "zhkb-kholecistit.html", т: "Желчнокаменная болезнь", к: true},
   {а: "ostryy-pankreatit.html", т: "Острый панкреатит", к: true},
   {а: "portalnaya-gipertenziya.html", т: "Заболевания печени", к: true},
+  {а: "stroenie-kozhi.html", т: "Строение кожи", к: false},
 ];
 /* ТЕМЫ-КОНЕЦ */
 
