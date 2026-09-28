@@ -767,8 +767,17 @@ const ХРАНИЛКА = {
       э.querySelectorAll("img").forEach(и => { if (!и.complete) и.addEventListener("load", () => с.updateAutoHeight(0)); });
     });
   }
+  /* Галерею создаёт скрипт страницы ПОСЛЕ того, как облик подгрузит Swiper, —
+     на телефоне с медленной сетью это позже «load» и позже полутора секунд
+     (владелец 28.09 23:44: на телефоне поле под кадром осталось). Поэтому ждём,
+     пока экземпляры появятся у всех галерей, а не один раз. */
+  let попыток = 0;
+  const таймер = setInterval(() => {
+    подогнать();
+    const все = [...document.querySelectorAll(".галерея .swiper")];
+    if (++попыток > 60 || (все.length && все.every(э => э.swiper && э.swiper.ob_авто))) clearInterval(таймер);
+  }, 500);
   window.addEventListener("load", подогнать);
-  setTimeout(подогнать, 1500);
 })();
 
 (function галерея(){
