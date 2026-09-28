@@ -97,7 +97,7 @@ const ПРЕДМЕТЫ_ТЕМ = {
   },
   "Дерматовенерология": {
     файл: "predmet-dermatovenerologiya.html",
-    темы: ["stroenie-kozhi.html"],
+    темы: ["stroenie-kozhi.html", "gribkovye-parazitarnye-bolezni-kozhi.html"],
   },
 };
 
@@ -133,6 +133,7 @@ const ГЛАВЫ_САЙТА = [
   {а: "ostryy-pankreatit.html", т: "Острый панкреатит", к: true},
   {а: "portalnaya-gipertenziya.html", т: "Заболевания печени", к: true},
   {а: "stroenie-kozhi.html", т: "Строение кожи", к: true},
+  {а: "gribkovye-parazitarnye-bolezni-kozhi.html", т: "Грибковые заболевания кожи", к: true},
 ];
 /* ТЕМЫ-КОНЕЦ */
 
