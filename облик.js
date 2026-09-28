@@ -761,6 +761,7 @@ const ХРАНИЛКА = {
       const с = э.swiper;
       if (!с || с.ob_авто) return;
       с.ob_авто = true;
+      э.classList.add("swiper-autoheight");
       с.params.autoHeight = true;
       с.updateAutoHeight(0);
       с.on("slideChangeTransitionStart", () => с.updateAutoHeight(250));
