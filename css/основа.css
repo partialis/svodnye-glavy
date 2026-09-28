@@ -1635,11 +1635,16 @@ a:hover .gl-ramka img{ transform: scale(1.03); }
    «Доказательная медицина» / «Кафедральная версия». На телефоне ряд
    переносится целыми кнопками, а не словами, и точка не повисает. */
 .ob-versii{ margin: 0 0 8px; display: flex; flex-wrap: wrap; gap: 8px; font-size: .88em; }
-:root .ob-versii .ob-kratko{
-  display: inline-block; padding: 5px 12px; border: 1px solid currentColor;
-  border-radius: 999px; line-height: 1.3; white-space: nowrap;
-}
-:root .ob-versii .ob-kratko:hover{ text-decoration: none; background: color-mix(in srgb, currentColor 10%, transparent); }
+/* Вид ссылки — прежний (владелец 28.09 23:12: «почему она перестала выглядеть
+   как раньше»); от «таблеток» осталось только то, что ряд свой и переносится
+   ссылками целиком. */
+:root .ob-versii .ob-kratko{ white-space: nowrap; }
+
+/* Галерея в тексте: высота по ТЕКУЩЕМУ кадру, точки под подписью. Владелец
+   28.09 со снимков: под низким кадром висело пустое поле высотой с самый
+   высокий кадр, а точки листания наезжали на подпись. */
+:root .галерея .swiper-wrapper{ align-items: flex-start; }
+:root .галерея .swiper-pagination{ position: static; margin-top: 10px; }
 
 /* ─── карточки ленты: ровный низ и обрезанное описание ───────────────────────
    «Криво, очень криво. Конец всегда на одном и том же расстоянии должен быть.

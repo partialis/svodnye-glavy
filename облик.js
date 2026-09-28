@@ -751,6 +751,26 @@ const ХРАНИЛКА = {
    все, и подпись меняется вместе с кадром. Открывается по клику на рисунок.
    Если библиотека почему-то не загрузилась, клик просто ничего не делает — но
    страница цела: ради галереи ломать чтение нельзя. */
+/* Галереи в тексте (`.галерея .swiper`, их заводит скрипт страницы) — высота по
+   текущему кадру. Владелец 28.09: под низким кадром оставалось пустое поле
+   высотой с самый высокий кадр. Скрипт страницы от сборки не трогаем: включаем
+   autoHeight у уже созданного экземпляра, как только он и его картинки готовы. */
+(function высотаГалерей(){
+  function подогнать(){
+    document.querySelectorAll(".галерея .swiper").forEach(э => {
+      const с = э.swiper;
+      if (!с || с.ob_авто) return;
+      с.ob_авто = true;
+      с.params.autoHeight = true;
+      с.updateAutoHeight(0);
+      с.on("slideChangeTransitionStart", () => с.updateAutoHeight(250));
+      э.querySelectorAll("img").forEach(и => { if (!и.complete) и.addEventListener("load", () => с.updateAutoHeight(0)); });
+    });
+  }
+  window.addEventListener("load", подогнать);
+  setTimeout(подогнать, 1500);
+})();
+
 (function галерея(){
   const рисунки = [...document.querySelectorAll(".ob-article figure img")];
   if (!рисунки.length) return;
