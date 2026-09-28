@@ -517,9 +517,17 @@ const ХРАНИЛКА = {
   });
 
   // Широкие таблицы прокручиваются ВНУТРИ обёртки, а не рвут страницу вбок.
+  /* Подпись выносится НАД обёрткой: <caption> шириной с таблицу и уезжал вместе
+     с ней, на телефоне конец подписи обрезался краем экрана (29.09). */
   статья.querySelectorAll("table").forEach(т => {
     const о = эл("div", "ob-table-wrap");
     т.replaceWith(о); о.appendChild(т);
+    const к = т.querySelector(":scope > caption");
+    if (к && к.textContent.trim()) {
+      const п = эл("div", "ob-table-cap");
+      while (к.firstChild) п.appendChild(к.firstChild);
+      к.remove(); о.before(п);
+    }
   });
 
   const справа = эл("aside", "ob-right");

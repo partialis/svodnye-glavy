@@ -78,7 +78,7 @@
         // Внутрь заголовков, ссылок, кода, подписей и уже помеченного не лезем:
         // подчёркнутый термин в заголовке выглядит как ошибка вёрстки.
         if (!узел.nodeValue || узел.nodeValue.trim().length < 4) return NodeFilter.FILTER_REJECT;
-        if (узел.parentElement.closest("h1,h2,h3,h4,a,code,pre,figcaption,caption,th,.ob-term"))
+        if (узел.parentElement.closest("h1,h2,h3,h4,a,code,pre,figcaption,caption,.ob-table-cap,th,.ob-term"))
           return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       }

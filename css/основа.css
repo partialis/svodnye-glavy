@@ -400,6 +400,7 @@ body{
   font-size: var(--ob-table-fs); line-height: 1.42;
 }
 .ob-article caption{ caption-side: top; text-align: left; font-size: .9em; color: var(--ob-muted); padding-bottom: .55em; }
+.ob-article .ob-table-cap{ font-size: .9em; color: var(--ob-muted); line-height: 1.45; margin: 1.2em 0 .55em; }
 .ob-article th{ background: var(--ob-th-bg); color: var(--ob-th-col); font-weight: 700; text-align: left; padding: 8px 11px; border: var(--ob-td-brd); vertical-align: bottom; }
 .ob-article td{ padding: 8px 11px; border: var(--ob-td-brd); vertical-align: top; }
 .ob-table-wrap{ overflow-x: auto; }
