@@ -833,8 +833,10 @@ const ХРАНИЛКА = {
       '<div class="swiper-wrapper">' +
         рисунки.map(им =>
           '<div class="swiper-slide">' +
-            '<img src="' + (им.currentSrc || им.src) + '" alt="' +
-            (им.alt || "").replace(/"/g, "&quot;") + '">' +
+            '<div class="swiper-zoom-container">' +
+              '<img src="' + (им.currentSrc || им.src) + '" alt="' +
+              (им.alt || "").replace(/"/g, "&quot;") + '">' +
+            "</div>" +
             '<div class="ob-lupa-pod">' + подписьРядом(им) + "</div>" +
           "</div>").join("") +
       "</div>" +
@@ -853,6 +855,7 @@ const ХРАНИЛКА = {
     speed: 320,
     loop: рисунки.length > 1,
     keyboard: {enabled: true},
+    zoom: {enabled: true, maxRatio: 4, minRatio: 1, toggle: true},
     navigation: {nextEl: слой.querySelector(".swiper-button-next"),
                  prevEl: слой.querySelector(".swiper-button-prev")},
     pagination: {el: слой.querySelector(".swiper-pagination"), type: "fraction"},
