@@ -97,7 +97,7 @@ const ПРЕДМЕТЫ_ТЕМ = {
   },
   "Дерматовенерология": {
     файл: "predmet-dermatovenerologiya.html",
-    темы: ["stroenie-kozhi.html", "gribkovye-parazitarnye-bolezni-kozhi.html", "dermatity-toksikodermiya-ekzema.html"],
+    темы: ["stroenie-kozhi.html", "gribkovye-parazitarnye-bolezni-kozhi.html", "dermatity-toksikodermiya-ekzema.html", "psoriaz-krasnyy-ploskiy-lishay-neyrodermatozy.html"],
   },
 };
 
@@ -135,6 +135,7 @@ const ГЛАВЫ_САЙТА = [
   {а: "stroenie-kozhi.html", т: "Строение кожи", к: true},
   {а: "gribkovye-parazitarnye-bolezni-kozhi.html", т: "Грибковые заболевания кожи", к: true, с: true},
   {а: "dermatity-toksikodermiya-ekzema.html", т: "Дерматиты, токсикодермия и экзема", к: true},
+  {а: "psoriaz-krasnyy-ploskiy-lishay-neyrodermatozy.html", т: "Псориаз, красный плоский лишай", к: true},
 ];
 /* ТЕМЫ-КОНЕЦ */
 
