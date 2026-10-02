@@ -97,7 +97,7 @@ const ПРЕДМЕТЫ_ТЕМ = {
   },
   "Дерматовенерология": {
     файл: "predmet-dermatovenerologiya.html",
-    темы: ["stroenie-kozhi.html", "gribkovye-parazitarnye-bolezni-kozhi.html", "dermatity-toksikodermiya-ekzema.html", "psoriaz-krasnyy-ploskiy-lishay-neyrodermatozy.html", "puzyrnye-zabolevaniya-kozhi-virusnye-dermatozy.html", "kollagenozy-eritemy-tuberkulez-kozhi-lepra-leyshmanioz.html", "venerologiya-sifilis-pervichnyy-vich.html"],
+    темы: ["stroenie-kozhi.html", "gribkovye-parazitarnye-bolezni-kozhi.html", "dermatity-toksikodermiya-ekzema.html", "psoriaz-krasnyy-ploskiy-lishay-neyrodermatozy.html", "puzyrnye-zabolevaniya-kozhi-virusnye-dermatozy.html", "kollagenozy-eritemy-tuberkulez-kozhi-lepra-leyshmanioz.html", "venerologiya-sifilis-pervichnyy-vich.html", "sifilis-vtorichnyy-tretichnyy-vrozhdennyy-lechenie.html", "gonoreya-negonokokkovye-uretrity.html"],
   },
 };
 
@@ -139,6 +139,8 @@ const ГЛАВЫ_САЙТА = [
   {а: "puzyrnye-zabolevaniya-kozhi-virusnye-dermatozy.html", т: "Пузырные заболевания кожи", к: true},
   {а: "kollagenozy-eritemy-tuberkulez-kozhi-lepra-leyshmanioz.html", т: "Коллагенозы", к: true},
   {а: "venerologiya-sifilis-pervichnyy-vich.html", т: "Методика обследования больного венерическими заболеваниями", к: true},
+  {а: "sifilis-vtorichnyy-tretichnyy-vrozhdennyy-lechenie.html", т: "Вторичный и третичный период сифилиса, врожденный сифилис", к: true},
+  {а: "gonoreya-negonokokkovye-uretrity.html", т: "Гонорея, негонококковые уретриты у мужчин", к: true},
 ];
 /* ТЕМЫ-КОНЕЦ */
 
