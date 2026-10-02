@@ -97,7 +97,7 @@ const ПРЕДМЕТЫ_ТЕМ = {
   },
   "Дерматовенерология": {
     файл: "predmet-dermatovenerologiya.html",
-    темы: ["stroenie-kozhi.html", "gribkovye-parazitarnye-bolezni-kozhi.html", "dermatity-toksikodermiya-ekzema.html", "psoriaz-krasnyy-ploskiy-lishay-neyrodermatozy.html", "puzyrnye-zabolevaniya-kozhi-virusnye-dermatozy.html", "kollagenozy-eritemy-tuberkulez-kozhi-lepra-leyshmanioz.html"],
+    темы: ["stroenie-kozhi.html", "gribkovye-parazitarnye-bolezni-kozhi.html", "dermatity-toksikodermiya-ekzema.html", "psoriaz-krasnyy-ploskiy-lishay-neyrodermatozy.html", "puzyrnye-zabolevaniya-kozhi-virusnye-dermatozy.html", "kollagenozy-eritemy-tuberkulez-kozhi-lepra-leyshmanioz.html", "venerologiya-sifilis-pervichnyy-vich.html"],
   },
 };
 
@@ -138,6 +138,7 @@ const ГЛАВЫ_САЙТА = [
   {а: "psoriaz-krasnyy-ploskiy-lishay-neyrodermatozy.html", т: "Псориаз, красный плоский лишай", к: true},
   {а: "puzyrnye-zabolevaniya-kozhi-virusnye-dermatozy.html", т: "Пузырные заболевания кожи", к: true},
   {а: "kollagenozy-eritemy-tuberkulez-kozhi-lepra-leyshmanioz.html", т: "Коллагенозы", к: true},
+  {а: "venerologiya-sifilis-pervichnyy-vich.html", т: "Методика обследования больного венерическими заболеваниями", к: true},
 ];
 /* ТЕМЫ-КОНЕЦ */
 
